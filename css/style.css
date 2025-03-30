@@ -591,6 +591,49 @@ a {
   }
 }
 
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+  display: none; /* Hidden by default on desktop */
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--dark);
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block; /* Show on mobile */
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem;
+  }
+}
+
 /* Animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }

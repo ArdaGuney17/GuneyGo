@@ -651,3 +651,110 @@ a {
 .service-card:nth-child(1) { animation-delay: 0.1s; }
 .service-card:nth-child(2) { animation-delay: 0.2s; }
 .service-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Header Styles (add these within or near your existing header styles) */
+.nav-links li.dropdown {
+  position: relative; /* Essential for positioning the dropdown menu */
+}
+
+.dropdown-toggle {
+  display: flex; /* To align text and icon */
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.dropdown-toggle:hover {
+  color: var(--primary);
+}
+
+.dropdown-arrow {
+  transition: transform 0.3s ease; /* Smooth rotation for the arrow */
+}
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%; /* Position below the toggle */
+  left: 50%; /* Center horizontally relative to parent */
+  transform: translateX(-50%); /* Adjust for centering */
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0.375rem;
+  list-style: none;
+  min-width: 220px; /* Adjust as needed */
+  padding: 0.75rem 0;
+  z-index: 999; /* Ensure it appears above other content */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  transform: translateX(-50%) translateY(10px); /* Initial position for slide-down effect */
+}
+
+.dropdown-menu.active {
+  display: block; /* Show when active */
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0); /* Final position */
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--dark);
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--light-gray);
+  color: var(--primary);
+}
+
+/* Responsive adjustments for dropdown */
+@media (max-width: 768px) {
+  .nav-links li.dropdown {
+    position: static; /* No absolute positioning on mobile */
+  }
+
+  .dropdown-menu {
+    position: static; /* Stack naturally within the mobile menu */
+    transform: none; /* Remove desktop centering transform */
+    box-shadow: none; /* No shadow on mobile */
+    border-radius: 0;
+    width: 100%;
+    min-width: auto;
+    padding: 0;
+    background-color: transparent; /* Transparent background */
+    display: none; /* Still hidden by default */
+    overflow: hidden; /* To enable slide-down animation */
+    transition: height 0.3s ease-out, opacity 0.3s ease;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .dropdown-menu.active {
+    display: block;
+    height: auto; /* Allow content to define height */
+    opacity: 1;
+    visibility: visible;
+    /* Use max-height for smooth slide down */
+    max-height: 500px; /* A value larger than the max possible height */
+  }
+
+  .dropdown-menu a {
+    padding-left: 2.5rem; /* Indent sub-items in mobile menu */
+    background-color: var(--light); /* Slightly different background for sub-items */
+  }
+
+  .dropdown-arrow {
+    margin-left: auto; /* Push arrow to the right on mobile dropdown-toggle */
+  }
+}

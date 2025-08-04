@@ -39,31 +39,16 @@
   <div class="section-container">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-container">
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        <div class="contact-method">
-          <i class="fas fa-envelope"></i>
-          <span>ardagney05@gmail.com</span>
-        </div>
-        <div class="contact-method">
-          <i class="fas fa-phone"></i>
-          <span>+90 532 567 32 91</span>
-        </div>
-        <div class="contact-method">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Istanbul, Turkey</span>
-        </div>
-      </div>
-
       <div class="form-wrapper">
         <form class="contact-form" action="https://formspree.io/f/mjkyeadq" method="POST">
-          <input type="hidden" name="_next" value="http://localhost:63342/untitled/contact.html"> <div class="form-group">
+          <input type="hidden" name="_next" value="http://localhost:63342/untitled/contact.html">
+          <h3>Send Us a Message</h3> <div class="form-group">
           <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          <input type="text" id="name" name="name" placeholder="Enter your name and surname" required>
         </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number with country code" required>
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
@@ -79,7 +64,7 @@
           </button>
         </form>
 
-        <form id="uploadForm" class="contact-form document-upload-form" style="margin-top: 2rem;">
+        <form id="uploadForm" class="document-upload-form">
           <h3>Document Upload</h3>
           <div id="customUploadMessage" style="
               display: none;
@@ -105,6 +90,22 @@
           </button>
         </form>
       </div>
+
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-method">
+          <i class="fas fa-envelope"></i>
+          <span>ardagney05@gmail.com</span>
+        </div>
+        <div class="contact-method">
+          <i class="fas fa-phone"></i>
+          <span>+90 532 567 32 91</span>
+        </div>
+        <div class="contact-method">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Istanbul, Turkey</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -114,11 +115,6 @@
     <div class="footer-logo">
       <i class="fas fa-hand-holding-medical"></i>
       <span>Güney Consultancy</span>
-    </div>
-    <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="patients.html">Services</a>
-      <a href="contact.html">Contact</a>
     </div>
     <div class="footer-social">
       <a href="#"><i class="fab fa-linkedin"></i></a>

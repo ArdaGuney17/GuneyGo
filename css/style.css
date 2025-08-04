@@ -269,13 +269,52 @@ a {
   margin: 1rem 0 0 0;
 }
 
-/* About Section */
-.about-content {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
+/* --- About Section --- */
+.about-section {
+  background-color: var(--light-gray);
+  /* Keep padding consistent with other sections */
+  padding: 6rem 2rem; /* Adjusted to match .section padding */
+  text-align: center; /* This centers the section title. The wrapper will override for its content. */
 }
 
+/* New wrapper for image and text content */
+.about-content-wrapper {
+  display: flex; /* Use flexbox for side-by-side layout */
+  align-items: center; /* Vertically align image and text */
+  gap: 4rem; /* Space between image and text (equivalent to var(--spacing-xl)) */
+  max-width: 1000px; /* Constrain width of this section content */
+  margin: 0 auto; /* Center the content wrapper */
+  text-align: left; /* Reset text align for content inside */
+}
+
+.about-image {
+  flex-shrink: 0; /* Prevent image from shrinking too much */
+  width: 40%; /* Image takes 40% of the space */
+  border-radius: 8px; /* Optional: rounded corners for the image container */
+  overflow: hidden; /* Ensures image respects border-radius if it overflows */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* Ensures image covers its area nicely */
+}
+
+.about-text-content {
+  flex-grow: 1; /* Text content takes remaining space */
+  width: 60%; /* Text takes 60% of the space */
+  font-size: 1.1rem; /* Existing font size for paragraphs */
+  line-height: 1.7; /* Existing line height for paragraphs */
+}
+
+.about-text-content p:not(:last-child) {
+  margin-bottom: 1.5rem; /* Space between paragraphs (equivalent to var(--spacing-md)) */
+}
+
+/* REMOVED: Old stats-container and stat-item styles */
+/*
 .stats-container {
   display: flex;
   justify-content: center;
@@ -299,6 +338,7 @@ a {
   font-size: 1rem;
   color: var(--gray);
 }
+*/
 
 /* Services Section */
 .services-section {
@@ -748,7 +788,8 @@ a {
     margin-bottom: 2rem;
   }
 
-  /* Stats */
+  /* REMOVED: Old Stats responsive rules */
+  /*
   .stats-container {
     flex-direction: column;
     gap: 1.5rem;
@@ -757,6 +798,22 @@ a {
   .stat-number {
     font-size: 2rem;
   }
+  */
+
+  /* NEW: About Section Mobile Responsive */
+  .about-content-wrapper {
+    flex-direction: column; /* Stack image and text vertically */
+    gap: 1.5rem; /* Adjust gap for mobile (equivalent to var(--spacing-md)) */
+  }
+
+  .about-image, .about-text-content {
+    width: 100%; /* Both take full width on mobile */
+  }
+
+  .about-text-content {
+    text-align: center; /* Center text on mobile if desired */
+  }
+
 
   /* Services */
   .services-grid {

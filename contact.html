@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Güney Healthcare Consultancy</title> <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+      <span class="logo-icon"><i class="fas fa-hand-holding-medical"></i></span>
+      <h1>Güney Consultancy</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li> <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="patients.html">For Patients</a></li>
+            <li><a href="agencies.html">For Medical Tourism Agencies</a></li>
+            <li><a href="companies.html">For Companies</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="cta-button">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section id="contact" class="section contact-section">
+  <div class="section-container">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-method">
+          <i class="fas fa-envelope"></i>
+          <span>ardagney05@gmail.com</span>
+        </div>
+        <div class="contact-method">
+          <i class="fas fa-phone"></i>
+          <span>+90 532 567 32 91</span>
+        </div>
+        <div class="contact-method">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Istanbul, Turkey</span>
+        </div>
+      </div>
+
+      <div class="form-wrapper">
+        <form class="contact-form" action="https://formspree.io/f/mjkyeadq" method="POST">
+          <input type="hidden" name="_next" value="http://localhost:63342/untitled/contact.html"> <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" placeholder="How can we help you?" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+
+        <form id="uploadForm" class="contact-form document-upload-form" style="margin-top: 2rem;">
+          <h3>Document Upload</h3>
+          <div id="customUploadMessage" style="
+              display: none;
+              padding: 15px;
+              margin-top: 20px;
+              border-radius: 8px;
+              text-align: center;
+              font-weight: bold;
+              color: white;
+              background-color: #4CAF50;
+              box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+              transition: opacity 0.3s ease-in-out;
+              opacity: 0;
+          ">
+          </div>
+          <div class="form-group">
+            <label for="fileInput">Upload your documents (if needed)</label>
+            <input type="file" id="fileInput" name="document">
+          </div>
+          <button type="submit" class="submit-btn secondary">
+            <span>Upload Files</span>
+            <i class="fas fa-upload"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <i class="fas fa-hand-holding-medical"></i>
+      <span>Güney Consultancy</span>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="patients.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Güney Consultancy Company. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="../js/app.js" defer></script>
+</body>
+</html>

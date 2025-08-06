@@ -272,45 +272,43 @@ a {
 /* --- About Section --- */
 .about-section {
   background-color: var(--light-gray);
-  /* Keep padding consistent with other sections */
-  padding: 6rem 2rem; /* Adjusted to match .section padding */
-  text-align: center; /* This centers the section title. The wrapper will override for its content. */
+  padding: 6rem 2rem;
+  text-align: center;
 }
 
-/* New wrapper for image and text content */
 .about-content-wrapper {
-  display: flex; /* Use flexbox for side-by-side layout */
-  align-items: center; /* Vertically align image and text */
-  gap: 4rem; /* Space between image and text (equivalent to var(--spacing-xl)) */
-  max-width: 1000px; /* Constrain width of this section content */
-  margin: 0 auto; /* Center the content wrapper */
-  text-align: left; /* Reset text align for content inside */
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .about-image {
-  flex-shrink: 0; /* Prevent image from shrinking too much */
-  width: 40%; /* Image takes 40% of the space */
-  border-radius: 8px; /* Optional: rounded corners for the image container */
-  overflow: hidden; /* Ensures image respects border-radius if it overflows */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+  flex-shrink: 0;
+  width: 40%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .about-image img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover; /* Ensures image covers its area nicely */
+  object-fit: cover;
 }
 
 .about-text-content {
-  flex-grow: 1; /* Text content takes remaining space */
-  width: 60%; /* Text takes 60% of the space */
-  font-size: 1.1rem; /* Existing font size for paragraphs */
-  line-height: 1.7; /* Existing line height for paragraphs */
+  flex-grow: 1;
+  width: 60%;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .about-text-content p:not(:last-child) {
-  margin-bottom: 1.5rem; /* Space between paragraphs (equivalent to var(--spacing-md)) */
+  margin-bottom: 1.5rem;
 }
 
 /* Services Section */
@@ -365,10 +363,10 @@ a {
 
 .patient-services-container {
   display: flex;
-  align-items: center;
   gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: center;
 }
 
 .patient-content-left {
@@ -383,13 +381,39 @@ a {
   margin-bottom: 2.5rem;
 }
 
+.how-we-help-section, .service-fee-section {
+  margin-top: 2.5rem;
+}
+
+.how-we-help-list {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.how-we-help-list li {
+  position: relative;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.how-we-help-list li i {
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  color: var(--primary);
+}
+
 .patient-contact-btn {
   margin-top: 1rem;
 }
 
 .patient-logos-right {
   flex: 1;
-  text-align: center;
+  text-align: center; /* Center the title */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .logos-title {
@@ -399,22 +423,24 @@ a {
 }
 
 .logos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  justify-items: center;
-  align-items: center;
+  /* CHANGED: Switched to flexbox for a vertical (column) layout */
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center; /* Horizontally centers the logos */
+  margin-top: 3rem;
 }
 
 .logos-grid img {
-  max-width: 230px;
+  /* CHANGED: Set max-width to control the size of the logos */
+  max-width: 250px;
+  width: 100%;
   height: auto;
 }
 
 /* Contact Section */
 .contact-container {
   display: grid;
-  /* UPDATED: Swap grid columns to put the form wrapper (2fr) on the left and contact info (1fr) on the right */
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
   align-items: start;
@@ -453,35 +479,16 @@ a {
 .form-wrapper {
   display: flex;
   flex-direction: column;
-  /* UPDATED: Control vertical spacing between forms within the wrapper */
-  gap: 1.5rem; /* Reduced from 2rem for compactness */
-  /* NEW: Apply unified box styling to the wrapper */
+  gap: 1.5rem;
   background-color: white;
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensure it takes full width of its grid cell */
-}
-
-/* REMOVED: Individual form box styling (now handled by .form-wrapper) */
-.contact-form /*, .document-upload */ {
-  /* Removed background-color, padding, border-radius, box-shadow from here */
-  width: 100%; /* Keep this to ensure forms fill their wrapper */
-}
-
-/* REMOVED: Separate background for document-upload form */
-/* .document-upload {
-  background-color: var(--light-gray);
-} */
-
-.document-upload-form h3 { /* Renamed from .document-upload h3 for clarity */
-  margin-bottom: 1.5rem;
-  color: var(--primary);
+  width: 100%;
 }
 
 .form-group {
-  /* UPDATED: Reduce bottom margin for more compactness */
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -494,8 +501,7 @@ a {
 .form-group textarea,
 .form-group select {
   width: 100%;
-  /* UPDATED: Reduce padding for more compactness */
-  padding: 0.65rem 1rem; /* Reduced from 0.75rem */
+  padding: 0.65rem 1rem;
   border: 1px solid var(--light-gray);
   border-radius: 0.375rem;
   font-family: inherit;
@@ -554,12 +560,10 @@ a {
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  /* UPDATED: Define 3 columns explicitly for logo, social, and links */
-  /* 1fr for logo (left), auto for social (middle, sized to content), 1fr for links (right) */
   grid-template-columns: 1fr auto 1fr;
   gap: 2rem;
   margin-bottom: 3rem;
-  align-items: center; /* Vertically aligns all items in the grid row */
+  align-items: center;
 }
 
 .footer-logo {
@@ -569,7 +573,6 @@ a {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  /* NEW: Place logo in the first column and align to start */
   grid-column: 1 / 2;
   justify-self: start;
 }
@@ -583,7 +586,6 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  /* NEW: Place links in the third column and align to end */
   grid-column: 3 / 4;
   justify-self: end;
 }
@@ -599,11 +601,8 @@ a {
 .footer-social {
   display: flex;
   gap: 1rem;
-  /* UPDATED: Place social in the second (middle) column */
   grid-column: 2 / 3;
-  /* UPDATED: Horizontally center the entire .footer-social flex container within its grid cell */
   justify-self: center;
-  /* This rule already centers the icons *within* the .footer-social flex container */
   justify-content: center;
 }
 
@@ -658,17 +657,22 @@ a {
   }
 
   .logos-grid {
+    flex-direction: row;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
   }
 
-  /* UPDATED: Contact section on tablets/smaller desktops */
+  .logos-grid img {
+    max-width: 120px;
+  }
+
   .contact-container {
-    grid-template-columns: 1fr; /* Stack into a single column */
-    gap: 2rem; /* Reduce gap */
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .contact-info {
-    order: 2; /* Put contact info below the form on smaller screens */
+    order: 2;
     text-align: center;
   }
 
@@ -677,8 +681,8 @@ a {
   }
 
   .form-wrapper {
-    order: 1; /* Keep form wrapper at the top */
-    padding: 1.5rem; /* Adjust padding for tablets */
+    order: 1;
+    padding: 1.5rem;
   }
 }
 
@@ -793,18 +797,18 @@ a {
     margin-bottom: 2rem;
   }
 
-  /* NEW: About Section Mobile Responsive */
+  /* About Section Mobile Responsive */
   .about-content-wrapper {
-    flex-direction: column; /* Stack image and text vertically */
-    gap: 1.5rem; /* Adjust gap for mobile (equivalent to var(--spacing-md)) */
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .about-image, .about-text-content {
-    width: 100%; /* Both take full width on mobile */
+    width: 100%;
   }
 
   .about-text-content {
-    text-align: center; /* Center text on mobile if desired */
+    text-align: center;
   }
 
   /* Services */
@@ -844,7 +848,6 @@ a {
 
   /* Footer */
   .footer-container {
-    /* UPDATED: Revert to single column stacking for mobile */
     grid-template-columns: 1fr;
     text-align: center;
     gap: 1.5rem;
@@ -852,20 +855,18 @@ a {
 
   .footer-logo {
     margin-bottom: 0.5rem;
-    justify-self: center; /* Center the logo itself on mobile */
+    justify-self: center;
   }
 
   .footer-links {
-    /* UPDATED: Reset grid-column for mobile */
     grid-column: auto;
-    justify-self: center; /* Center links on mobile */
+    justify-self: center;
   }
 
   .footer-social {
-    /* UPDATED: Reset grid-column for mobile */
     grid-column: auto;
-    justify-content: center; /* Already set, ensures icons are centered */
-    justify-self: center; /* Center the entire social block on mobile */
+    justify-content: center;
+    justify-self: center;
   }
 }
 

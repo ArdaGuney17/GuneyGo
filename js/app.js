@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
           // Your Google Apps Script URL
-          const response = await fetch('https://script.google.com/macros/s/AKfycbxX_Pki0Cpxo-hMvUQhXZ1ZUyEjKK3kES93zjSiFvBOjYhhIazy0UYORsRk6RJ0ckmU_A/exec', {
+          const response = await fetch('https://script.google.com/macros/s/AKfycbyLCPA1JylIdUnpX_2x-ai6v4_dk4G1tkSz3LijoXmyX88gd2qZn92ek9crfGVj14LN/exec', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
             body: new URLSearchParams({

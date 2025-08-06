@@ -6,72 +6,235 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Companies | Güney Healthcare Consultancy</title> <link rel="stylesheet" href="../css/style.css">
+  <title>For Companies | Güney Healthcare Consultancy</title>
+  <!-- Tailwind CSS CDN for modern styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for elements not fully covered by Tailwind or for specific overrides */
+    body {
+      font-family: 'Inter', sans-serif; /* Applied Inter font */
+    }
+    /* Dropdown menu styling for desktop navigation */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 0.5rem; /* Rounded corners */
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-radius: 0.5rem; /* Rounded corners for individual items */
+    }
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+    /* Mobile menu styling for responsive design */
+    .mobile-menu {
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      position: absolute;
+      top: 64px; /* Position below the header */
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 10;
+      padding: 1rem;
+      border-radius: 0.5rem; /* Rounded corners */
+    }
+    .mobile-menu.active {
+      display: flex; /* Shown when active */
+    }
+    .mobile-menu a {
+      padding: 0.75rem 0;
+      text-align: center;
+      border-bottom: 1px solid #eee; /* Separator for menu items */
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none; /* No separator for the last item */
+    }
+  </style>
 </head>
-<body>
-<header class="main-header">
-  <div class="header-container">
-    <div class="logo">
-      <span class="logo-icon"><i class="fas fa-hand-holding-medical"></i></span>
-      <h1>Güney Consultancy</h1>
+<body class="bg-gray-50 text-gray-800">
+<header class="main-header bg-white shadow-md py-4">
+  <div class="header-container container mx-auto flex justify-between items-center px-4">
+    <div class="logo flex items-center space-x-2">
+      <span class="logo-icon text-blue-600 text-2xl"><i class="fas fa-hand-holding-medical"></i></span>
+      <h1 class="text-xl font-bold text-gray-900">Güney Consultancy</h1>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li> <li><a href="about.html">About Us</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="patients.html">For Patients</a></li>
-            <li><a href="agencies.html">For Medical Tourism Agencies</a></li>
-            <li><a href="companies.html">For Companies</a></li>
+    <nav class="hidden md:block">
+      <ul class="nav-links flex space-x-6 items-center">
+        <li><a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
+        <li><a href="about.html" class="text-gray-700 hover:text-blue-600 transition duration-300">About Us</a></li>
+        <li class="dropdown relative">
+          <a href="#" class="dropdown-toggle text-gray-700 hover:text-blue-600 transition duration-300 flex items-center">Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+          <ul class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
+            <li><a href="patients.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Patients</a></li>
+            <li><a href="agencies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Medical Tourism Agencies</a></li>
+            <li><a href="companies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Companies</a></li>
           </ul>
         </li>
-        <li><a href="contact.html" class="cta-button">Contact</a></li>
+        <li><a href="contact.html" class="cta-button bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Contact Us</a></li>
       </ul>
-      <div class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
     </nav>
+    <div class="mobile-menu-btn md:hidden text-2xl text-gray-700 cursor-pointer">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <!-- Mobile menu content, hidden by default and toggled by JS -->
+  <div class="mobile-menu hidden md:hidden bg-white shadow-lg mt-2 mx-4 rounded-lg">
+    <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Home</a>
+    <a href="about.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">About Us</a>
+    <a href="patients.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Patients</a>
+    <a href="agencies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Medical Tourism Agencies</a>
+    <a href="companies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Companies</a>
+    <a href="contact.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-gray-100 rounded-md">Contact Us</a>
   </div>
 </header>
 
-<section id="for-companies" class="section services-section">
-  <div class="section-container patient-services-container">
-    <div class="patient-content-left">
-      <h2 class="section-title left-aligned">For Companies</h2>
-      <p class="patient-intro-text">
-        At Güney Healthcare Consultancy, your health and well-being are our utmost priority. We understand that navigating the complexities of healthcare, especially in a new country, can be daunting. Our dedicated services are designed to provide comprehensive support, ensuring a seamless and comfortable journey towards receiving world-class medical treatment. From your initial consultation to post-treatment care, we are here to guide you every step of the way, connecting you with leading specialists and state-of-the-art facilities.
+<main>
+  <!-- Page Title Indicator for Companies -->
+  <div class="container mx-auto px-4 py-4 mt-4">
+    <h2 class="text-3xl font-bold text-blue-600">For Companies</h2>
+  </div>
+
+  <!-- Main Content Section for Companies -->
+  <section id="for-companies" class="section py-16 bg-white">
+    <div class="section-container container mx-auto px-4 max-w-4xl">
+      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-8">Healthcare Investment & Management for Companies</h2>
+
+      <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center">
+        Healthcare expenditures, investments, and financing are among the <strong>top priorities</strong> for every country and remain an <strong>ongoing focus of development</strong>. With an aging population, advancements in medical technology, and increasing public expectations from healthcare services, healthcare spending and investments continue to <strong>grow steadily each year</strong>.
       </p>
-      <a href="contact.html" class="btn-primary patient-contact-btn">Get Personalized Support</a> </div>
-    <div class="patient-logos-right">
-      <h3 class="logos-title">Some of The Hospitals & Clinics in Türkiye</h3>
-      <div class="logos-grid">
-        <img src="acıbadem.png" alt="Acibadem Hospital Logo">
-        <img src="memorial.png" alt="Memorial Hospital Logo">
-        <img src="medicalpark.png" alt="Medical Park Hospital Logo">
-        <img src="esteworld.png" alt="Esteworld Clinic Logo">
+
+    <div class="image-content flex justify-center items-center">
+      <!-- Placeholder image for visual appeal -->
+      <img src="companie.jpg" alt="Modern Hospital" class="rounded-lg shadow-lg w-full max-w-md">
+    </div>
+
+    <hr class="my-10 border-gray-300">
+
+      <div class="bg-gray-50 p-8 rounded-lg shadow-inner mb-10">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">
+          <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>However, healthcare investments and management differ significantly from other industries:
+        </h3>
+        <ul class="list-none space-y-4 text-lg text-gray-700">
+          <li class="flex items-start">
+            <i class="fas fa-dollar-sign text-blue-600 mr-3 mt-1"></i>
+            <div>
+              They are <strong>high-cost investments</strong>.
+            </div>
+          </li>
+          <li class="flex items-start">
+            <i class="fas fa-exchange-alt text-blue-600 mr-3 mt-1"></i>
+            <div>
+              They are <strong>difficult to convert to other sectors</strong>.
+            </div>
+          </li>
+          <li class="flex items-start">
+            <i class="fas fa-clock text-blue-600 mr-3 mt-1"></i>
+            <div>
+              They have a <strong>longer return on investment (ROI) period</strong>.
+            </div>
+          </li>
+          <li class="flex items-start">
+            <i class="fas fa-clipboard-check text-blue-600 mr-3 mt-1"></i>
+            <div>
+              They are subject to <strong>strict regulations and compliance requirements</strong>.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center">
+        Healthcare financing is increasingly moving toward a <strong>public–private balance model</strong>, with <strong>private health insurance</strong> playing a growing role in this process.
+      </p>
+
+      <p class="text-lg text-gray-700 leading-relaxed mb-10 text-center">
+        Therefore, when investing in the healthcare sector, it is essential to understand the country’s <strong>market dynamics</strong>, <strong>reimbursement systems</strong>, and <strong>core healthcare regulations</strong>.
+      </p>
+
+      <hr class="my-10 border-gray-300">
+
+      <!-- Our Support Section -->
+      <div class="our-support-section mt-16 bg-blue-50 p-8 rounded-lg shadow-inner">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center flex items-center justify-center">
+          <i class="fas fa-lightbulb text-blue-600 mr-3"></i>Our Strategic Support
+        </h3>
+        <p class="text-lg text-gray-700 leading-relaxed text-center">
+          We provide <strong>consulting and strategic support</strong> for your healthcare investment, hospital management, and reimbursement system projects in Türkiye or some other countries.
+        </p>
+      </div>
+
+      <div class="our-support-section mt-16 bg-blue-50 p-8 rounded-lg shadow-inner">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center flex items-center justify-center">
+          <i class="fas fa-users text-blue-600 mr-3"></i>Our Team
+        </h3>
+        <p class="text-lg text-gray-700 leading-relaxed text-center">
+          Depending on your <strong>needs</strong>, we integrate <strong>sector-specific</strong> experts into the project when required.
+        </p>
+      </div>
+      <!-- Hospital Logos Section -->
+      <div class="patient-logos-section mt-16 text-center">
+        <h3 class="logos-title text-2xl font-semibold text-gray-900 mb-6">Some of The Hospitals & Clinics in Türkiye</h3>
+        <div class="logos-grid grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+          <!-- Placeholder images for hospital logos -->
+          <img src="acıbadem.png" alt="Acibadem Hospital Logo">
+          <img src="memorial.png" alt="Memorial Hospital Logo">
+          <img src="medicalpark.png" alt="Medical Park Hospital Logo">
+          <img src="esteworld.png" alt="Esteworld Clinic Logo">
+        </div>
+      </div>
+
+      <!-- Call to Action Button -->
+      <div class="text-center mt-16">
+        <a href="contact.html" class="btn-primary bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg text-xl font-semibold">Discuss Your Project</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
-<footer class="main-footer">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <i class="fas fa-hand-holding-medical"></i>
-      <span>Güney Consultancy</span>
+<footer class="main-footer bg-gray-900 text-white py-8">
+  <div class="footer-container container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-4 md:space-y-0">
+    <div class="footer-logo flex items-center space-x-2">
+      <i class="fas fa-hand-holding-medical text-2xl text-blue-400"></i>
+      <span class="text-xl font-bold">Güney Consultancy</span>
     </div>
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+    <div class="footer-social flex space-x-6">
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom text-center text-gray-500 text-sm mt-6">
     <p>&copy; 2025 Güney Consultancy Company. All rights reserved.</p>
   </div>
 </footer>
 
-<script src="../js/app.js" defer></script>
+<script>
+  // JavaScript for mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden'); /* Toggle Tailwind's hidden class */
+        mobileMenu.classList.toggle('active'); /* Toggle custom 'active' class for display:flex */
+      });
+    }
+  });
+</script>
 </body>
 </html>

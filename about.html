@@ -6,65 +6,256 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Güney Healthcare Consultancy</title> <link rel="stylesheet" href="../css/style.css">
+  <title>About Us | Güney Healthcare Consultancy</title>
+  <!-- Tailwind CSS CDN for modern styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom styles for elements not fully covered by Tailwind or for specific overrides */
+    body {
+      font-family: 'Inter', sans-serif; /* Applied Inter font */
+    }
+    /* Dropdown menu styling for desktop navigation */
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 0.5rem; /* Rounded corners */
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-radius: 0.5rem; /* Rounded corners for individual items */
+    }
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+    /* Mobile menu styling for responsive design */
+    .mobile-menu {
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      position: absolute;
+      top: 64px; /* Position below the header */
+      left: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 10;
+      padding: 1rem;
+      border-radius: 0.5rem; /* Rounded corners */
+    }
+    .mobile-menu.active {
+      display: flex; /* Shown when active */
+    }
+    .mobile-menu a {
+      padding: 0.75rem 0;
+      text-align: center;
+      border-bottom: 1px solid #eee; /* Separator for menu items */
+    }
+    .mobile-menu a:last-child {
+      border-bottom: none; /* No separator for the last item */
+    }
+  </style>
 </head>
-<body>
-<header class="main-header">
-  <div class="header-container">
-    <div class="logo">
-      <span class="logo-icon"><i class="fas fa-hand-holding-medical"></i></span>
-      <h1>Güney Consultancy</h1>
+<body class="bg-gray-50 text-gray-800">
+<header class="main-header bg-white shadow-md py-4">
+  <div class="header-container container mx-auto flex justify-between items-center px-4">
+    <div class="logo flex items-center space-x-2">
+      <span class="logo-icon text-blue-600 text-2xl"><i class="fas fa-hand-holding-medical"></i></span>
+      <h1 class="text-xl font-bold text-gray-900">Güney Consultancy</h1>
     </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li> <li><a href="about.html">About Us</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">Our Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="patients.html">For Patients</a></li>
-            <li><a href="agencies.html">For Medical Tourism Agencies</a></li>
-            <li><a href="companies.html">For Companies</a></li>
+    <nav class="hidden md:block">
+      <ul class="nav-links flex space-x-6 items-center">
+        <li><a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
+        <li><a href="about.html" class="text-blue-600 font-semibold transition duration-300">About Us</a></li>
+        <li class="dropdown relative">
+          <a href="#" class="dropdown-toggle text-gray-700 hover:text-blue-600 transition duration-300 flex items-center">Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+          <ul class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
+            <li><a href="patients.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Patients</a></li>
+            <li><a href="agencies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Medical Tourism Agencies</a></li>
+            <li><a href="companies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Companies</a></li>
           </ul>
         </li>
-        <li><a href="contact.html" class="cta-button">Contact</a></li>
+        <li><a href="contact.html" class="cta-button bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">Contact Us</a></li>
       </ul>
-      <div class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
     </nav>
+    <div class="mobile-menu-btn md:hidden text-2xl text-gray-700 cursor-pointer">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+  <!-- Mobile menu content, hidden by default and toggled by JS -->
+  <div class="mobile-menu hidden md:hidden bg-white shadow-lg mt-2 mx-4 rounded-lg">
+    <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Home</a>
+    <a href="about.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-gray-100 rounded-md">About Us</a>
+    <a href="patients.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Patients</a>
+    <a href="agencies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Medical Tourism Agencies</a>
+    <a href="companies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Companies</a>
+    <a href="contact.html" class="block px-4 py-2 text-blue-600 font-semibold hover:bg-gray-100 rounded-md">Contact Us</a>
   </div>
 </header>
 
-<section id="about" class="section about-section">
-  <div class="section-container">
-    <h2 class="section-title">Founder</h2>
-    <div class="about-content-wrapper"> <div class="about-image">
-      <img src="founder.jpg" alt="Founder of Güney Consultancy"> </div>
-      <div class="about-text-content">
-        <p>Güney Consultancy specializes in delivering strategic solutions for healthcare organizations. With our deep industry knowledge and analytical approach, we help clients navigate complex challenges and achieve sustainable growth.</p>
-        <p>Our founder, Tahsin Güney, brings over 10 years of experience in the healthcare sector, having successfully guided numerous clients through market challenges and opportunities. Their vision is to create a seamless and supportive environment for all our partners and patients.</p>
+<main>
+  <!-- Page Title Indicator -->
+  <div class="container mx-auto px-4 py-4 mt-4">
+    <h2 class="text-3xl font-bold text-blue-600">About Us</h2>
+  </div>
+
+  <!-- Intro Text Section -->
+  <section id="intro-text" class="section py-16 bg-white">
+    <div class="section-container container mx-auto px-4 max-w-4xl text-center">
+      <h2 class="section-title text-3xl font-bold text-gray-900 mb-8">Our Mission & Expertise</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+        We are a <strong>trusted consulting team</strong> specializing in <i class="fas fa-plane-departure text-blue-500 mr-1"></i><strong>medical tourism in Turkey</strong>, <i class="fas fa-chart-line text-blue-500 mr-1"></i><strong>healthcare investment consulting</strong>, <i class="fas fa-hospital text-blue-500 mr-1"></i><strong>hospital management</strong>, and <i class="fas fa-receipt text-blue-500 mr-1"></i><strong>reimbursement systems</strong> at both national and international levels.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+        Our mission is to provide <strong>strategic guidance</strong> to individual patients and healthcare organizations, ensuring access to the <strong>highest quality healthcare</strong> at the <strong>most affordable cost</strong>.
+      </p>
+      <p class="text-lg text-gray-700 leading-relaxed text-justify">
+        Our expertise is built on a strong foundation in the <strong>Turkish healthcare sector</strong>, <strong>international patient services</strong>, and <strong>public–private healthcare partnership models</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Us – Founder Section -->
+  <section id="about-founder" class="section py-16 bg-gray-100">
+    <div class="section-container container mx-auto px-4 max-w-5xl text-center">
+      <h2 class="section-title text-3xl font-bold text-gray-900 mb-8">Meet Our Founder</h2>
+
+      <!-- Founder Image (now centered and above text) -->
+      <div class="flex justify-center mb-8">
+        <img src="founder.jpg" alt="Tahsin Güney" class="rounded-full shadow-lg w-48 h-48 md:w-64 md:h-64 object-cover">
+      </div>
+
+      <!-- Founder Bio Text (now a single column) -->
+      <div class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Tahsin Güney</h3>
+        <p class="mb-4 text-justify">
+          Tahsin Güney is a <strong>senior healthcare executive</strong> with over 30 years of expertise in general health insurance, social security systems, private healthcare management, and hospital operations. He is recognized as one of the most <strong>influential figures</strong> in Turkey’s private healthcare sector, with extensive experience in healthcare investment consulting, medical tourism strategy, and public–private healthcare integration.
+        </p>
+        <p class="mb-4 text-justify">
+          He served as <strong>Vice President</strong> and, for a time, as <strong>Acting President and Chairman of the Board</strong> at the <strong>Turkish Social Security Institution (SGK)</strong>, where he led <strong>major reforms</strong> in retirement modeling, health insurance systems, and healthcare reimbursement structures.
+        </p>
+        <p class="mb-4 text-justify">
+          In the private sector, he held senior leadership roles at <strong>Acıbadem Healthcare Group</strong>, one of Turkey’s leading private hospital networks. As <strong>CEO</strong>, he oversaw <strong>domestic and international hospital operations</strong>, drove <strong>strategic growth</strong>, and managed <strong>regulatory and government relations</strong>.
+        </p>
+        <div class="our-support-section mt-16 bg-white p-8 rounded-lg shadow-inner">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center flex items-center justify-center">
+            His professional expertise includes:
+          </h3>
+          <ul class="list-none space-y-2 text-left mx-auto max-w-prose">
+            <li class="flex items-start"><i class="fas fa-coins text-blue-600 mr-2 mt-1"></i><strong>Healthcare financing and investment advisory</strong></li>
+            <li class="flex items-start"><i class="fas fa-hospital-user text-blue-600 mr-2 mt-1"></i><strong>Hospital management and operational efficiency</strong></li>
+            <li class="flex items-start"><i class="fas fa-user-tie text-blue-600 mr-2 mt-1"></i><strong>Physician compensation models</strong></li>
+            <li class="flex items-start"><i class="fas fa-file-contract text-blue-600 mr-2 mt-1"></i><strong>Healthcare policy and social security reform</strong></li>
+            <li class="flex items-start"><i class="fas fa-link text-blue-600 mr-2 mt-1"></i><strong>Integration of public and private healthcare systems</strong></li>
+            <li class="flex items-start"><i class="fas fa-file-contract text-blue-600 mr-2 mt-1"></i><strong>Contract management with private health insurance companies</strong></li>
+            <li class="flex items-start"><i class="fas fa-globe-americas text-blue-600 mr-2 mt-1"></i><strong>Medical tourism project development</strong></li>
+          </ul>
+        </div>
+        <p class="mt-6 mb-4 text-justify">
+          Tahsin Güney earned his BA in Public Administration and Political Science from <strong>Middle East Technical University</strong> (Ankara, Turkey) and his MA in Actuarial Science and Statistics from <strong>City University of London</strong>.
+          He worked 20 years at the <strong>Turkish Social Security Institution</strong> and 16 years at <strong>Acıbadem Healthcare Group</strong>.
+        </p>
+        <p class="font-semibold text-justify">
+          Currently, he provides <strong>consultancy services</strong> to private health insurance companies, hospitals, healthcare investors, and international agencies seeking to enter or expand in healthcare markets of Türkiye and close regions.
+        </p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="main-footer">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <i class="fas fa-hand-holding-medical"></i>
-      <span>Güney Consultancy</span>
+  <!-- Our Core Principles Section -->
+  <section id="core-principles" class="section py-16 bg-white">
+    <div class="section-container container mx-auto px-4 max-w-4xl">
+      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-12">Our Core Principles</h2>
+      <p class="text-lg text-gray-700 leading-relaxed mb-8 text-justify">
+        Our approach in medical tourism in Turkey, healthcare investment consulting, and international patient services is built on <strong>trust, quality, and sustainable success</strong>.
+      </p>
+      <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">Our core principles are:</h3>
+      <ol class="list-none space-y-8 text-lg text-gray-700">
+        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm">
+          <i class="fas fa-lightbulb text-blue-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <strong class="block text-xl text-gray-900 mb-2">1. Wisely Applying Knowledge and Experience</strong>
+            We leverage our <strong>extensive expertise and industry knowledge</strong> to help our clients make the <strong>best decisions</strong>, always with a <strong>strategic and ethical approach</strong>.
+          </div>
+        </li>
+        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm">
+          <i class="fas fa-handshake text-blue-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <strong class="block text-xl text-gray-900 mb-2">2. Reliability</strong>
+            Guided by the timeless rule, “Wish for others what you wish for yourself”, we deliver <strong>transparent, honest, and reliable services</strong> to both partner institutions and patients.
+          </div>
+        </li>
+        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm">
+          <i class="fas fa-eye text-blue-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <strong class="block text-xl text-gray-900 mb-2">3. Foresight</strong>
+            By closely monitoring healthcare trends and sector dynamics, we provide <strong>strategic foresight</strong> based on <strong>knowledge and experience</strong>, enabling our clients to <strong>prepare for the future with confidence</strong>.
+          </div>
+        </li>
+        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm">
+          <i class="fas fa-medal text-blue-600 text-3xl mr-4 mt-1"></i>
+          <div>
+            <strong class="block text-xl text-gray-900 mb-2">4. Quality</strong>
+            We ensure that our clients receive the <strong>highest quality service</strong> with <strong>affordable prices</strong> by working with the right facilities, and efficient process management.
+          </div>
+        </li>
+      </ol>
     </div>
-    <div class="footer-social">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
+  </section>
+
+
+  <!-- New Contact Call-to-Action Section -->
+  <section id="contact-cta" class="section py-16 bg-blue-600 text-white text-center">
+    <div class="section-container container mx-auto px-4 max-w-3xl">
+      <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+      <p class="text-xl leading-relaxed mb-8">
+        Have questions or ready to discuss your healthcare needs or partnership opportunities? Our team is here to provide personalized support and expert guidance.
+      </p>
+      <a href="contact.html" class="bg-white text-blue-600 px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-lg shadow-lg">Contact Us Now</a>
+    </div>
+  </section>
+</main>
+
+<footer class="main-footer bg-gray-900 text-white py-8">
+  <div class="footer-container container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-4 md:space-y-0">
+    <div class="footer-logo flex items-center space-x-2">
+      <i class="fas fa-hand-holding-medical text-2xl text-blue-400"></i>
+      <span class="text-xl font-bold">Güney Consultancy</span>
+    </div>
+    <div class="footer-social flex space-x-6">
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom text-center text-gray-500 text-sm mt-6">
     <p>&copy; 2025 Güney Consultancy Company. All rights reserved.</p>
   </div>
 </footer>
 
-<script src="../js/app.js" defer></script>
+<script>
+  // JavaScript for mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden'); /* Toggle Tailwind's hidden class */
+        mobileMenu.classList.toggle('active'); /* Toggle custom 'active' class for display:flex */
+      });
+    }
+  });
+</script>
 </body>
 </html>

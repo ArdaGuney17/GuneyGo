@@ -21,12 +21,13 @@
       background-color: white;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 20; /* Ensure the dropdown menu is on top of other elements */
       border-radius: 0.5rem; /* Rounded corners */
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }
-    .dropdown:hover .dropdown-menu {
+    /* Show the menu when the 'active' class is present */
+    .dropdown-menu.active {
       display: block;
     }
     .dropdown-menu a {
@@ -77,9 +78,9 @@
       <ul class="nav-links flex space-x-6 items-center">
         <li><a href="index.html" class="text-gray-700 hover:text-blue-600 transition duration-300">Home</a></li>
         <li><a href="about.html" class="text-gray-700 hover:text-blue-600 transition duration-300">About Us</a></li>
-        <li class="dropdown relative">
-          <a href="#" class="dropdown-toggle text-gray-700 hover:text-blue-600 transition duration-300 flex items-center">Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
-          <ul class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
+        <li class="dropdown relative z-10">
+          <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-700 hover:text-blue-600 transition duration-300 flex items-center">Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+          <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
             <li><a href="patients.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Patients</a></li>
             <li><a href="agencies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Medical Tourism Agencies</a></li>
             <li><a href="companies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Companies</a></li>
@@ -118,12 +119,12 @@
         Healthcare expenditures, investments, and financing are among the <strong>top priorities</strong> for every country and remain an <strong>ongoing focus of development</strong>. With an aging population, advancements in medical technology, and increasing public expectations from healthcare services, healthcare spending and investments continue to <strong>grow steadily each year</strong>.
       </p>
 
-    <div class="image-content flex justify-center items-center">
-      <!-- Placeholder image for visual appeal -->
-      <img src="companie.jpg" alt="Modern Hospital" class="rounded-lg shadow-lg w-full max-w-md">
-    </div>
+      <div class="image-content flex justify-center items-center">
+        <!-- Placeholder image for visual appeal -->
+        <img src="companie.jpg" alt="Modern Hospital" class="rounded-lg shadow-lg w-full max-w-md">
+      </div>
 
-    <hr class="my-10 border-gray-300">
+      <hr class="my-10 border-gray-300">
 
       <div class="bg-gray-50 p-8 rounded-lg shadow-inner mb-10">
         <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">
@@ -199,7 +200,7 @@
 
       <!-- Call to Action Button -->
       <div class="text-center mt-16">
-        <a href="contact_company_agency.html" class="btn-primary bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg text-xl font-semibold">Discuss Your Project</a>
+        <a href="contact_company.html" class="btn-primary bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition duration-300 shadow-lg text-xl font-semibold">Discuss Your Project</a>
       </div>
     </div>
   </section>
@@ -223,15 +224,34 @@
 </footer>
 
 <script>
-  // JavaScript for mobile menu toggle functionality
+  // JavaScript for mobile menu toggle and dropdown functionality
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
+    const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
 
+    // Toggle the mobile menu
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden'); /* Toggle Tailwind's hidden class */
-        mobileMenu.classList.toggle('active'); /* Toggle custom 'active' class for display:flex */
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('active');
+      });
+    }
+
+    // Toggle the services dropdown menu on click
+    if (servicesDropdownToggle && servicesDropdownMenu) {
+      servicesDropdownToggle.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent the link from navigating
+        event.stopPropagation(); // Stop the click from propagating to the document listener
+        servicesDropdownMenu.classList.toggle('active');
+      });
+
+      // Close the dropdown when clicking outside of it
+      document.addEventListener('click', (event) => {
+        if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
+          servicesDropdownMenu.classList.remove('active');
+        }
       });
     }
   });

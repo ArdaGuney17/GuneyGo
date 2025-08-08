@@ -137,7 +137,7 @@
 <main>
   <!-- Page Title Indicator -->
   <div class="container mx-auto px-4 py-4 mt-4">
-    <h2 class="text-3xl font-bold text-blue-600">Contact Us</h2>
+    <h2 class="text-3xl font-bold text-blue-600">Contact Us/ For Agencies</h2>
   </div>
 
   <section id="contact" class="section py-16 bg-white">
@@ -193,11 +193,28 @@
             </div>
 
             <!-- Data Sharing Consent Form -->
+            <!-- The 'required' attribute has been removed from both inputs. -->
+            <!-- We will now use JavaScript to ensure at least one is checked. -->
             <div class="form-group flex items-start space-x-3 mt-4">
-              <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-blue-600 rounded" required>
+              <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-blue-600 rounded">
               <label for="consentContact" class="text-sm text-gray-700">
-                English – Data Sharing Consent: By submitting this form, I give my explicit consent for the personal and medical information I have provided to be shared only with authorized personnel at the relevant healthcare facilities for the purpose of evaluating my request and providing the necessary medical services. I acknowledge that my information will not be shared with third parties or used for any purpose other than managing the process and ensuring communication.
+                Data Sharing Consent: By submitting this form, we confirm that we have obtained the explicit consent of the patient for the sharing of their personal and medical information with authorized personnel at the relevant healthcare facilities.
+                The patient’s information is shared solely for the purpose of evaluating their request and facilitating the provision of appropriate medical services.<br><br>
               </label>
+            </div>
+
+            <div class="form-group flex items-start space-x-3 mt-4">
+              <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-blue-600 rounded">
+              <!-- Corrected the 'for' attribute to match the input's ID -->
+              <label for="consentContact1" class="text-sm text-gray-700">
+                Data Sharing Consent: We give our consent for the sharing of our own corporate contact and process-related information (such as service requests, coordination details, and other relevant operational data) with the relevant healthcare institutions for the purpose of managing the medical travel process efficiently.
+                We confirm that none of the information neither the patient’s nor ours will be shared with any third parties outside the involved healthcare institutions, and will not be used for any purposes other than communication and process management.
+              </label>
+            </div>
+
+            <!-- This div will be used to show the custom error message for the consent checkboxes -->
+            <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
+              Please check at least one of the consent boxes to continue.
             </div>
 
             <div id="formSubmissionMessage" class="hidden p-4 mt-5 rounded-lg text-center font-bold text-white shadow-md transition-opacity duration-300 opacity-0">
@@ -208,8 +225,6 @@
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
-
-          <hr class="my-8 border-gray-300"> <!-- Separator between forms -->
         </div>
       </div>
     </div>
@@ -268,24 +283,32 @@
     // JavaScript for form submission and message display for the contact form
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
+    const consentCheckbox1 = document.getElementById('consentContact');
+    const consentCheckbox2 = document.getElementById('consentContact1');
+    const consentErrorDiv = document.getElementById('consentError');
 
     if (contactForm && formSubmissionMessage) {
       contactForm.addEventListener('submit', async function(e) {
         e.preventDefault(); // Prevent default form submission
 
-        // Check for consent
-        const consentCheckbox = document.getElementById('consentContact');
-        if (!consentCheckbox.checked) {
-          formSubmissionMessage.textContent = 'Error: Please agree to the data sharing consent.';
-          formSubmissionMessage.style.backgroundColor = '#f44336'; // Red for error
-          formSubmissionMessage.classList.remove('hidden');
-          formSubmissionMessage.style.opacity = '1';
+        // NEW LOGIC: Check if at least one consent box is checked.
+        if (!consentCheckbox1.checked && !consentCheckbox2.checked) {
+          consentErrorDiv.textContent = 'Please check at least one of the consent boxes to continue.';
+          consentErrorDiv.classList.remove('hidden');
+          consentErrorDiv.style.opacity = '1';
           setTimeout(() => {
-            formSubmissionMessage.style.opacity = '0';
-            formSubmissionMessage.classList.add('hidden');
+            consentErrorDiv.style.opacity = '0';
+            // Use 'transitionend' to ensure the element is fully hidden after fade out.
+            consentErrorDiv.addEventListener('transitionend', () => {
+              consentErrorDiv.classList.add('hidden');
+            }, { once: true });
           }, 7000);
           return; // Stop the function
         }
+
+        // Hide the consent error message if it was visible
+        consentErrorDiv.classList.add('hidden');
+        consentErrorDiv.style.opacity = '0';
 
         formSubmissionMessage.style.opacity = '0'; // Hide previous message
         formSubmissionMessage.classList.add('hidden'); // Ensure hidden class is applied for fade out
@@ -335,6 +358,10 @@
     const uploadForm = document.getElementById('uploadForm');
     const fileInput = document.getElementById('fileInput');
     const customUploadMessage = document.getElementById('customUploadMessage');
+
+    // NOTE: The file upload form is not present in the provided HTML,
+    // so this script block will not execute. The code is kept here for reference
+    // and potential future use.
 
     if (uploadForm && fileInput && customUploadMessage) {
       uploadForm.addEventListener('submit', async function (e) {

@@ -20,10 +20,13 @@
       background-color: white;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 20; /* Ensure the dropdown menu is on top of other elements */
       border-radius: 0.5rem; /* Rounded corners */
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
-    .dropdown:hover .dropdown-menu {
+    /* Show the menu when the 'active' class is present */
+    .dropdown-menu.active {
       display: block;
     }
     .dropdown-menu a {
@@ -38,7 +41,6 @@
     }
     /* Mobile menu styling for responsive design */
     .mobile-menu {
-      display: none; /* Hidden by default */
       flex-direction: column;
       position: absolute;
       top: 64px; /* Position below the header */
@@ -46,12 +48,9 @@
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 10;
+      z-index: 20; /* Increased z-index to ensure it's on top */
       padding: 1rem;
       border-radius: 0.5rem; /* Rounded corners */
-    }
-    .mobile-menu.active {
-      display: flex; /* Shown when active */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
@@ -95,6 +94,26 @@
     </div>
   </div>
 </header>
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
+  <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
+  <a href="about.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About Us</a>
+  <div class="relative py-2">
+    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
+      Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+    </a>
+    <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
+      <li><a href="patients.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">For Patients</a></li>
+      <li><a href="agencies.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">For Medical Tourism Agencies</a></li>
+      <li><a href="companies.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">For Companies</a></li>
+    </ul>
+  </div>
+  <a href="contact.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact Us</a>
+  <div class="flex justify-center space-x-2 mt-4">
+    <a href="patients.html" class="text-[#59CDD1] hover:text-[#45a8b3]">ENG</a>
+    <span>/</span>
+    <a href="patients_tr.html" class="text-gray-700 hover:text-[#59CDD1]">TR</a>
+  </div>
+</nav>
 
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
@@ -224,36 +243,59 @@
 </footer>
 
 <script>
-  // JavaScript for mobile menu toggle functionality
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
+
+    // Select the mobile services dropdown and its toggle element
+    const mobileServicesDropdownToggle = document.querySelector('#mobile-menu a[onclick]');
+    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
 
     // Toggle the mobile menu
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('active');
       });
     }
 
-    // Toggle the services dropdown menu on click
+    // Toggle the services dropdown menu for desktop
     if (servicesDropdownToggle && servicesDropdownMenu) {
       servicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the link from navigating
-        event.stopPropagation(); // Stop the click from propagating to the document listener
+        event.preventDefault();
+        event.stopPropagation();
         servicesDropdownMenu.classList.toggle('active');
       });
+    }
 
-      // Close the dropdown when clicking outside of it
-      document.addEventListener('click', (event) => {
-        if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
-          servicesDropdownMenu.classList.remove('active');
-        }
+    // Toggle the services dropdown menu for mobile
+    if (mobileServicesDropdownToggle && mobileServicesDropdown) {
+      mobileServicesDropdownToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        mobileServicesDropdown.classList.toggle('hidden');
       });
     }
+
+    // Close all dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+      // For desktop services dropdown
+      if (servicesDropdownToggle && servicesDropdownMenu && !servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
+        servicesDropdownMenu.classList.remove('active');
+      }
+
+      // For mobile menu and its dropdown
+      const isClickInsideMobileMenu = mobileMenu.contains(event.target);
+      const isClickOnMobileButton = mobileMenuBtn.contains(event.target);
+      if (mobileMenu && mobileMenuBtn && !isClickInsideMobileMenu && !isClickOnMobileButton) {
+        mobileMenu.classList.add('hidden');
+        // Also close the mobile dropdown if the mobile menu is closed
+        if (mobileServicesDropdown) {
+          mobileServicesDropdown.classList.add('hidden');
+        }
+      }
+    });
   });
 </script>
 </body>

@@ -41,7 +41,6 @@
     }
     /* Duyarlı tasarım için mobil menü stili */
     .mobile-menu {
-      display: none; /* Varsayılan olarak gizli */
       flex-direction: column;
       position: absolute;
       top: 64px; /* Başlığın altına konumlandır */
@@ -49,12 +48,9 @@
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 10;
+      z-index: 20; /* Açılır menünün diğer öğelerin üzerinde olmasını sağlar */
       padding: 1rem;
       border-radius: 0.5rem; /* Yuvarlak köşeler */
-    }
-    .mobile-menu.active {
-      display: flex; /* Etkin olduğunda gösterilir */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
@@ -128,6 +124,26 @@
     </div>
   </div>
 </header>
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
+  <a href="index_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
+  <a href="about_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
+  <div class="relative py-2">
+    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
+      Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+    </a>
+    <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
+      <li><a href="patients_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Hastalar İçin</a></li>
+      <li><a href="agencies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="companies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
+    </ul>
+  </div>
+  <a href="contact_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
+  <div class="flex justify-center space-x-2 mt-4">
+    <a href="contact_agency.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
+    <span>/</span>
+    <a href="contact_agency_tr.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
+  </div>
+</nav>
 
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
@@ -237,7 +253,7 @@
   // Mobil menü açma/kapama ve açılır menü işlevselliği için JavaScript
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
 
@@ -245,7 +261,6 @@
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('active');
       });
     }
 
@@ -264,6 +279,16 @@
         }
       });
     }
+
+    // Mobil hizmetler açılır menüsünü açma/kapama
+    window.toggleMobileDropdown = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+      if (mobileServicesDropdown) {
+        mobileServicesDropdown.classList.toggle('hidden');
+      }
+    };
 
     // İletişim formu için form gönderimi ve mesaj görüntüleme JavaScript'i
     const contactForm = document.getElementById('contactForm');
@@ -428,3 +453,5 @@
     }
   });
 </script>
+</body>
+</html>

@@ -20,10 +20,13 @@
       background-color: white;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
+      z-index: 20; /* Ensure the dropdown menu is on top of other elements */
       border-radius: 0.5rem; /* Rounded corners */
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
-    .dropdown:hover .dropdown-menu {
+    /* Show the menu when the 'active' class is present */
+    .dropdown-menu.active {
       display: block;
     }
     .dropdown-menu a {
@@ -38,7 +41,6 @@
     }
     /* Mobile menu styling for responsive design */
     .mobile-menu {
-      display: none; /* Hidden by default */
       flex-direction: column;
       position: absolute;
       top: 64px; /* Position below the header */
@@ -46,12 +48,9 @@
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 10;
+      z-index: 20; /* Increased z-index to ensure it's on top */
       padding: 1rem;
       border-radius: 0.5rem; /* Rounded corners */
-    }
-    .mobile-menu.active {
-      display: flex; /* Shown when active */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
@@ -95,6 +94,26 @@
     </div>
   </div>
 </header>
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
+  <a href="index_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
+  <a href="about_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
+  <div class="relative py-2">
+    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
+      Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+    </a>
+    <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
+      <li><a href="patients_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Hastalar İçin</a></li>
+      <li><a href="agencies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="companies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
+    </ul>
+  </div>
+  <a href="contact_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
+  <div class="flex justify-center space-x-2 mt-4">
+    <a href="patients.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
+    <span>/</span>
+    <a href="patients_tr.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
+  </div>
+</nav>
 
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
@@ -105,18 +124,18 @@
     <div class="section-container container mx-auto px-4 max-w-4xl">
       <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-8">Neden Bir Rehbere İhtiyacınız Var?</h2>
       <p class="text-lg text-gray-700 leading-relaxed mb-10 text-justify">
-        Yolunuzu kaybetmeyin, zamanınızı ve paranızı boşa harcamayın. <strong>100'den fazla uzmanlık ve yan dal uzmanlığına sahip sağlık kuruluşları</strong> arasında rehberlik olmadan en iyi çözümleri bulmak kolay değildir.
+        Yolunuzu kaybetmeyin, zamanınızı ve paranızı boşa harcamayın. **100'den fazla uzmanlık ve yan dal uzmanlığına sahip sağlık kuruluşları** arasında rehberlik olmadan en iyi çözümleri bulmak kolay değildir.
       </p>
       <p class="text-lg text-gray-700 leading-relaxed mb-10 text-justify">
-        Sağlık hizmetlerinde, sadece <strong>en iyi doktorlara sahip olmak</strong> yeterli değildir. <strong>En iyi tedavi sonuçları</strong>, farklı alanlardan uzmanların <strong>multidisipliner bir yaklaşımla</strong> birlikte çalışmasıyla elde edilir.
+        Sağlık hizmetlerinde, sadece **en iyi doktorlara sahip olmak** yeterli değildir. **En iyi tedavi sonuçları**, farklı alanlardan uzmanların **multidisipliner bir yaklaşımla** birlikte çalışmasıyla elde edilir.
       </p>
 
       <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-8">Hastalar İçin Neden Türkiye?</h2>
       <p class="text-lg text-gray-700 leading-relaxed mb-10 text-justify">
-        Türkiye, <strong>yüksek kaliteli sağlık hizmetleri</strong>, <strong>uygun fiyatlı tedaviler</strong>, <strong>modern tıbbi tesisler</strong> ve <strong>yüksek yaşam standartları</strong> sunarak sağlık turizminde hızla en iyi destinasyonlardan biri haline geliyor. <i class="fas fa-water text-[#59CDD1] mr-1"></i><strong>Temiz suyu</strong>, <i class="fas fa-wind text-[#59CDD1] mr-1"></i><strong>düşük hava kirliliği</strong>, <i class="fas fa-landmark text-[#59CDD1] mr-1"></i><strong>zengin kültürel mirası</strong> ve <i class="fas fa-archway text-[#59CDD1] mr-1"></i><strong>tarihi mekanları</strong> ile Türkiye, hem tıbbi bakımı hem de turizm fırsatlarını tek bir yerde sunar.
+        Türkiye, **yüksek kaliteli sağlık hizmetleri**, **uygun fiyatlı tedaviler**, **modern tıbbi tesisler** ve **yüksek yaşam standartları** sunarak sağlık turizminde hızla en iyi destinasyonlardan biri haline geliyor. <i class="fas fa-water text-[#59CDD1] mr-1"></i>**Temiz suyu**, <i class="fas fa-wind text-[#59CDD1] mr-1"></i>**düşük hava kirliliği**, <i class="fas fa-landmark text-[#59CDD1] mr-1"></i>**zengin kültürel mirası** ve <i class="fas fa-archway text-[#59CDD1] mr-1"></i>**tarihi mekanları** ile Türkiye, hem tıbbi bakımı hem de turizm fırsatlarını tek bir yerde sunar.
       </p>
       <p class="text-lg text-gray-700 leading-relaxed mb-10 text-justify">
-        Birçok <strong>uluslararası akreditasyona sahip hastane</strong>, en son tıbbi teknoloji, <strong>en iyi standartta laboratuvarlar</strong>, <strong>gelişmiş ameliyathaneler</strong> ve <strong>son derece deneyimli sağlık profesyonelleri</strong> ile donatılmış olup, beş yıldızlı otel konforunda hizmet sunmaktadır.
+        Birçok **uluslararası akreditasyona sahip hastane**, en son tıbbi teknoloji, **en iyi standartta laboratuvarlar**, **gelişmiş ameliyathaneler** ve **son derece deneyimli sağlık profesyonelleri** ile donatılmış olup, beş yıldızlı otel konforunda hizmet sunmaktadır.
       </p>
 
       <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-8">Türkiye'de Yüksek Kaliteli Sağlık Hizmeti ve Uygun Fiyatlı Tedaviler</h2>
@@ -224,17 +243,59 @@
 </footer>
 
 <script>
-  // JavaScript for mobile menu toggle functionality
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
+    const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
 
+    // Select the mobile services dropdown and its toggle element
+    const mobileServicesDropdownToggle = document.querySelector('#mobile-menu a[onclick]');
+    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+
+    // Toggle the mobile menu
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden'); /* Toggle Tailwind's hidden class */
-        mobileMenu.classList.toggle('active'); /* Toggle custom 'active' class for display:flex */
+        mobileMenu.classList.toggle('hidden');
       });
     }
+
+    // Toggle the services dropdown menu for desktop
+    if (servicesDropdownToggle && servicesDropdownMenu) {
+      servicesDropdownToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        servicesDropdownMenu.classList.toggle('active');
+      });
+    }
+
+    // Toggle the services dropdown menu for mobile
+    if (mobileServicesDropdownToggle && mobileServicesDropdown) {
+      mobileServicesDropdownToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        mobileServicesDropdown.classList.toggle('hidden');
+      });
+    }
+
+    // Close all dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+      // For desktop services dropdown
+      if (servicesDropdownToggle && servicesDropdownMenu && !servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
+        servicesDropdownMenu.classList.remove('active');
+      }
+
+      // For mobile menu and its dropdown
+      const isClickInsideMobileMenu = mobileMenu.contains(event.target);
+      const isClickOnMobileButton = mobileMenuBtn.contains(event.target);
+      if (mobileMenu && mobileMenuBtn && !isClickInsideMobileMenu && !isClickOnMobileButton) {
+        mobileMenu.classList.add('hidden');
+        // Also close the mobile dropdown if the mobile menu is closed
+        if (mobileServicesDropdown) {
+          mobileServicesDropdown.classList.add('hidden');
+        }
+      }
+    });
   });
 </script>
 </body>

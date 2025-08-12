@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <meta name="theme-color" content="#59CDD1">
   <link rel="manifest" href="/site.webmanifest">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Artun Healthcare Consultancy</title>
+  <title>Bize Ulaşın | Artun Sağlık Danışmanlığı</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Custom styles for elements not fully covered by Tailwind or for specific overrides */
+    /* Tailwind'in kapsamadığı veya özel geçersiz kılmalar için özel stiller */
     body {
-      font-family: 'Inter', sans-serif; /* Applied Inter font */
+      font-family: 'Inter', sans-serif; /* Inter yazı tipi uygulandı */
     }
-    /* Dropdown menu styling for desktop navigation */
+    /* Masaüstü navigasyon için açılır menü stili */
     .dropdown-menu {
       display: none;
       position: absolute;
       background-color: white;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 20; /* Ensure the dropdown menu is on top of other elements */
-      border-radius: 0.5rem; /* Rounded corners */
+      z-index: 20; /* Açılır menünün diğer öğelerin üzerinde olmasını sağlar */
+      border-radius: 0.5rem; /* Yuvarlak köşeler */
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }
-    /* Show the menu when the 'active' class is present */
+    /* 'active' sınıfı mevcut olduğunda menüyü göster */
     .dropdown-menu.active {
       display: block;
     }
@@ -34,38 +34,38 @@
       padding: 12px 16px;
       text-decoration: none;
       display: block;
-      border-radius: 0.5rem; /* Rounded corners for individual items */
+      border-radius: 0.5rem; /* Bireysel öğeler için yuvarlak köşeler */
     }
     .dropdown-menu a:hover {
       background-color: #f1f1f1;
     }
-    /* Mobile menu styling for responsive design */
+    /* Duyarlı tasarım için mobil menü stili */
     .mobile-menu {
-      display: none; /* Hidden by default */
+      display: none; /* Varsayılan olarak gizli */
       flex-direction: column;
       position: absolute;
-      top: 64px; /* Position below the header */
+      top: 64px; /* Başlığın altına konumlandır */
       left: 0;
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 10;
       padding: 1rem;
-      border-radius: 0.5rem; /* Rounded corners */
+      border-radius: 0.5rem; /* Yuvarlak köşeler */
     }
     .mobile-menu.active {
-      display: flex; /* Shown when active */
+      display: flex; /* Etkin olduğunda gösterilir */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
       text-align: center;
-      border-bottom: 1px solid #eee; /* Separator for menu items */
+      border-bottom: 1px solid #eee; /* Menü öğeleri için ayırıcı */
     }
     .mobile-menu a:last-child {
-      border-bottom: none; /* No separator for the last item */
+      border-bottom: none; /* Son öğe için ayırıcı yok */
     }
 
-    /* Custom styles for file input to make it look better */
+    /* Dosya girişi için daha iyi görünmesini sağlayan özel stiller */
     input[type="file"] {
       display: block;
       width: 100%;
@@ -100,26 +100,26 @@
 <header class="main-header bg-white shadow-md py-4">
   <div class="header-container container mx-auto flex justify-between items-center px-4">
     <div class="logo flex items-center space-x-2">
-      <img src="artun.png" alt="Artun Consultancy Logo" class="w-50 h-10">
+      <img src="artun.png" alt="Artun Danışmanlık Logosu" class="w-50 h-10">
     </div>
     <nav class="hidden md:block">
       <ul class="nav-links flex space-x-6 items-center">
-        <li><a href="index.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Home</a></li>
-        <li><a href="about.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">About Us</a></li>
+        <li><a href="index_tr.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Ana Sayfa</a></li>
+        <li><a href="about_tr.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Hakkımızda</a></li>
         <li class="dropdown relative z-10">
-          <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-700 hover:text-[#59CDD1] transition duration-300 flex items-center">Services <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+          <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-700 hover:text-[#59CDD1] transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
           <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
-            <li><a href="patients.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Patients</a></li>
-            <li><a href="agencies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Medical Tourism Agencies</a></li>
-            <li><a href="companies.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">For Companies</a></li>
+            <li><a href="patients_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Hastalar İçin</a></li>
+            <li><a href="agencies_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
+            <li><a href="companies_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Şirketler İçin</a></li>
           </ul>
         </li>
-        <li><a href="contact.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">Contact Us</a></li>
+        <li><a href="contact_tr.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
 
         <li class="lang-switcher text-gray-700 font-semibold space-x-2">
-          <a href="contact_agency.html" class="text-[#59CDD1]">ENG</a>
+          <a href="contact_agency.html">ENG</a>
           <span>/</span>
-          <a href="contact_agency_tr.html">TR</a>
+          <a href="contact_agency_tr.html" class="text-[#59CDD1]">TR</a>
         </li>
       </ul>
     </nav>
@@ -131,20 +131,20 @@
 
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
-    <h2 class="text-3xl font-bold text-[#59CDD1]">Contact Us/ For Agencies</h2>
+    <h2 class="text-3xl font-bold text-[#59CDD1]">Bize Ulaşın / Acenteler İçin</h2>
   </div>
 
   <section id="contact" class="section py-16 bg-white">
     <div class="section-container container mx-auto px-4 max-w-5xl">
-      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">Get In Touch</h2>
+      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">İletişime Geçin</h2>
       <p class="text-lg text-gray-700 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
-        We're here to help! Whether you have a question, need support, or want to discuss a partnership, feel free to reach out to us.
+        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir ortaklık görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
       </p>
 
       <div class="grid md:grid-cols-[1.2fr_2fr] gap-12 items-start">
         <div>
           <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6">İletişim Bilgileri</h3>
             <div class="space-y-4">
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <i class="fas fa-envelope text-[#59CDD1] text-xl"></i>
@@ -152,7 +152,7 @@
               </div>
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <i class="fas fa-map-marker-alt text-[#59CDD1] text-xl"></i>
-                <span>Istanbul, Turkey</span>
+                <span>İstanbul, Türkiye</span>
               </div>
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <a href="https://wa.me/905325673291" class="text-[#59CDD1] text-xl" target="_blank">
@@ -166,50 +166,48 @@
 
         <div class="bg-gray-50 p-8 rounded-lg shadow-lg space-y-8">
           <form id="contactForm" class="contact-form space-y-6" action="https://script.google.com/macros/s/AKfycbyPt8bF4tvPwJoQu7DY335H30-9BuzFeG7xx5Od9VHDuIPrIs0H5AyQYCwFLggaRmok8g/exec" method="POST">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Send Us a Message</h3>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Bize Bir Mesaj Gönderin</h3>
 
             <div class="form-group">
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter your name and surname" required>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Ad Soyad</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Adınızı ve soyadınızı girin" required>
             </div>
             <div class="form-group">
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter your phone number with country code" required>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numarası</label>
+              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodu ile telefon numaranızı girin" required>
             </div>
             <div class="form-group">
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter your email" required>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresi</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="E-posta adresinizi girin" required>
             </div>
             <div class="form-group">
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
-              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="How can we help you?" required></textarea>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesajınız</label>
+              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Size nasıl yardımcı olabiliriz?" required></textarea>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
               <label for="consentContact" class="text-sm text-gray-700">
-                Data Sharing Consent: By submitting this form, we confirm that we have obtained the explicit consent of the patient for the sharing of their personal and medical information with authorized personnel at the relevant healthcare facilities.
-                The patient’s information is shared solely for the purpose of evaluating their request and facilitating the provision of appropriate medical services.<br><br>
+                Veri Paylaşım Onayı: Bu formu göndererek, hastanın kişisel ve tıbbi bilgilerinin, taleplerinin değerlendirilmesi ve uygun tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık tesislerindeki yetkili personel ile paylaşılması için hastanın açık rızasını aldığımızı onaylarız.<br><br>
               </label>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
               <label for="consentContact1" class="text-sm text-gray-700">
-                Data Sharing Consent: We give our consent for the sharing of our own corporate contact and process-related information (such as service requests, coordination details, and other relevant operational data) with the relevant healthcare institutions for the purpose of managing the medical travel process efficiently.
-                We confirm that none of the information neither the patient’s nor ours will be shared with any third parties outside the involved healthcare institutions, and will not be used for any purposes other than communication and process management.
+                Veri Paylaşım Onayı: Kendi kurumsal iletişim ve süreçle ilgili bilgilerimizin (hizmet talepleri, koordinasyon detayları ve diğer ilgili operasyonel veriler gibi) medikal seyahat sürecini verimli bir şekilde yönetmek amacıyla ilgili sağlık kurumları ile paylaşılmasına rıza gösteriyoruz. Ne hastanın ne de bizim bilgilerimizin ilgili sağlık kurumları dışındaki üçüncü şahıslarla paylaşılmayacağını ve iletişim ile süreç yönetimi dışında herhangi bir amaçla kullanılmayacağını onaylarız.
               </label>
             </div>
 
             <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
-              Please check at least one of the consent boxes to continue.
+              Devam etmek için lütfen onay kutularından en az birini işaretleyin.
             </div>
 
             <div id="formSubmissionMessage" class="hidden p-4 mt-5 rounded-lg text-center font-bold text-white shadow-md transition-opacity duration-300 opacity-0">
             </div>
 
             <button type="submit" class="w-full bg-[#59CDD1] text-white px-6 py-3 rounded-md hover:bg-[#45a8b3] transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2">
-              <span>Send Message</span>
+              <span>Mesaj Gönder</span>
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
@@ -222,7 +220,7 @@
 <footer class="main-footer bg-gray-900 text-white py-8">
   <div class="footer-container container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-4 md:space-y-0">
     <div class="logo flex items-center space-x-2">
-      <img src="artun2.png" alt="Artun Consultancy Logo" class="w-50 h-10">
+      <img src="artun2.png" alt="Artun Danışmanlık Logosu" class="w-50 h-10">
     </div>
     <div class="footer-social flex space-x-6">
       <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
@@ -231,19 +229,19 @@
     </div>
   </div>
   <div class="footer-bottom text-center text-gray-500 text-sm mt-6">
-    <p>&copy; 2025 Artun Consultancy Company. All rights reserved.</p>
+    <p>&copy; 2025 Artun Danışmanlık Şirketi. Tüm hakları saklıdır.</p>
   </div>
 </footer>
 
 <script>
-  // JavaScript for mobile menu toggle and dropdown functionality
+  // Mobil menü açma/kapama ve açılır menü işlevselliği için JavaScript
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
 
-    // Toggle the mobile menu
+    // Mobil menüyü açıp kapama
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
@@ -251,15 +249,15 @@
       });
     }
 
-    // Toggle the services dropdown menu on click
+    // Hizmetler açılır menüsünü tıklamayla açma/kapama
     if (servicesDropdownToggle && servicesDropdownMenu) {
       servicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the link from navigating
-        event.stopPropagation(); // Stop the click from propagating to the document listener
+        event.preventDefault(); // Bağlantının gezinmesini engelle
+        event.stopPropagation(); // Tıklamanın belge dinleyicisine yayılmasını durdur
         servicesDropdownMenu.classList.toggle('active');
       });
 
-      // Close the dropdown when clicking outside of it
+      // Dışarıya tıklandığında menüyü kapat
       document.addEventListener('click', (event) => {
         if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
           servicesDropdownMenu.classList.remove('active');
@@ -267,7 +265,7 @@
       });
     }
 
-    // JavaScript for form submission and message display for the contact form
+    // İletişim formu için form gönderimi ve mesaj görüntüleme JavaScript'i
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
     const consentCheckbox1 = document.getElementById('consentContact');
@@ -276,38 +274,38 @@
 
     if (contactForm && formSubmissionMessage) {
       contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault(); // Varsayılan form gönderimini engelle
 
-        // NEW LOGIC: Check if at least one consent box is checked.
+        // YENİ MANTIK: En az bir onay kutusunun işaretli olup olmadığını kontrol et.
         if (!consentCheckbox1.checked && !consentCheckbox2.checked) {
-          consentErrorDiv.textContent = 'Please check at least one of the consent boxes to continue.';
+          consentErrorDiv.textContent = 'Devam etmek için lütfen onay kutularından en az birini işaretleyin.';
           consentErrorDiv.classList.remove('hidden');
           consentErrorDiv.style.opacity = '1';
           setTimeout(() => {
             consentErrorDiv.style.opacity = '0';
-            // Use 'transitionend' to ensure the element is fully hidden after fade out.
+            // Geçişin tamamlandığından emin olmak için 'transitionend' kullan
             consentErrorDiv.addEventListener('transitionend', () => {
               consentErrorDiv.classList.add('hidden');
             }, { once: true });
           }, 7000);
-          return; // Stop the function
+          return; // İşlevi durdur
         }
 
-        // Hide the consent error message if it was visible
+        // Onay hata mesajı görünürse gizle
         consentErrorDiv.classList.add('hidden');
         consentErrorDiv.style.opacity = '0';
 
-        formSubmissionMessage.style.opacity = '0'; // Hide previous message
-        formSubmissionMessage.classList.add('hidden'); // Ensure hidden class is applied for fade out
+        formSubmissionMessage.style.opacity = '0'; // Önceki mesajı gizle
+        formSubmissionMessage.classList.add('hidden'); // Soluklaşması için gizli sınıfını uygula
 
-        // Show loading indicator
-        formSubmissionMessage.textContent = 'Sending your message...';
-        formSubmissionMessage.style.backgroundColor = '#59CDD1'; // Turquoise for loading
+        // Yükleniyor göstergesini göster
+        formSubmissionMessage.textContent = 'Mesajınız gönderiliyor...';
+        formSubmissionMessage.style.backgroundColor = '#59CDD1'; // Yükleniyor için Turkuaz
         formSubmissionMessage.classList.remove('hidden');
         formSubmissionMessage.style.opacity = '1';
 
         try {
-          // Use FormData to easily grab all form values
+          // Tüm form değerlerini kolayca almak için FormData kullan
           const formData = new FormData(contactForm);
 
           const response = await fetch(contactForm.action, {
@@ -318,17 +316,17 @@
           const resultText = await response.text();
 
           if (response.ok) {
-            formSubmissionMessage.textContent = 'Success! Your message has been sent.';
-            formSubmissionMessage.style.backgroundColor = '#4CAF50'; // Green for success
-            contactForm.reset(); // Clear the form
+            formSubmissionMessage.textContent = 'Başarılı! Mesajınız gönderildi.';
+            formSubmissionMessage.style.backgroundColor = '#4CAF50'; // Başarı için Yeşil
+            contactForm.reset(); // Formu temizle
           } else {
-            formSubmissionMessage.textContent = 'Error: ' + resultText;
-            formSubmissionMessage.style.backgroundColor = '#f44336'; // Red for error
+            formSubmissionMessage.textContent = 'Hata: ' + resultText;
+            formSubmissionMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
           }
         } catch (error) {
-          console.error('Network or submission error:', error);
-          formSubmissionMessage.textContent = 'Network error. Please try again.';
-          formSubmissionMessage.style.backgroundColor = '#f44336'; // Red for error
+          console.error('Ağ veya gönderim hatası:', error);
+          formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
+          formSubmissionMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
         } finally {
           formSubmissionMessage.classList.remove('hidden');
           formSubmissionMessage.style.opacity = '1';
@@ -341,12 +339,8 @@
       });
     }
 
-    // NOTE: The file upload form is not present in the provided HTML,
-    // so this script block will not execute. The code is kept here for reference
-    // and potential future use.
-
-    // This is a placeholder and will not run as there's no upload form
-    // in this specific file.
+    // Not: Sağlanan HTML'de dosya yükleme formu bulunmadığından bu kod bloğu çalışmayacaktır.
+    // Kod, referans ve olası gelecekteki kullanım için burada tutulmuştur.
     const uploadForm = document.getElementById('uploadForm');
     const fileInput = document.getElementById('fileInput');
     const customUploadMessage = document.getElementById('customUploadMessage');
@@ -355,35 +349,34 @@
       uploadForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        // Check for consent
+        // Onay kontrolü
         const consentCheckbox = document.getElementById('consentUpload');
         if (!consentCheckbox.checked) {
-          customUploadMessage.textContent = 'Error: Please agree to the data sharing consent.';
-          customUploadMessage.style.backgroundColor = '#f44336'; // Red for error
+          customUploadMessage.textContent = 'Hata: Lütfen veri paylaşım onayını işaretleyin.';
+          customUploadMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
           customUploadMessage.classList.remove('hidden');
           customUploadMessage.style.opacity = '1';
           setTimeout(() => {
             customUploadMessage.style.opacity = '0';
             customUploadMessage.classList.add('hidden');
           }, 7000);
-          return; // Stop the function
+          return; // İşlevi durdur
         }
 
-        // Show a loading message and hide the previous message
+        // Yükleniyor mesajı göster ve önceki mesajı gizle
         customUploadMessage.style.opacity = '0';
         customUploadMessage.classList.add('hidden');
-        customUploadMessage.textContent = 'Uploading file...';
-        customUploadMessage.style.backgroundColor = '#59CDD1'; // Turquoise for loading
+        customUploadMessage.textContent = 'Dosya yükleniyor...';
+        customUploadMessage.style.backgroundColor = '#59CDD1'; // Yükleniyor için Turkuaz
         customUploadMessage.classList.remove('hidden');
         customUploadMessage.style.opacity = '1';
 
         const file = fileInput.files[0];
 
         if (!file) {
-          customUploadMessage.textContent = 'Please select a file to upload.';
+          customUploadMessage.textContent = 'Lütfen yüklenecek bir dosya seçin.';
           customUploadMessage.classList.remove('bg-green-500');
           customUploadMessage.classList.add('bg-red-500', 'opacity-100');
-          // Hide message after 7 seconds
           setTimeout(() => {
             customUploadMessage.classList.add('hidden', 'opacity-0');
           }, 7000);
@@ -410,23 +403,21 @@
             const result = await response.json();
 
             if (result.status === 'success') {
-              customUploadMessage.textContent = '✅ File uploaded successfully!';
+              customUploadMessage.textContent = '✅ Dosya başarıyla yüklendi!';
               customUploadMessage.classList.remove('bg-red-500');
               customUploadMessage.classList.add('bg-green-500', 'opacity-100');
-              // Clear the file input field
               fileInput.value = '';
             } else {
-              customUploadMessage.textContent = '❌ Upload failed: ' + result.message;
+              customUploadMessage.textContent = '❌ Yükleme başarısız: ' + result.message;
               customUploadMessage.classList.remove('bg-green-500');
               customUploadMessage.classList.add('bg-red-500', 'opacity-100');
             }
           } catch (error) {
-            console.error('Network or submission error:', error);
-            customUploadMessage.textContent = 'Network error. Please try again.';
+            console.error('Ağ veya gönderim hatası:', error);
+            customUploadMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
             customUploadMessage.classList.remove('bg-green-500');
             customUploadMessage.classList.add('bg-red-500', 'opacity-100');
           } finally {
-            // Hide message after 7 seconds
             setTimeout(() => {
               customUploadMessage.classList.add('hidden', 'opacity-0');
             }, 7000);

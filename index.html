@@ -21,7 +21,6 @@
       background-color: white;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      /* Increased z-index to ensure it's on top of all other header elements */
       z-index: 20;
       border-radius: 0.5rem; /* Rounded corners */
       padding-top: 0.5rem;
@@ -44,7 +43,6 @@
     }
     /* Mobile menu styling for responsive design */
     .mobile-menu {
-      display: none; /* Hidden by default */
       flex-direction: column;
       position: absolute;
       top: 64px; /* Position below the header */
@@ -52,12 +50,9 @@
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 10;
+      z-index: 20; /* Increased z-index to ensure it's on top */
       padding: 1rem;
       border-radius: 0.5rem; /* Rounded corners */
-    }
-    .mobile-menu.active {
-      display: flex; /* Shown when active */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
@@ -124,7 +119,7 @@
     </div>
   </div>
 </header>
-<nav id="mobile-menu" class="mobile-menu absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 md:hidden z-20">
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
   <a href="index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
   <a href="about.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About Us</a>
   <div class="relative py-2">
@@ -270,6 +265,9 @@
     const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
+
+    // Select the mobile services dropdown and its toggle element
+    const mobileServicesDropdownToggle = document.querySelector('#mobile-menu a[onclick]');
     const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
 
     // Toggle the mobile menu
@@ -289,19 +287,30 @@
     }
 
     // Toggle the services dropdown menu for mobile
-    window.toggleMobileDropdown = function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      mobileServicesDropdown.classList.toggle('hidden');
+    if (mobileServicesDropdownToggle && mobileServicesDropdown) {
+      mobileServicesDropdownToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        mobileServicesDropdown.classList.toggle('hidden');
+      });
     }
 
     // Close all dropdowns when clicking outside
     document.addEventListener('click', (event) => {
-      if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
+      // For desktop services dropdown
+      if (servicesDropdownToggle && servicesDropdownMenu && !servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
         servicesDropdownMenu.classList.remove('active');
       }
-      if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+
+      // For mobile menu and its dropdown
+      const isClickInsideMobileMenu = mobileMenu.contains(event.target);
+      const isClickOnMobileButton = mobileMenuBtn.contains(event.target);
+      if (mobileMenu && mobileMenuBtn && !isClickInsideMobileMenu && !isClickOnMobileButton) {
         mobileMenu.classList.add('hidden');
+        // Also close the mobile dropdown if the mobile menu is closed
+        if (mobileServicesDropdown) {
+          mobileServicesDropdown.classList.add('hidden');
+        }
       }
     });
   });

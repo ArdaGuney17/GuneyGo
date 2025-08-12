@@ -129,6 +129,27 @@
   </div>
 </header>
 
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
+  <a href="index_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
+  <a href="about_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
+  <div class="relative py-2">
+    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
+      Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+    </a>
+    <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
+      <li><a href="patients_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Hastalar İçin</a></li>
+      <li><a href="agencies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="companies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
+    </ul>
+  </div>
+  <a href="contact_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
+  <div class="flex justify-center space-x-2 mt-4">
+    <a href="contact_patient.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
+    <span>/</span>
+    <a href="contact_patient_tr.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
+  </div>
+</nav>
+
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
     <h2 class="text-3xl font-bold text-[#59CDD1]">Bize Ulaşın / Hastalar İçin</h2>
@@ -253,19 +274,20 @@
   // JavaScript for mobile menu toggle and dropdown functionality
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
+    const mobileServicesDropdownToggle = document.querySelector('#mobile-menu .dropdown-toggle');
+    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
 
     // Toggle the mobile menu
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('active');
       });
     }
 
-    // Toggle the services dropdown menu on click
+    // Toggle the desktop services dropdown menu on click
     if (servicesDropdownToggle && servicesDropdownMenu) {
       servicesDropdownToggle.addEventListener('click', (event) => {
         event.preventDefault(); // Prevent the link from navigating
@@ -273,13 +295,23 @@
         servicesDropdownMenu.classList.toggle('active');
       });
 
-      // Close the dropdown when clicking outside of it
+      // Close the desktop dropdown when clicking outside of it
       document.addEventListener('click', (event) => {
         if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
           servicesDropdownMenu.classList.remove('active');
         }
       });
     }
+
+    // Toggle the mobile services dropdown
+    function toggleMobileDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (mobileServicesDropdown) {
+        mobileServicesDropdown.classList.toggle('hidden');
+      }
+    }
+
 
     // JavaScript for form submission and message display for the contact form
     const contactForm = document.getElementById('contactForm');
@@ -438,3 +470,5 @@
     }
   });
 </script>
+</body>
+</html>

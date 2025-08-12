@@ -99,6 +99,27 @@
   </div>
 </header>
 
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
+  <a href="index_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
+  <a href="about_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
+  <div class="relative py-2">
+    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
+      Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+    </a>
+    <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
+      <li><a href="patients_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Hastalar İçin</a></li>
+      <li><a href="agencies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="companies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
+    </ul>
+  </div>
+  <a href="contact_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
+  <div class="flex justify-center space-x-2 mt-4">
+    <a href="contact_company.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
+    <span>/</span>
+    <a href="contact_company_tr.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
+  </div>
+</nav>
+
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
     <h2 class="text-3xl font-bold text-[#59CDD1]">Bize Ulaşın / Şirketler İçin</h2>
@@ -189,32 +210,44 @@
   // Mobil menü açma/kapama ve açılır menü işlevselliği için JavaScript
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
+
+    // Mobil menüdeki hizmetler dropdown'ı için
+    const mobileServicesDropdownToggle = document.querySelector('#mobile-menu .dropdown-toggle');
+    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
 
     // Mobil menüyü açıp kapama
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('active');
       });
     }
 
-    // Hizmetler açılır menüsünü tıklamayla açma/kapama
+    // Hizmetler açılır menüsünü tıklamayla açma/kapama (masaüstü)
     if (servicesDropdownToggle && servicesDropdownMenu) {
       servicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Bağlantının gezinmesini engelle
-        event.stopPropagation(); // Tıklamanın belge dinleyicisine yayılmasını durdur
+        event.preventDefault();
+        event.stopPropagation();
         servicesDropdownMenu.classList.toggle('active');
       });
 
-      // Dışarıya tıklandığında menüyü kapat
+      // Dışarıya tıklandığında menüyü kapat (masaüstü)
       document.addEventListener('click', (event) => {
         if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
           servicesDropdownMenu.classList.remove('active');
         }
       });
+    }
+
+    // Mobil menüdeki hizmetler dropdown'ı için tıklama işlevi
+    function toggleMobileDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (mobileServicesDropdown) {
+        mobileServicesDropdown.classList.toggle('hidden');
+      }
     }
 
     // İletişim formu gönderimi ve mesaj görüntüleme için JavaScript
@@ -223,14 +256,13 @@
 
     if (contactForm && formSubmissionMessage) {
       contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Varsayılan form gönderimini engelle
+        e.preventDefault();
 
-        formSubmissionMessage.style.opacity = '0'; // Önceki mesajı gizle
-        formSubmissionMessage.classList.add('hidden'); // Soluklaşması için gizli sınıfını uygula
+        formSubmissionMessage.style.opacity = '0';
+        formSubmissionMessage.classList.add('hidden');
 
-        // Yükleniyor göstergesini göster
         formSubmissionMessage.textContent = 'Mesajınız gönderiliyor...';
-        formSubmissionMessage.style.backgroundColor = '#59CDD1'; // Yükleniyor için Turkuaz
+        formSubmissionMessage.style.backgroundColor = '#59CDD1';
         formSubmissionMessage.classList.remove('hidden');
         formSubmissionMessage.style.opacity = '1';
 
@@ -247,17 +279,17 @@
 
           if (response.ok && successPattern.test(resultText)) {
             formSubmissionMessage.textContent = 'Başarılı! Mesajınız gönderildi.';
-            formSubmissionMessage.style.backgroundColor = '#4CAF50'; // Başarı için Yeşil
-            contactForm.reset(); // Formu temizle
+            formSubmissionMessage.style.backgroundColor = '#4CAF50';
+            contactForm.reset();
           } else {
             formSubmissionMessage.textContent = 'Hata: ' + (resultText || 'Bilinmeyen bir hata oluştu.');
-            formSubmissionMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
+            formSubmissionMessage.style.backgroundColor = '#f44336';
           }
 
         } catch (error) {
           console.error('Ağ veya gönderim hatası:', error);
           formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
-          formSubmissionMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
+          formSubmissionMessage.style.backgroundColor = '#f44336';
         } finally {
           formSubmissionMessage.classList.remove('hidden');
           formSubmissionMessage.style.opacity = '1';

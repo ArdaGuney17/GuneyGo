@@ -103,7 +103,7 @@
   <a href="index_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
   <a href="about_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
   <div class="relative py-2">
-    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
+    <a href="#" id="mobileServicesToggle" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
       Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
     </a>
     <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
@@ -215,7 +215,7 @@
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
 
     // Mobil menüdeki hizmetler dropdown'ı için
-    const mobileServicesDropdownToggle = document.querySelector('#mobile-menu .dropdown-toggle');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
     const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
 
     // Mobil menüyü açıp kapama
@@ -242,12 +242,12 @@
     }
 
     // Mobil menüdeki hizmetler dropdown'ı için tıklama işlevi
-    function toggleMobileDropdown(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      if (mobileServicesDropdown) {
+    if (mobileServicesToggle && mobileServicesDropdown) {
+      mobileServicesToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         mobileServicesDropdown.classList.toggle('hidden');
-      }
+      });
     }
 
     // İletişim formu gönderimi ve mesaj görüntüleme için JavaScript

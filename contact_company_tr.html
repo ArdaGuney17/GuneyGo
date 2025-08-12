@@ -41,7 +41,6 @@
     }
     /* Duyarlı tasarım için mobil menü stili */
     .mobile-menu {
-      display: none; /* Varsayılan olarak gizli */
       flex-direction: column;
       position: absolute;
       top: 64px; /* Başlığın altına konumlandır */
@@ -49,12 +48,9 @@
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 10;
+      z-index: 20; /* Açılır menünün diğer öğelerin üzerinde olmasını sağlar */
       padding: 1rem;
       border-radius: 0.5rem; /* Yuvarlak köşeler */
-    }
-    .mobile-menu.active {
-      display: flex; /* Etkin olduğunda gösterilir */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
@@ -249,6 +245,7 @@
         mobileServicesDropdown.classList.toggle('hidden');
       });
     }
+
 
     // İletişim formu gönderimi ve mesaj görüntüleme için JavaScript
     const contactForm = document.getElementById('contactForm');

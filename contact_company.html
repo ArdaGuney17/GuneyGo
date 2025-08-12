@@ -41,7 +41,6 @@
     }
     /* Mobile menu styling for responsive design */
     .mobile-menu {
-      display: none; /* Hidden by default */
       flex-direction: column;
       position: absolute;
       top: 64px; /* Position below the header */
@@ -49,12 +48,9 @@
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 10;
+      z-index: 20; /* Increased z-index to ensure it's on top */
       padding: 1rem;
       border-radius: 0.5rem; /* Rounded corners */
-    }
-    .mobile-menu.active {
-      display: flex; /* Shown when active */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
@@ -210,14 +206,13 @@
   // JavaScript for mobile menu toggle and dropdown functionality
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu'); // Added ID for clarity
+    const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
-    // This is the missing part
     const mobileServicesToggle = document.getElementById('mobileServicesToggle');
     const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
 
-    // Toggle the mobile menu
+    // Toggle the mobile menu by toggling the 'hidden' class
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
@@ -227,16 +222,9 @@
     // Toggle the desktop services dropdown menu on click
     if (servicesDropdownToggle && servicesDropdownMenu) {
       servicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the link from navigating
-        event.stopPropagation(); // Stop the click from propagating to the document listener
+        event.preventDefault();
+        event.stopPropagation();
         servicesDropdownMenu.classList.toggle('active');
-      });
-
-      // Close the desktop dropdown when clicking outside of it
-      document.addEventListener('click', (event) => {
-        if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
-          servicesDropdownMenu.classList.remove('active');
-        }
       });
     }
 
@@ -249,6 +237,24 @@
       });
     }
 
+    // Close all menus and dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+      // For the desktop services dropdown
+      if (servicesDropdownToggle && servicesDropdownMenu && !servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
+        servicesDropdownMenu.classList.remove('active');
+      }
+
+      // For the mobile menu and its dropdown
+      const isClickInsideMobileMenu = mobileMenu.contains(event.target);
+      const isClickOnMobileButton = mobileMenuBtn.contains(event.target);
+      if (mobileMenu && mobileMenuBtn && !isClickInsideMobileMenu && !isClickOnMobileButton) {
+        mobileMenu.classList.add('hidden');
+        // Also close the mobile dropdown if the mobile menu is closed
+        if (mobileServicesDropdown) {
+          mobileServicesDropdown.classList.add('hidden');
+        }
+      }
+    });
 
     // JavaScript for contact form submission and message display
     const contactForm = document.getElementById('contactForm');

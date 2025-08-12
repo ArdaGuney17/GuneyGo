@@ -364,7 +364,7 @@
             formSubmissionMessage.style.backgroundColor = '#4CAF50'; // Green for success
             contactForm.reset(); // Clear the form
           } else {
-            formSubmissionMessage.textContent = 'Error: ' + resultText;
+            formSubmissionMessage.textContent = 'Error: ' + (resultText || 'An unknown error occurred.');
             formSubmissionMessage.style.backgroundColor = '#f44336'; // Red for error
           }
         } catch (error) {
@@ -449,7 +449,7 @@
             const response = await fetch('https://script.google.com/macros/s/AKfycbx4F3OLxihONUOxcmDRaId5iE2BiSTIUjp5bW0YPOk_b5HVKzAxd7nUb4YlIJp6zSIboA/exec', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json' // Changed to JSON
+                'Content-Type': 'application/json'
               },
               body: JSON.stringify(payload)
             });

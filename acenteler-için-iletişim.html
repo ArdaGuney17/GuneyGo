@@ -9,23 +9,23 @@
   <title>Bize Ulaşın | Artun Sağlık Danışmanlığı</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Custom styles for elements not fully covered by Tailwind or for specific overrides */
+    /* Tailwind'in kapsamadığı veya özel geçersiz kılmalar için özel stiller */
     body {
-      font-family: 'Inter', sans-serif; /* Applied Inter font */
+      font-family: 'Inter', sans-serif; /* Inter yazı tipi uygulandı */
     }
-    /* Dropdown menu styling for desktop navigation */
+    /* Masaüstü navigasyon için açılır menü stili */
     .dropdown-menu {
       display: none;
       position: absolute;
       background-color: white;
       min-width: 160px;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 20; /* Ensure the dropdown menu is on top of other elements */
-      border-radius: 0.5rem; /* Rounded corners */
+      z-index: 20; /* Açılır menünün diğer öğelerin üzerinde olmasını sağlar */
+      border-radius: 0.5rem; /* Yuvarlak köşeler */
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }
-    /* Show the menu when the 'active' class is present */
+    /* 'active' sınıfı mevcut olduğunda menüyü göster */
     .dropdown-menu.active {
       display: block;
     }
@@ -34,34 +34,34 @@
       padding: 12px 16px;
       text-decoration: none;
       display: block;
-      border-radius: 0.5rem; /* Rounded corners for individual items */
+      border-radius: 0.5rem; /* Bireysel öğeler için yuvarlak köşeler */
     }
     .dropdown-menu a:hover {
       background-color: #f1f1f1;
     }
-    /* Mobile menu styling for responsive design */
+    /* Duyarlı tasarım için mobil menü stili */
     .mobile-menu {
       flex-direction: column;
       position: absolute;
-      top: 64px; /* Position below the header */
+      top: 64px; /* Başlığın altına konumlandır */
       left: 0;
       width: 100%;
       background-color: white;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 20; /* Increased z-index to ensure it's on top */
+      z-index: 20; /* Açılır menünün diğer öğelerin üzerinde olmasını sağlar */
       padding: 1rem;
-      border-radius: 0.5rem; /* Rounded corners */
+      border-radius: 0.5rem; /* Yuvarlak köşeler */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
       text-align: center;
-      border-bottom: 1px solid #eee; /* Separator for menu items */
+      border-bottom: 1px solid #eee; /* Menü öğeleri için ayırıcı */
     }
     .mobile-menu a:last-child {
-      border-bottom: none; /* No separator for the last item */
+      border-bottom: none; /* Son öğe için ayırıcı yok */
     }
 
-    /* Custom styles for file input to make it look better */
+    /* Dosya girişi için daha iyi görünmesini sağlayan özel stiller */
     input[type="file"] {
       display: block;
       width: 100%;
@@ -100,22 +100,22 @@
     </div>
     <nav class="hidden md:block">
       <ul class="nav-links flex space-x-6 items-center">
-        <li><a href="index_tr.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Ana Sayfa</a></li>
-        <li><a href="about_tr.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Hakkımızda</a></li>
+        <li><a href="ana-sayfa.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Ana Sayfa</a></li>
+        <li><a href="hakkımızda.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Hakkımızda</a></li>
         <li class="dropdown relative z-10">
           <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-700 hover:text-[#59CDD1] transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
           <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
             <li><a href="patients_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Hastalar İçin</a></li>
-            <li><a href="agencies_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
-            <li><a href="companies_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Şirketler İçin</a></li>
+            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
+            <li><a href="şirketler-için.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Şirketler İçin</a></li>
           </ul>
         </li>
-        <li><a href="contact_tr.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
+        <li><a href="iletişime-geçin.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
 
         <li class="lang-switcher text-gray-700 font-semibold space-x-2">
-          <a href="contact_patient.html">ENG</a>
+          <a href="contact-for-agencies.html">ENG</a>
           <span>/</span>
-          <a href="contact_patient_tr.html" class="text-[#59CDD1]">TR</a>
+          <a href="acenteler-için-iletişim.html" class="text-[#59CDD1]">TR</a>
         </li>
       </ul>
     </nav>
@@ -124,38 +124,37 @@
     </div>
   </div>
 </header>
-
 <nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
-  <a href="index_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
-  <a href="about_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
+  <a href="ana-sayfa.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
+  <a href="hakkımızda.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
   <div class="relative py-2">
-    <a href="#" id="mobileServicesToggle" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+    <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
       Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
     </a>
     <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
       <li><a href="patients_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Hastalar İçin</a></li>
-      <li><a href="agencies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
-      <li><a href="companies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
+      <li><a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="şirketler-için.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
     </ul>
   </div>
-  <a href="contact_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
+  <a href="iletişime-geçin.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
   <div class="flex justify-center space-x-2 mt-4">
-    <a href="contact_patient.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
+    <a href="contact-for-agencies.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
     <span>/</span>
-    <a href="contact_patient_tr.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
+    <a href="acenteler-için-iletişim.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
   </div>
 </nav>
 
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
-    <h2 class="text-3xl font-bold text-[#59CDD1]">Bize Ulaşın / Hastalar İçin</h2>
+    <h2 class="text-3xl font-bold text-[#59CDD1]">Bize Ulaşın / Acenteler İçin</h2>
   </div>
 
   <section id="contact" class="section py-16 bg-white">
     <div class="section-container container mx-auto px-4 max-w-5xl">
-      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">Bize Ulaşın</h2>
+      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">İletişime Geçin</h2>
       <p class="text-lg text-gray-700 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
-        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya sağlık sorununuz için en iyi profesyonelleri ve tesisi bulmak istiyorsanız, bize ulaşmaktan çekinmeyin.
+        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir sağlık kuruluşu ile görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
       </p>
 
       <div class="grid md:grid-cols-[1.2fr_2fr] gap-12 items-start">
@@ -186,12 +185,12 @@
             <h3 class="text-2xl font-semibold text-gray-900 mb-4">Bize Bir Mesaj Gönderin</h3>
 
             <div class="form-group">
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Ad Soyad</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Adınızı ve soyadınızı girin" required>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Acente adı</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Acente adını girin" required>
             </div>
             <div class="form-group">
               <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numarası</label>
-              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodu ile telefon numaranızı girin" required>
+              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodu ile telefon numarasını girin" required>
             </div>
             <div class="form-group">
               <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresi</label>
@@ -203,10 +202,21 @@
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
-              <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded" required>
+              <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
               <label for="consentContact" class="text-sm text-gray-700">
-                Veri Paylaşım Onayı: Bu formu göndererek, sağlamış olduğum kişisel ve tıbbi bilgilerin, talebimin değerlendirilmesi ve gerekli tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık tesislerindeki yetkili personel ile paylaşılmasına açıkça rıza gösteriyorum. Bilgilerimin üçüncü şahıslarla paylaşılmayacağını ve süreç yönetimi ile iletişim dışında herhangi bir amaçla kullanılmayacağını kabul ediyorum.
+                Veri Paylaşım Onayı: Bu formu göndererek, hastanın kişisel ve tıbbi bilgilerinin, taleplerinin değerlendirilmesi ve uygun tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık tesislerindeki yetkili personel ile paylaşılması için hastanın açık rızasını aldığımızı onaylarız.<br><br>
               </label>
+            </div>
+
+            <div class="form-group flex items-start space-x-3 mt-4">
+              <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
+              <label for="consentContact1" class="text-sm text-gray-700">
+                Veri Paylaşım Onayı: Kendi kurumsal iletişim ve süreçle ilgili bilgilerimizin (hizmet talepleri, koordinasyon detayları ve diğer ilgili operasyonel veriler gibi) medikal seyahat sürecini verimli bir şekilde yönetmek amacıyla ilgili sağlık kurumları ile paylaşılmasına rıza gösteriyoruz. Ne hastanın ne de bizim bilgilerimizin ilgili sağlık kurumları dışındaki üçüncü şahıslarla paylaşılmayacağını ve iletişim ile süreç yönetimi dışında herhangi bir amaçla kullanılmayacağını onaylarız.
+              </label>
+            </div>
+
+            <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
+              Devam etmek için lütfen onay kutularından en az birini işaretleyin.
             </div>
 
             <div class="form-group flex items-start space-x-2 mt-4">
@@ -224,33 +234,6 @@
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
-
-          <hr class="my-8 border-gray-300"> <form id="uploadForm" class="document-upload-form space-y-6">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Doküman Yükleme</h3>
-          <p class="text-gray-700 text-sm mb-4">
-            İlgili dokümanlarınızı (örn. tıbbi raporlar, tetkikler) buraya yükleyebilirsiniz.
-          </p>
-
-          <div id="customUploadMessage" class="hidden p-4 mt-5 rounded-lg text-center font-bold text-white shadow-md transition-opacity duration-300 opacity-0">
-          </div>
-
-          <div class="form-group">
-            <label for="fileInput" class="block text-sm font-medium text-gray-700 mb-1">Yüklenecek dosyayı seçin</label>
-            <input type="file" id="fileInput" name="document" class="block w-full text-sm text-gray-600">
-          </div>
-
-          <div class="form-group flex items-start space-x-3 mt-4">
-            <input type="checkbox" id="consentUpload" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded" required>
-            <label for="consentUpload" class="text-sm text-gray-700">
-              Veri Paylaşım Onayı: Bu formu göndererek, sağlamış olduğum kişisel ve tıbbi bilgilerin, talebimin değerlendirilmesi ve gerekli tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık tesislerindeki yetkili personel ile paylaşılmasına açıkça rıza gösteriyorum. Bilgilerimin üçüncü şahıslarla paylaşılmayacağını ve süreç yönetimi ile iletişim dışında herhangi bir amaçla kullanılmayacağını kabul ediyorum.
-            </label>
-          </div>
-
-          <button type="submit" class="w-full bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400 transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2">
-            <span>Dosya Yükle</span>
-            <i class="fas fa-upload"></i>
-          </button>
-        </form>
         </div>
       </div>
     </div>
@@ -274,32 +257,29 @@
 </footer>
 
 <script>
-  // JavaScript for mobile menu toggle and dropdown functionality
+  // Mobil menü açma/kapama ve açılır menü işlevselliği için JavaScript
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
-    // For the mobile services dropdown
-    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
-    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
 
-    // Toggle the mobile menu by toggling the 'hidden' class
+    // Mobil menüyü açıp kapama
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
     }
 
-    // Toggle the desktop services dropdown menu on click
+    // Hizmetler açılır menüsünü tıklamayla açma/kapama
     if (servicesDropdownToggle && servicesDropdownMenu) {
       servicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the link from navigating
-        event.stopPropagation(); // Stop the click from propagating to the document listener
+        event.preventDefault(); // Bağlantının gezinmesini engelle
+        event.stopPropagation(); // Tıklamanın belge dinleyicisine yayılmasını durdur
         servicesDropdownMenu.classList.toggle('active');
       });
 
-      // Close the desktop dropdown when clicking outside of it
+      // Dışarıya tıklandığında menüyü kapat
       document.addEventListener('click', (event) => {
         if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
           servicesDropdownMenu.classList.remove('active');
@@ -307,67 +287,57 @@
       });
     }
 
-    // Toggle the mobile services dropdown
-    if (mobileServicesToggle && mobileServicesDropdown) {
-      mobileServicesToggle.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
+    // Mobil hizmetler açılır menüsünü açma/kapama
+    window.toggleMobileDropdown = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+      if (mobileServicesDropdown) {
         mobileServicesDropdown.classList.toggle('hidden');
-      });
-    }
-
-    // Close all dropdowns and menus when clicking outside
-    document.addEventListener('click', (event) => {
-      // For desktop services dropdown
-      if (servicesDropdownToggle && servicesDropdownMenu && !servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
-        servicesDropdownMenu.classList.remove('active');
       }
+    };
 
-      // For mobile menu and its dropdown
-      const isClickInsideMobileMenu = mobileMenu.contains(event.target);
-      const isClickOnMobileButton = mobileMenuBtn.contains(event.target);
-      if (mobileMenu && mobileMenuBtn && !isClickInsideMobileMenu && !isClickOnMobileButton) {
-        mobileMenu.classList.add('hidden');
-        // Also close the mobile dropdown if the mobile menu is closed
-        if (mobileServicesDropdown) {
-          mobileServicesDropdown.classList.add('hidden');
-        }
-      }
-    });
-
-    // JavaScript for form submission and message display for the contact form
+    // İletişim formu için form gönderimi ve mesaj görüntüleme JavaScript'i
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
+    const consentCheckbox1 = document.getElementById('consentContact');
+    const consentCheckbox2 = document.getElementById('consentContact1');
+    const consentErrorDiv = document.getElementById('consentError');
 
     if (contactForm && formSubmissionMessage) {
       contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault(); // Varsayılan form gönderimini engelle
 
-        // Check for consent
-        const consentCheckbox = document.getElementById('consentContact');
-        if (!consentCheckbox.checked) {
-          formSubmissionMessage.textContent = 'Hata: Lütfen veri paylaşım onayını işaretleyin.';
-          formSubmissionMessage.style.backgroundColor = '#f44336'; // Red for error
-          formSubmissionMessage.classList.remove('hidden');
-          formSubmissionMessage.style.opacity = '1';
+        // YENİ MANTIK: En az bir onay kutusunun işaretli olup olmadığını kontrol et.
+        if (!consentCheckbox1.checked && !consentCheckbox2.checked) {
+          consentErrorDiv.textContent = 'Devam etmek için lütfen onay kutularından en az birini işaretleyin.';
+          consentErrorDiv.classList.remove('hidden');
+          consentErrorDiv.style.opacity = '1';
           setTimeout(() => {
-            formSubmissionMessage.style.opacity = '0';
-            formSubmissionMessage.classList.add('hidden');
+            consentErrorDiv.style.opacity = '0';
+            // Geçişin tamamlandığından emin olmak için 'transitionend' kullan
+            consentErrorDiv.addEventListener('transitionend', () => {
+              consentErrorDiv.classList.add('hidden');
+            }, { once: true });
           }, 7000);
-          return; // Stop the function
+          return; // İşlevi durdur
         }
 
-        formSubmissionMessage.style.opacity = '0'; // Hide previous message
-        formSubmissionMessage.classList.add('hidden'); // Ensure hidden class is applied for fade out
+        // Onay hata mesajı görünürse gizle
+        consentErrorDiv.classList.add('hidden');
+        consentErrorDiv.style.opacity = '0';
 
-        // Show loading indicator
+        formSubmissionMessage.style.opacity = '0'; // Önceki mesajı gizle
+        formSubmissionMessage.classList.add('hidden'); // Soluklaşması için gizli sınıfını uygula
+
+        // Yükleniyor göstergesini göster
         formSubmissionMessage.textContent = 'Mesajınız gönderiliyor...';
-        formSubmissionMessage.style.backgroundColor = '#59CDD1'; // Turquoise for loading
+        formSubmissionMessage.style.backgroundColor = '#59CDD1'; // Yükleniyor için Turkuaz
         formSubmissionMessage.classList.remove('hidden');
         formSubmissionMessage.style.opacity = '1';
 
         try {
-          // Use FormData to easily grab all form values
+          // Tüm form değerlerini kolayca almak için FormData kullan
           const formData = new FormData(contactForm);
 
           const response = await fetch(contactForm.action, {
@@ -376,20 +346,19 @@
           });
 
           const resultText = await response.text();
-          const successPattern = /success/i;
 
-          if (response.ok && successPattern.test(resultText)) {
+          if (response.ok) {
             formSubmissionMessage.textContent = 'Başarılı! Mesajınız gönderildi.';
-            formSubmissionMessage.style.backgroundColor = '#4CAF50'; // Green for success
-            contactForm.reset(); // Clear the form
+            formSubmissionMessage.style.backgroundColor = '#4CAF50'; // Başarı için Yeşil
+            contactForm.reset(); // Formu temizle
           } else {
-            formSubmissionMessage.textContent = 'Hata: ' + (resultText || 'Bilinmeyen bir hata oluştu.');
-            formSubmissionMessage.style.backgroundColor = '#f44336'; // Red for error
+            formSubmissionMessage.textContent = 'Hata: ' + resultText;
+            formSubmissionMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
           }
         } catch (error) {
-          console.error('Network or submission error:', error);
+          console.error('Ağ veya gönderim hatası:', error);
           formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
-          formSubmissionMessage.style.backgroundColor = '#f44336'; // Red for error
+          formSubmissionMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
         } finally {
           formSubmissionMessage.classList.remove('hidden');
           formSubmissionMessage.style.opacity = '1';
@@ -402,55 +371,46 @@
       });
     }
 
-    // JavaScript for file upload and message display
+    // Not: Sağlanan HTML'de dosya yükleme formu bulunmadığından bu kod bloğu çalışmayacaktır.
+    // Kod, referans ve olası gelecekteki kullanım için burada tutulmuştur.
     const uploadForm = document.getElementById('uploadForm');
     const fileInput = document.getElementById('fileInput');
     const customUploadMessage = document.getElementById('customUploadMessage');
-    const uploadButton = document.querySelector('#uploadForm button[type="submit"]');
 
-    if (uploadForm && fileInput && customUploadMessage && uploadButton) {
+    if (uploadForm && fileInput && customUploadMessage) {
       uploadForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
+        // Onay kontrolü
         const consentCheckbox = document.getElementById('consentUpload');
         if (!consentCheckbox.checked) {
           customUploadMessage.textContent = 'Hata: Lütfen veri paylaşım onayını işaretleyin.';
-          customUploadMessage.style.backgroundColor = '#f44336';
+          customUploadMessage.style.backgroundColor = '#f44336'; // Hata için Kırmızı
           customUploadMessage.classList.remove('hidden');
           customUploadMessage.style.opacity = '1';
           setTimeout(() => {
             customUploadMessage.style.opacity = '0';
             customUploadMessage.classList.add('hidden');
           }, 7000);
-          return;
+          return; // İşlevi durdur
         }
 
+        // Yükleniyor mesajı göster ve önceki mesajı gizle
         customUploadMessage.style.opacity = '0';
         customUploadMessage.classList.add('hidden');
         customUploadMessage.textContent = 'Dosya yükleniyor...';
-        customUploadMessage.style.backgroundColor = '#59CDD1';
+        customUploadMessage.style.backgroundColor = '#59CDD1'; // Yükleniyor için Turkuaz
         customUploadMessage.classList.remove('hidden');
         customUploadMessage.style.opacity = '1';
-
-        uploadButton.disabled = true;
-        uploadButton.classList.remove('bg-gray-300', 'hover:bg-gray-400');
-        uploadButton.classList.add('bg-gray-400', 'cursor-not-allowed');
 
         const file = fileInput.files[0];
 
         if (!file) {
           customUploadMessage.textContent = 'Lütfen yüklenecek bir dosya seçin.';
-          customUploadMessage.style.backgroundColor = '#f44336';
-          customUploadMessage.classList.remove('hidden');
-          customUploadMessage.style.opacity = '1';
-
-          uploadButton.disabled = false;
-          uploadButton.classList.remove('bg-gray-400', 'cursor-not-allowed');
-          uploadButton.classList.add('bg-gray-300', 'hover:bg-gray-400');
-
+          customUploadMessage.classList.remove('bg-green-500');
+          customUploadMessage.classList.add('bg-red-500', 'opacity-100');
           setTimeout(() => {
-            customUploadMessage.style.opacity = '0';
-            customUploadMessage.classList.add('hidden');
+            customUploadMessage.classList.add('hidden', 'opacity-0');
           }, 7000);
           return;
         }
@@ -458,43 +418,40 @@
         const reader = new FileReader();
         reader.onload = async function (event) {
           const base64 = event.target.result.split(',')[1];
-          const payload = {
-            file: base64,
-            filename: file.name,
-            type: file.type
-          };
 
           try {
             const response = await fetch('https://script.google.com/macros/s/AKfycbx4F3OLxihONUOxcmDRaId5iE2BiSTIUjp5bW0YPOk_b5HVKzAxd7nUb4YlIJp6zSIboA/exec', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/x-www-form-urlencoded'
               },
-              body: JSON.stringify(payload)
+              body: new URLSearchParams({
+                file: base64,
+                filename: file.name,
+                type: file.type
+              })
             });
 
             const result = await response.json();
 
             if (result.status === 'success') {
               customUploadMessage.textContent = '✅ Dosya başarıyla yüklendi!';
-              customUploadMessage.style.backgroundColor = '#4CAF50';
+              customUploadMessage.classList.remove('bg-red-500');
+              customUploadMessage.classList.add('bg-green-500', 'opacity-100');
               fileInput.value = '';
             } else {
               customUploadMessage.textContent = '❌ Yükleme başarısız: ' + result.message;
-              customUploadMessage.style.backgroundColor = '#f44336';
+              customUploadMessage.classList.remove('bg-green-500');
+              customUploadMessage.classList.add('bg-red-500', 'opacity-100');
             }
           } catch (error) {
-            console.error('Network or submission error:', error);
+            console.error('Ağ veya gönderim hatası:', error);
             customUploadMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
-            customUploadMessage.style.backgroundColor = '#f44336';
+            customUploadMessage.classList.remove('bg-green-500');
+            customUploadMessage.classList.add('bg-red-500', 'opacity-100');
           } finally {
-            uploadButton.disabled = false;
-            uploadButton.classList.remove('bg-gray-400', 'cursor-not-allowed');
-            uploadButton.classList.add('bg-gray-300', 'hover:bg-gray-400');
-
             setTimeout(() => {
-              customUploadMessage.style.opacity = '0';
-              customUploadMessage.classList.add('hidden');
+              customUploadMessage.classList.add('hidden', 'opacity-0');
             }, 7000);
           }
         };

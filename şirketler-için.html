@@ -6,7 +6,7 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kimsiniz? | Artun Sağlık Danışmanlığı</title>
+  <title>Şirketler İçin | Artun Sağlık Danışmanlığı</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* Custom styles for elements not fully covered by Tailwind or for specific overrides */
@@ -70,22 +70,22 @@
     </div>
     <nav class="hidden md:block">
       <ul class="nav-links flex space-x-6 items-center">
-        <li><a href="index_tr.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Ana Sayfa</a></li>
-        <li><a href="about_tr.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Hakkımızda</a></li>
+        <li><a href="ana-sayfa.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Ana Sayfa</a></li>
+        <li><a href="hakkımızda.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Hakkımızda</a></li>
         <li class="dropdown relative z-10">
           <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-700 hover:text-[#59CDD1] transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
           <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
             <li><a href="patients_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Hastalar İçin</a></li>
-            <li><a href="agencies_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
-            <li><a href="companies_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Şirketler İçin</a></li>
+            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
+            <li><a href="şirketler-için.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Şirketler İçin</a></li>
           </ul>
         </li>
-        <li><a href="contact_tr.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
+        <li><a href="iletişime-geçin.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
 
         <li class="lang-switcher text-gray-700 font-semibold space-x-2">
-          <a href="contact.html">ENG</a>
+          <a href="for-companies.html">ENG</a>
           <span>/</span>
-          <a href="contact_tr.html" class="text-[#59CDD1]">TR</a>
+          <a href="şirketler-için.html" class="text-[#59CDD1]">TR</a>
         </li>
       </ul>
     </nav>
@@ -95,55 +95,124 @@
   </div>
 </header>
 <nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
-  <a href="index_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
-  <a href="about_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
+  <a href="ana-sayfa.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
+  <a href="hakkımızda.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
   <div class="relative py-2">
     <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="toggleMobileDropdown(event)">
       Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
     </a>
     <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
       <li><a href="patients_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Hastalar İçin</a></li>
-      <li><a href="agencies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
-      <li><a href="companies_tr.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
+      <li><a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="şirketler-için.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
     </ul>
   </div>
-  <a href="contact_tr.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
+  <a href="iletişime-geçin.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
   <div class="flex justify-center space-x-2 mt-4">
-    <a href="contact.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
+    <a href="for-companies.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
     <span>/</span>
-    <a href="contact_tr.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
+    <a href="şirketler-için.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
   </div>
 </nav>
 
 <main>
   <div class="container mx-auto px-4 py-4 mt-4">
-    <h2 class="text-3xl font-bold text-[#59CDD1]">Yolunuzu Seçin</h2>
+    <h2 class="text-3xl font-bold text-[#59CDD1]">Şirketler İçin</h2>
   </div>
 
-  <section id="choice-section" class="section py-16 bg-white flex items-center justify-center min-h-[calc(100vh-200px)]">
-    <div class="section-container container mx-auto px-4 max-w-4xl text-center">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 leading-tight">
-        Siz bir <span class="text-[#59CDD1]">Hasta</span>, <span class="text-[#59CDD1]">Medikal Turizm Acentesi</span> veya <span class="text-[#59CDD1]">Şirket</span> misiniz?
-      </h2>
-      <p class="text-lg text-gray-700 leading-relaxed mb-12 max-w-2xl mx-auto">
-        Size özel bilgi ve hizmetler için lütfen sizi en iyi tanımlayan seçeneği belirleyin.
+  <section id="for-companies" class="section py-16 bg-white">
+    <div class="section-container container mx-auto px-4 max-w-4xl">
+      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-8">Şirketler İçin Sağlık Sektörü Yatırımı & Yönetimi</h2>
+
+      <p class="text-lg text-gray-700 leading-relaxed mb-8 text-justify">
+        Sağlık harcamaları, yatırımları ve finansmanı, her ülkenin <strong>en önemli önceliklerinden</strong> biridir ve <strong>sürekli gelişim odak noktası</strong> olmaya devam etmektedir. Yaşlanan nüfus, tıbbi teknolojideki gelişmeler ve sağlık hizmetlerinden artan beklentilerle, sağlık harcamaları ve yatırımları <strong>her yıl sürekli bir şekilde büyümeye</strong> devam etmektedir.
       </p>
 
-      <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
-        <a href="contact_patient_tr.html" class="flex flex-col items-center justify-center bg-[#59CDD1] text-white px-8 py-6 rounded-lg shadow-lg hover:bg-[#45a8b3] transition duration-300 w-full md:w-auto min-h-[150px]">
-          <i class="fas fa-user-injured text-5xl mb-4"></i>
-          <span class="text-xl font-semibold">Hastalar İçin</span>
-        </a>
+      <div class="image-content flex justify-center items-center">
+        <img src="companie.jpg" alt="Modern Hastane" class="rounded-lg shadow-lg w-full max-w-md">
+      </div>
 
-        <a href="contact_agency_tr.html" class="flex flex-col items-center justify-center bg-[#59CDD1] text-white px-8 py-6 rounded-lg shadow-lg hover:bg-[#45a8b3] transition duration-300 w-full md:w-auto min-h-[150px]">
-          <i class="fas fa-plane-departure text-5xl mb-4"></i>
-          <span class="text-xl font-semibold">Medikal Turizm Acenteleri İçin</span>
-        </a>
+      <hr class="my-10 border-gray-300">
 
-        <a href="contact_company_tr.html" class="flex flex-col items-center justify-center bg-[#59CDD1] text-white px-8 py-6 rounded-lg shadow-lg hover:bg-[#45a8b3] transition duration-300 w-full md:w-auto min-h-[150px]">
-          <i class="fas fa-building text-5xl mb-4"></i>
-          <span class="text-xl font-semibold">Şirketler İçin</span>
-        </a>
+      <div class="bg-gray-50 p-8 rounded-lg shadow-inner mb-10">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center">
+          <i class="fas fa-exclamation-triangle text-red-500 mr-2"></i>Ancak, sağlık yatırımları ve yönetimi diğer sektörlerden önemli ölçüde farklıdır:
+        </h3>
+        <ul class="list-none space-y-4 text-lg text-gray-700">
+          <li class="flex items-start">
+            <i class="fas fa-dollar-sign text-[#59CDD1] mr-3 mt-1"></i>
+            <div>
+              Bunlar <strong>yüksek maliyetli yatırımlardır</strong>.
+            </div>
+          </li>
+          <li class="flex items-start">
+            <i class="fas fa-exchange-alt text-[#59CDD1] mr-3 mt-1"></i>
+            <div>
+              <strong>Diğer sektörlere dönüştürülmesi zordur</strong>.
+            </div>
+          </li>
+          <li class="flex items-start">
+            <i class="fas fa-clock text-[#59CDD1] mr-3 mt-1"></i>
+            <div>
+              <strong>Daha uzun bir yatırım getirisi (ROI) süresine</strong> sahiptirler.
+            </div>
+          </li>
+          <li class="flex items-start">
+            <i class="fas fa-clipboard-check text-[#59CDD1] mr-3 mt-1"></i>
+            <div>
+              <strong>Sıkı düzenlemelere ve uyumluluk gereksinimlerine</strong> tabidirler.
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <p class="text-lg text-gray-700 leading-relaxed mb-8 text-center">
+        Sağlık finansmanı, cepten harcamalar ile <strong>özel sağlık sigortasının</strong> bu süreçte giderek artan bir rol oynamasıyla, <strong>kamu-özel denge modeline</strong> doğru ilerlemektedir.
+      </p>
+
+      <p class="text-lg text-gray-700 leading-relaxed mb-10 text-center">
+        Bu nedenle, sağlık sektörüne yatırım yaparken, bir ülkenin <strong>pazar dinamiklerini</strong>, <strong>geri ödeme sistemlerini</strong> ve <strong>temel sağlık düzenlemelerini</strong> anlamak esastır.
+      </p>
+
+      <hr class="my-10 border-gray-300">
+
+      <div class="our-support-section mt-16 bg-[#f0fafa] p-8 rounded-lg shadow-inner">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center flex items-center justify-center">
+          <i class="fas fa-lightbulb text-[#59CDD1] mr-3"></i>Stratejik Desteğimiz
+        </h3>
+        <p class="text-lg text-gray-700 leading-relaxed text-center">
+          Türkiye'deki veya bazı diğer ülkelerdeki sağlık yatırım, hastane yönetimi ve geri ödeme sistemi projeleriniz için <strong>danışmanlık ve stratejik destek</strong> sağlıyoruz.
+        </p>
+      </div>
+
+      <div class="our-support-section mt-16 bg-[#f0fafa] p-8 rounded-lg shadow-inner">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center flex items-center justify-center">
+          <i class="fas fa-users text-[#59CDD1] mr-3"></i>Ekibimiz
+        </h3>
+        <p class="text-lg text-gray-700 leading-relaxed text-center">
+          <strong>İhtiyaçlarınıza</strong> bağlı olarak, gerektiğinde projeye <strong>sektöre özel</strong> uzmanları dahil ediyoruz.
+        </p>
+      </div>
+
+      <div class="patient-logos-section mt-16 text-center">
+        <h3 class="logos-title text-2xl font-semibold text-gray-900 mb-6">Some of The Hospitals & Clinics in Türkiye</h3>
+        <div class="logos-grid grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+          <img src="acıbadem.png" alt="Acibadem Hospital Logo" class="logo-image max-w-50">
+          <img src="memorial.png" alt="Memorial Hospital Logo" class="logo-image max-w-50">
+          <img src="liv.png" alt="Liv Hospital Logo" class="logo-image max-w-50">
+          <img src="medicalpark.png" alt="Medical Park Hospital Logo" class="logo-image max-w-50">
+          <img src="medipol.png" alt="Liv Hospital Logo" class="logo-image max-w-50">
+          <img src="Medicana.png" alt="Medicana Hospital Logo" class="logo-image max-w-50">
+          <img src="Güven_Hastanesi.png" alt="Güven Logo" class="logo-image max-w-50">
+          <img src="bahat.png" alt="Bahat Logo" class="logo-image max-w-50">
+        </div>
+        <div class="flex justify-center mt-8">
+          <img src="esteworld.png" alt="Esteworld Clinic Logo" class="logo-image max-w-40">
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <a href="şirketler-için-iletişim.html" class="btn-primary bg-[#59CDD1] text-white px-8 py-4 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-lg text-xl font-semibold">İletişime Geçin</a>
       </div>
     </div>
   </section>

@@ -89,7 +89,7 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-<header class="fixed z-[9999] w-full main-header bg-gray-900 shadow-md py-4">
+<header class="main-header bg-gray-900 shadow-md py-4">
   <div class="header-container container mx-auto flex justify-between items-center px-4">
     <div class="logo flex items-center space-x-2">
       <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="w-50 h-10">
@@ -101,9 +101,9 @@
         <li class="dropdown relative z-10">
           <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-300 hover:text-white transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
           <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-gray-800 shadow-lg rounded-lg py-2">
-            <li><a href="hastalar-için.html" class="block px-4 py-2 text-white-300 hover:bg-white-700 rounded-md">Hastalar İçin</a></li>
-            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 text-white-300 hover:bg-white-700 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
-            <li><a href="şirketler-için.html" class="block px-4 py-2 text-white-300 hover:bg-white-700 rounded-md">Şirketler İçin</a></li>
+            <li><a href="hastalar-için.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800 rounded-md">Hastalar İçin</a></li>
+            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
+            <li><a href="şirketler-için.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800 rounded-md">Şirketler İçin</a></li>
           </ul>
         </li>
         <li><a href="iletişime-geçin.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
@@ -141,9 +141,9 @@
 </nav>
 
 <main>
-  <section class="hero-section h-screen">
+  <section class="hero-section">
     <div class="hero-overlay"></div>
-    <div class="hero-content max-w-4xl mx-auto h-full flex flex-col justify-center">
+    <div class="hero-content max-w-4xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4">Türkiye'de Birinci Sınıf Sağlık Çözümleri ve İşbirliği</h2>
       <p class="text-xl md:text-2xl mb-8">Hastaların, acentelerin ve sağlık şirketlerinin ihtiyaçlarına özel hizmetler.</p>
       <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
@@ -155,67 +155,82 @@
   </section>
 
   <section
-  class="section py-16 w-full bg-gradient-to-r from-[#59CDD1] to-[#45a8b3] text-white"
->
-  <div class="container sm:blcok  mx-auto px-4 max-w-6xl">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <!-- Sol Taraf: Bilgilendirici Metin -->
-      <div class="space-y-6">
-        <h2 class="text-4xl font-bold leading-tight">Başlık</h2>
-        <p class="text-xl leading-relaxed opacity-90">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Aspernatur sed modi eos nisi dicta repellat, odit ut quaerat
-          quae autem, voluptatum cupiditate accusamus laboriosam.
-          Obcaecati minus maxime tempora consequatur aliquid!
-        </p>
-        <div class="space-y-4">
-          <div class="flex items-center space-x-3">
-            <i class="fas fa-check-circle text-2xl text-green-300"></i>
-            <span class="text-lg">Bir şeyler</span>
+    class="section py-16 w-full bg-gradient-to-r from-[#59CDD1] to-[#45a8b3] text-white"
+  >
+    <div class="container sm:blcok  mx-auto px-4 max-w-6xl">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h2 class="text-4xl font-bold leading-tight">Başlık</h2>
+          <p class="text-xl leading-relaxed opacity-90">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Aspernatur sed modi eos nisi dicta repellat, odit ut quaerat
+            quae autem, voluptatum cupiditate accusamus laboriosam.
+            Obcaecati minus maxime tempora consequatur aliquid!
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-check-circle text-2xl text-green-300"></i>
+              <span class="text-lg">Bir şeyler</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Sağ Taraf: Form -->
-      <div
-        class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20"
-      >
-        <h3 class="text-2xl font-semibold mb-6 text-center">
-          Hemen Başlayın
-        </h3>
-        <form class="space-y-4">
-          <div>
-            <input
-              type="text"
-              placeholder="Adınız Soyadınız"
-              class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all duration-300"
-            />
-          </div>
-          <div>
-            <input
-              type="tel"
-              placeholder="Telefon Numaranız"
-              class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all duration-300"
-            />
-          </div>
-          <div>
-            <textarea
-              placeholder="Mesajınız (Opsiyonel)"
-              rows="3"
-              class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 text-white placeholder-white placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all duration-300 resize-none"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="w-full bg-white text-[#59CDD1] py-3 px-6 rounded-lg font-semibold text-lg hover:bg-gray-100 duration-300 shadow-lg"
-          >
-            button
-          </button>
-        </form>
+        <div
+          class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-20"
+        >
+          <h3 class="text-2xl font-semibold mb-6 text-center">
+            Hemen Başlayın
+          </h3>
+          <form id="contactForm" class="contact-form space-y-6" action="https://script.google.com/macros/s/AKfycbyPt8bF4tvPwJoQu7DY335H30-9BuzFeG7xx5Od9VHDuIPrIs0H5AyQYCwFLggaRmok8g/exec" method="POST">
+            <div>
+              <label for="name" class="block text-sm font-medium text-white mb-1">Adınız Soyadınız</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Adınız Soyadınız"
+                class="w-full px-4 py-3 rounded-lg bg-white text-gray-800"
+                required
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-sm font-medium text-white mb-1">Telefon Numarası</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                placeholder="Telefon Numarası"
+                class="w-full px-4 py-3 rounded-lg bg-white text-gray-800"
+                required
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium text-white mb-1">Mesajınız</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="1"
+                placeholder="Size nasıl yardımcı olabiliriz?"
+                class="w-full px-4 py-3 rounded-lg bg-white text-gray-800 resize-none"
+                required
+              ></textarea>
+            </div>
+
+            <div id="formSubmissionMessage" class="hidden p-4 rounded-lg text-center font-bold text-white shadow-md transition-opacity duration-300 opacity-0">
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-white text-[#59CDD1] px-6 py-3 rounded-full hover:bg-gray-100 transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2"
+            >
+              <span>Mesaj Gönder</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="why-turkey" class="section py-16 bg-white">
     <div class="section-container container mx-auto px-4 max-w-4xl">
@@ -289,26 +304,18 @@
           <h3 class="text-xl font-semibold text-gray-900 mb-3">Şirketler İçin</h3>
           <p class="text-gray-700 mb-6">Sağlık yatırımı, hastane yönetimi, geri ödeme danışmanlığı.</p>
           <a href="şirketler-için.html" class="mt-auto bg-[#59CDD1] text-white px-6 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 text-sm font-semibold">Daha Fazla Bilgi</a>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact-cta" class="section py-16 bg-[#59CDD1] text-white text-center">
-    <div class="section-container container mx-auto px-4 max-w-3xl">
-      <h2 class="text-4xl font-bold mb-4">İletişime Geçin</h2>
-      <p class="text-xl leading-relaxed mb-8">
-        Sorularınız mı var veya sağlık ihtiyaçlarınızı ya da işbirliği fırsatlarını görüşmeye hazır mısınız? Biz, kişiselleştirilmiş destek ve uzman rehberlik sağlamak için buradayız.
-      </p>
-      <a href="iletişime-geçin.html" class="bg-white text-[#59CDD1] px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-lg shadow-lg">Şimdi İletişime Geçin</a>
-    </div>
-  </section>
 </main>
 
 <footer class="main-footer bg-gray-900 text-white py-8">
   <div class="footer-container container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-4 md:space-y-0">
     <div class="logo flex items-center space-x-2">
-      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TRW" class="w-50 h-10">
+      <img src="ArtuntrW.png" alt="Artun Danışmanlık Logosu TRW" class="w-50 h-10">
     </div>
     <div class="footer-social flex space-x-6">
       <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
@@ -322,59 +329,98 @@
 </footer>
 
 <script>
+  // Mobil menü açma/kapama ve açılır menü işlevselliği için JavaScript
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
     const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
 
-    // Select the mobile services dropdown and its toggle element
-    const mobileServicesDropdownToggle = document.querySelector('#mobile-menu a[onclick]');
-    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-
-    // Toggle the mobile menu
+    // Mobil menüyü açıp kapama
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
     }
 
-    // Toggle the services dropdown menu for desktop
+    // Hizmetler açılır menüsünü tıklamayla açma/kapama
     if (servicesDropdownToggle && servicesDropdownMenu) {
       servicesDropdownToggle.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
         servicesDropdownMenu.classList.toggle('active');
       });
-    }
 
-    // Toggle the services dropdown menu for mobile
-    if (mobileServicesDropdownToggle && mobileServicesDropdown) {
-      mobileServicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        mobileServicesDropdown.classList.toggle('hidden');
+      // Dışarıya tıklandığında menüyü kapat
+      document.addEventListener('click', (event) => {
+        if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
+          servicesDropdownMenu.classList.remove('active');
+        }
       });
     }
 
-    // Close all dropdowns when clicking outside
-    document.addEventListener('click', (event) => {
-      // For desktop services dropdown
-      if (servicesDropdownToggle && servicesDropdownMenu && !servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
-        servicesDropdownMenu.classList.remove('active');
+    // Mobil hizmetler açılır menüsünü açma/kapama
+    window.toggleMobileDropdown = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+      if (mobileServicesDropdown) {
+        mobileServicesDropdown.classList.toggle('hidden');
       }
+    };
 
-      // For mobile menu and its dropdown
-      const isClickInsideMobileMenu = mobileMenu.contains(event.target);
-      const isClickOnMobileButton = mobileMenuBtn.contains(event.target);
-      if (mobileMenu && mobileMenuBtn && !isClickInsideMobileMenu && !isClickOnMobileButton) {
-        mobileMenu.classList.add('hidden');
-        // Also close the mobile dropdown if the mobile menu is closed
-        if (mobileServicesDropdown) {
-          mobileServicesDropdown.classList.add('hidden');
+    // Form gönderimini ele alan JavaScript
+    const contactForm = document.getElementById('contactForm');
+    const formSubmissionMessage = document.getElementById('formSubmissionMessage');
+
+    if (contactForm && formSubmissionMessage) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault(); // Varsayılan form gönderimini engelle
+
+        formSubmissionMessage.style.opacity = '0';
+        formSubmissionMessage.classList.add('hidden');
+
+        // Yükleniyor göstergesini göster
+        formSubmissionMessage.textContent = 'Mesajınız gönderiliyor...';
+        formSubmissionMessage.style.backgroundColor = '#59CDD1';
+        formSubmissionMessage.classList.remove('hidden');
+        formSubmissionMessage.style.opacity = '1';
+
+        try {
+          const formData = new FormData(contactForm);
+
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' // Google Scripts için gerekli
+          });
+
+          // Google Scripts response is 'opaque' with no-cors, so we check the response type
+          if (response.ok || response.type === 'opaque') {
+            formSubmissionMessage.textContent = 'Başarılı! Mesajınız gönderildi.';
+            formSubmissionMessage.style.backgroundColor = '#4CAF50';
+            contactForm.reset();
+          } else {
+            // This part might not be triggered with 'no-cors' mode
+            const resultText = await response.text();
+            formSubmissionMessage.textContent = 'Hata: ' + resultText;
+            formSubmissionMessage.style.backgroundColor = '#f44336';
+          }
+        } catch (error) {
+          console.error('Ağ veya gönderim hatası:', error);
+          formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
+          formSubmissionMessage.style.backgroundColor = '#f44336';
+        } finally {
+          formSubmissionMessage.classList.remove('hidden');
+          formSubmissionMessage.style.opacity = '1';
+
+          setTimeout(() => {
+            formSubmissionMessage.style.opacity = '0';
+            formSubmissionMessage.classList.add('hidden');
+          }, 7000);
         }
-      }
-    });
+      });
+    }
   });
 </script>
 </body>

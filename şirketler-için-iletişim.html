@@ -63,26 +63,25 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-<header class="main-header bg-white shadow-md py-4">
+<header class="fixed z-[9999] w-full main-header bg-gray-900 shadow-md py-4">
   <div class="header-container container mx-auto flex justify-between items-center px-4">
     <div class="logo flex items-center space-x-2">
-      <img src="artun.png" alt="Artun Danışmanlık Logosu" class="w-50 h-10">
+      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="w-50 h-10">
     </div>
     <nav class="hidden md:block">
       <ul class="nav-links flex space-x-6 items-center">
-        <li><a href="ana-sayfa.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Ana Sayfa</a></li>
-        <li><a href="hakkımızda.html" class="text-gray-700 hover:text-[#59CDD1] transition duration-300">Hakkımızda</a></li>
+        <li><a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition duration-300">Ana Sayfa</a></li>
+        <li><a href="hakkımızda.html" class="text-gray-300 hover:text-white transition duration-300">Hakkımızda</a></li>
         <li class="dropdown relative z-10">
-          <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-700 hover:text-[#59CDD1] transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
-          <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-white shadow-lg rounded-lg py-2">
-            <li><a href="hastalar-için.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Hastalar İçin</a></li>
-            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
-            <li><a href="şirketler-için.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-md">Şirketler İçin</a></li>
+          <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-300 hover:text-white transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+          <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-gray-800 shadow-lg rounded-lg py-2">
+            <li><a href="hastalar-için.html" class="block px-4 py-2 text-[#59CDD1] hover:bg-gray-700 rounded-md">Hastalar İçin</a></li>
+            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 text-white hover:bg-gray-700 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
+            <li><a href="şirketler-için.html" class="block px-4 py-2 text-white hover:bg-gray-700 rounded-md">Şirketler İçin</a></li>
           </ul>
         </li>
         <li><a href="iletişime-geçin.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
-
-        <li class="lang-switcher text-gray-700 font-semibold space-x-2">
+        <li class="lang-switcher text-gray-300 font-semibold space-x-2">
           <a href="contact-for-companies.html">ENG</a>
           <span>/</span>
           <a href="şirketler-için-iletişim.html" class="text-[#59CDD1]">TR</a>
@@ -94,30 +93,29 @@
     </div>
   </div>
 </header>
-
-<nav id="mobile-menu" class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-lg p-4 z-20">
-  <a href="ana-sayfa.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Ana Sayfa</a>
-  <a href="hakkımızda.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Hakkımızda</a>
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden ...">
+  <a href="ana-sayfa.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Ana Sayfa</a>
+  <a href="hakkımızda.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Hakkımızda</a>
   <div class="relative py-2">
-    <a href="#" id="mobileServicesToggle" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+    <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-800" onclick="toggleMobileDropdown(event)">
       Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
     </a>
     <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
-      <li><a href="hastalar-için.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Hastalar İçin</a></li>
-      <li><a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Medikal Turizm Acenteleri İçin</a></li>
-      <li><a href="şirketler-için.html" class="block text-sm text-gray-600 hover:text-[#59CDD1]">Şirketler İçin</a></li>
+      <li><a href="hastalar-için.html" class="block text-sm text-gray-400 hover:text-white">Hastalar İçin</a></li>
+      <li><a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-400 hover:text-white">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="şirketler-için.html" class="block text-sm text-gray-400 hover:text-white">Şirketler İçin</a></li>
     </ul>
   </div>
-  <a href="iletişime-geçin.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">İletişime Geçin</a>
+  <a href="iletişime-geçin.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">İletişime Geçin</a>
   <div class="flex justify-center space-x-2 mt-4">
-    <a href="contact-for-companies.html" class="text-gray-700 hover:text-[#59CDD1]">ENG</a>
+    <a href="contact-for-companies.html" class="text-gray-300 hover:text-white">ENG</a>
     <span>/</span>
     <a href="şirketler-için-iletişim.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
   </div>
 </nav>
 
 <main>
-  <div class="container mx-auto px-4 py-4 mt-4">
+  <div class="container mx-auto px-4 py-4">
     <h2 class="text-3xl font-bold text-[#59CDD1]">Bize Ulaşın / Şirketler İçin</h2>
   </div>
 

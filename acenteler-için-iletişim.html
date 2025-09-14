@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <meta name="theme-color" content="#59CDD1">
   <link rel="manifest" href="/site.webmanifest">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Artun Health Consultancy</title>
+  <title>Bize Ulaşın | Artun Sağlık Danışmanlığı</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     html, body {
       width: 100%;
@@ -86,27 +87,27 @@
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
   <div class="container mx-auto px-4 flex justify-between items-center">
-    <a href="index.html">
-      <img src="ArtuntrW.png" alt="Artun Consultancy Logo EN" class="h-7 w-auto md:h-8">
+    <a href="ana-sayfa.html">
+      <img src="ArtuntrW.png" alt="Artun Danışmanlık Logosu TR" class="h-7 w-auto md:h-8">
     </a>
     <nav class="hidden md:flex items-center space-x-6">
-      <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
-      <a href="about-us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a>
+      <a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition-colors duration-300">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="text-gray-300 hover:text-white transition-colors duration-300">Hakkımızda</a>
       <div class="dropdown relative">
         <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
-          Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
         <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
-          <a href="for-patients.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
-          <a href="for-agencies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
-          <a href="for-companies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
+          <a href="hastalar-icin.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
+          <a href="acenteler-icin.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
+          <a href="firmalar-icin.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Firmalar İçin</a>
         </div>
       </div>
-      <a href="contact-us.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">Contact Us</a>
+      <a href="iletişime-geçin.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">İletişime Geçin</a>
       <div class="lang-switcher text-gray-300 font-semibold space-x-2">
-        <a href="contact-for-agencies.html" class="text-[#59CDD1]">ENG</a>
+        <a href="contact-for-agencies.html" class="text-gray-300 hover:text-white">ENG</a>
         <span>/</span>
-        <a href="acenteler-için-iletişim.html">TR</a>
+        <a href="acenteler-için-iletişim.html" class="text-[#59CDD1]">TR</a>
       </div>
     </nav>
     <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
@@ -117,23 +118,23 @@
 
 <nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
   <div class="flex flex-col space-y-2">
-    <a href="index.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Home</a>
-    <a href="about-us.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">About Us</a>
+    <a href="ana-sayfa.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Ana Sayfa</a>
+    <a href="hakkimizda.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hakkımızda</a>
     <div>
       <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
-        Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
       </button>
       <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
-        <a href="for-patients.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
-        <a href="for-agencies.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
-        <a href="for-companies.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
+        <a href="hastalar-icin.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
+        <a href="acenteler-icin.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
+        <a href="firmalar-icin.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Firmalar İçin</a>
       </div>
     </div>
-    <a href="contact-us.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Contact Us</a>
+    <a href="bize-ulasin.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Bize Ulaşın</a>
     <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
-      <a href="contact-for-agencies.html" class="text-[#59CDD1]">ENG</a>
+      <a href="contact-for-agencies.html" class="text-gray-300 hover:text-white">ENG</a>
       <span class="text-gray-500">/</span>
-      <a href="sağlık-turizmi-acenteleri-için.html" class="text-gray-300 hover:text-white">TR</a>
+      <a href="acenteler-için-iletişim.html" class="text-[#59CDD1]">TR</a>
     </div>
   </div>
 </nav>
@@ -141,15 +142,15 @@
 <main class="pt-16">
   <section id="contact" class="section py-16 bg-white">
     <div class="section-container container mx-auto px-4 max-w-5xl">
-      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">Contact Us</h2>
+      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">Bize Ulaşın</h2>
       <p class="text-lg text-gray-700 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
-        We're here to help! If you have a question, need support, or want to discuss with a healthcare provider, don't hesitate to reach out to us.
+        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir sağlık kuruluşuyla görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
       </p>
 
       <div class="grid md:grid-cols-[1.2fr_2fr] gap-12 items-start">
         <div>
           <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6">İletişim Bilgileri</h3>
             <div class="space-y-4">
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <i class="fas fa-envelope text-[#59CDD1] text-xl"></i>
@@ -157,7 +158,7 @@
               </div>
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <i class="fas fa-map-marker-alt text-[#59CDD1] text-xl"></i>
-                <span>Istanbul, Turkey</span>
+                <span>İstanbul, Türkiye</span>
               </div>
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <a href="https://wa.me/905325673291" class="text-[#59CDD1] text-xl" target="_blank">
@@ -171,47 +172,47 @@
 
         <div class="bg-gray-50 p-8 rounded-lg shadow-lg space-y-8">
           <form id="contactForm" class="contact-form space-y-6" action="https://script.google.com/macros/s/AKfycbyPt8bF4tvPwJoQu7DY335H30-9BuzFeG7xx5Od9VHDuIPrIs0H5AyQYCwFLggaRmok8g/exec" method="POST">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Send Us a Message</h3>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Bize Mesaj Gönderin</h3>
 
             <div class="form-group">
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Agency Name</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter agency name" required>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Acente Adı</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Acente adını girin" required>
             </div>
             <div class="form-group">
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter your phone number with country code" required>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numarası</label>
+              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodlu telefon numaranızı girin" required>
             </div>
             <div class="form-group">
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter your email address" required>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresi</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="E-posta adresinizi girin" required>
             </div>
             <div class="form-group">
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
-              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="How can we help you?" required></textarea>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesajınız</label>
+              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Size nasıl yardımcı olabiliriz?" required></textarea>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
               <label for="consentContact" class="text-sm text-gray-700">
-                Data Sharing Consent: By submitting this form, we confirm that we have obtained the patient's explicit consent to share their personal and medical information with authorized personnel at relevant healthcare facilities for the purpose of evaluating their requests and providing appropriate medical services.<br><br>
+                Veri Paylaşım Onayı: Bu formu göndererek, hastanın kişisel ve tıbbi bilgilerinin, taleplerinin değerlendirilmesi ve uygun tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık kuruluşlarındaki yetkili kişilerle paylaşılmasına açık rızasını aldığımızı onaylarız.<br><br>
               </label>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
               <label for="consentContact1" class="text-sm text-gray-700">
-                Data Sharing Consent: We consent to our corporate communication and process-related information (such as service requests, coordination details, and other relevant operational data) being shared with the relevant healthcare institutions to efficiently manage the medical travel process. We confirm that neither the patient's information nor our own information will be shared with third parties outside of the relevant healthcare institutions, and that it will not be used for any purpose other than communication and process management.
+                Veri Paylaşım Onayı: Kurumsal iletişim ve süreçle ilgili bilgilerimizin (hizmet talepleri, koordinasyon detayları ve diğer ilgili operasyonel veriler gibi) tıbbi seyahat sürecini verimli bir şekilde yönetmek amacıyla ilgili sağlık kurumlarıyla paylaşılmasına izin veriyoruz. Ne hastanın ne de bizim bilgilerimizin ilgili sağlık kurumları dışındaki üçüncü taraflarla paylaşılmayacağını ve iletişim ve süreç yönetimi dışında başka hiçbir amaçla kullanılmayacağını onaylarız.
               </label>
             </div>
 
             <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
-              Please check at least one of the consent boxes to proceed.
+              Lütfen devam etmek için en az bir onay kutusunu işaretleyin.
             </div>
 
             <div class="form-group flex items-start space-x-2 mt-4">
               <input type="checkbox" id="kvkk_onay" name="kvkk_onay" class="mt-1" required>
               <label for="kvkk_onay" class="text-sm text-gray-600">
-                I have read and understood the <a href="aydinlatmametni_tr.html" target="_blank" class="text-[#59CDD1] hover:underline font-medium">Clarification Text on the Protection and Processing of Personal Data</a>.
+                <a href="aydinlatmametni_tr.html" target="_blank" class="text-[#59CDD1] hover:underline font-medium">Kişisel Verilerin Korunması ve İşlenmesi Hakkında Aydınlatma Metnini</a> okudum ve anladım.
               </label>
             </div>
 
@@ -219,7 +220,7 @@
             </div>
 
             <button type="submit" class="w-full bg-[#59CDD1] text-white px-6 py-3 rounded-md hover:bg-[#45a8b3] transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2">
-              <span>Send Message</span>
+              <span>Mesajı Gönder</span>
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
@@ -233,29 +234,28 @@
   <div class="container mx-auto px-4">
     <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
-        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">Contact Us</h3>
+        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">Bize Ulaşın</h3>
         <a href="https://wa.me/905325673291" target="_blank" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-green-500 hover:text-white transition">
           <i class="fab fa-whatsapp text-2xl"></i><span class="font-semibold">WhatsApp</span>
         </a>
         <a href="tel:+905325673291" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-blue-500 hover:text-white transition">
-          <i class="fas fa-phone-alt text-xl"></i><span class="font-semibold">Phone</span>
+          <i class="fas fa-phone-alt text-xl"></i><span class="font-semibold">Telefon</span>
         </a>
         <a href="mailto:artunhcc@gmail.com" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
-          <i class="fas fa-envelope text-xl"></i><span class="font-semibold">Email</span>
+          <i class="fas fa-envelope text-xl"></i><span class="font-semibold">E-posta</span>
         </a>
       </div>
     </div>
     <div class="border-b border-gray-700 pb-8 mb-6 flex justify-center items-center">
-      <img src="ArtuntrW.png" alt="Artun Consultancy Logo EN" class="h-7 w-auto md:h-10">
+      <img src="ArtuntrW.png" alt="Artun Danışmanlık Logosu TR" class="h-7 w-auto md:h-10">
     </div>
     <div class="text-center text-gray-500 text-sm py-4">
-      <p>&copy; 2025 Artun Consultancy Company. All rights reserved.</p>
+      <p>&copy; 2025 Artun Danışmanlık Şirketi. Tüm hakları saklıdır.</p>
     </div>
   </div>
 </footer>
 
 <script>
-
   document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -271,23 +271,26 @@
       mobileServicesDropdown.classList.toggle('hidden');
     });
 
-    // FIX: Desktop dropdown menu toggle with JavaScript
+    // Desktop dropdown menu toggle
     const servicesToggle = document.getElementById('services-toggle');
     const servicesMenu = document.getElementById('services-menu');
-
     servicesToggle.addEventListener('click', (event) => {
       event.preventDefault();
+      event.stopPropagation();
       servicesMenu.classList.toggle('hidden');
     });
 
+    // Close dropdowns when clicking outside
     document.addEventListener('click', (event) => {
       if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
         servicesMenu.classList.add('hidden');
       }
+      if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
     });
 
-
-    // Contact form submission and message display logic
+    // Contact form submission and message display
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
     const consentCheckbox1 = document.getElementById('consentContact');
@@ -298,151 +301,57 @@
       contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // NEW LOGIC: Check if at least one consent box is checked.
         if (!consentCheckbox1.checked && !consentCheckbox2.checked) {
-          consentErrorDiv.textContent = 'Please check at least one of the consent boxes to proceed.';
+          consentErrorDiv.textContent = 'Lütfen devam etmek için en az bir onay kutusunu işaretleyin.';
           consentErrorDiv.classList.remove('hidden');
           consentErrorDiv.style.opacity = '1';
           setTimeout(() => {
             consentErrorDiv.style.opacity = '0';
-            // Use 'transitionend' to ensure the transition is complete
             consentErrorDiv.addEventListener('transitionend', () => {
               consentErrorDiv.classList.add('hidden');
             }, { once: true });
           }, 7000);
-          return; // Stop the function
+          return;
         }
 
-        // Hide consent error message if it's visible
         consentErrorDiv.classList.add('hidden');
         consentErrorDiv.style.opacity = '0';
-
         formSubmissionMessage.style.opacity = '0';
         formSubmissionMessage.classList.add('hidden');
-
-        formSubmissionMessage.textContent = 'Sending your message...';
+        formSubmissionMessage.textContent = 'Mesajınız gönderiliyor...';
         formSubmissionMessage.style.backgroundColor = '#59CDD1';
         formSubmissionMessage.classList.remove('hidden');
         formSubmissionMessage.style.opacity = '1';
 
         try {
           const formData = new FormData(contactForm);
-
           const response = await fetch(contactForm.action, {
             method: 'POST',
             body: formData
           });
-
           const resultText = await response.text();
           const successPattern = /success/i;
 
           if (response.ok && successPattern.test(resultText)) {
-            formSubmissionMessage.textContent = 'Success! Your message has been sent.';
+            formSubmissionMessage.textContent = 'Başarılı! Mesajınız gönderildi.';
             formSubmissionMessage.style.backgroundColor = '#4CAF50';
             contactForm.reset();
           } else {
-            formSubmissionMessage.textContent = 'Error: ' + (resultText || 'An unknown error occurred.');
+            formSubmissionMessage.textContent = 'Hata: ' + (resultText || 'Bilinmeyen bir hata oluştu.');
             formSubmissionMessage.style.backgroundColor = '#f44336';
           }
         } catch (error) {
           console.error('Network or submission error:', error);
-          formSubmissionMessage.textContent = 'Network error. Please try again.';
+          formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
           formSubmissionMessage.style.backgroundColor = '#f44336';
         } finally {
           formSubmissionMessage.classList.remove('hidden');
           formSubmissionMessage.style.opacity = '1';
-
           setTimeout(() => {
             formSubmissionMessage.style.opacity = '0';
             formSubmissionMessage.classList.add('hidden');
           }, 7000);
         }
-      });
-    }
-
-    // Note: The file upload form logic is not active in the provided HTML but is left here for reference.
-    const uploadForm = document.getElementById('uploadForm');
-    const fileInput = document.getElementById('fileInput');
-    const customUploadMessage = document.getElementById('customUploadMessage');
-
-    if (uploadForm && fileInput && customUploadMessage) {
-      uploadForm.addEventListener('submit', async function (e) {
-        e.preventDefault();
-
-        // Consent check
-        const consentCheckbox = document.getElementById('consentUpload');
-        if (!consentCheckbox.checked) {
-          customUploadMessage.textContent = 'Error: Please check the data sharing consent box.';
-          customUploadMessage.style.backgroundColor = '#f44336';
-          customUploadMessage.classList.remove('hidden');
-          customUploadMessage.style.opacity = '1';
-          setTimeout(() => {
-            customUploadMessage.style.opacity = '0';
-            customUploadMessage.classList.add('hidden');
-          }, 7000);
-          return;
-        }
-
-        customUploadMessage.style.opacity = '0';
-        customUploadMessage.classList.add('hidden');
-        customUploadMessage.textContent = 'Uploading file...';
-        customUploadMessage.style.backgroundColor = '#59CDD1';
-        customUploadMessage.classList.remove('hidden');
-        customUploadMessage.style.opacity = '1';
-
-        const file = fileInput.files[0];
-
-        if (!file) {
-          customUploadMessage.textContent = 'Please select a file to upload.';
-          customUploadMessage.classList.remove('bg-green-500');
-          customUploadMessage.classList.add('bg-red-500', 'opacity-100');
-          setTimeout(() => {
-            customUploadMessage.classList.add('hidden', 'opacity-0');
-          }, 7000);
-          return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = async function (event) {
-          const base64 = event.target.result.split(',')[1];
-
-          try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbx4F3OLxihONUOxcmDRaId5iE2BiSTIUjp5bW0YPOk_b5HVKzAxd7nUb4YlIJp6zSIboA/exec', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-              },
-              body: new URLSearchParams({
-                file: base64,
-                filename: file.name,
-                type: file.type
-              })
-            });
-
-            const result = await response.json();
-
-            if (result.status === 'success') {
-              customUploadMessage.textContent = '✅ File uploaded successfully!';
-              customUploadMessage.classList.remove('bg-red-500');
-              customUploadMessage.classList.add('bg-green-500', 'opacity-100');
-              fileInput.value = '';
-            } else {
-              customUploadMessage.textContent = '❌ Upload failed: ' + result.message;
-              customUploadMessage.classList.remove('bg-green-500');
-              customUploadMessage.classList.add('bg-red-500', 'opacity-100');
-            }
-          } catch (error) {
-            console.error('Network or submission error:', error);
-            customUploadMessage.textContent = 'Network error. Please try again.';
-            customUploadMessage.classList.remove('bg-green-500');
-            customUploadMessage.classList.add('bg-red-500', 'opacity-100');
-          } finally {
-            setTimeout(() => {
-              customUploadMessage.classList.add('hidden', 'opacity-0');
-            }, 7000);
-          }
-        };
-        reader.readAsDataURL(file);
       });
     }
   });

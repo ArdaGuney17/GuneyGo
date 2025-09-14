@@ -1,0 +1,52 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="index.html">
+      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-8">
+    </a>
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition-colors duration-300">Ana Sayfa</a>
+      <a href="hakkımızda.html" class="text-gray-300 hover:text-white transition-colors duration-300">Hakkımızda</a>
+      <div class="dropdown relative">
+        <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
+          Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </button>
+        <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+          <a href="hastalar-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
+          <a href="sağlık-turizmi-acenteleri-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
+          <a href="şirketler-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+        </div>
+      </div>
+      <a href="iletişime-geçin.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">İletişime Geçin</a>
+      <div class="lang-switcher text-gray-300 font-semibold space-x-2">
+        <a href="index.html">ENG</a>
+        <span>/</span>
+        <a href="ana-sayfa.html" class="text-[#59CDD1]">TR</a>
+      </div>
+    </nav>
+    <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</header>
+<nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
+  <div class="flex flex-col space-y-2">
+    <a href="ana-sayfa.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Ana Sayfa</a>
+    <a href="hakkımızda.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hakkımızda</a>
+    <div>
+      <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
+        Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      </button>
+      <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
+        <a href="hastalar-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
+        <a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
+        <a href="şirketler-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+      </div>
+    </div>
+    <a href="iletişime-geçin.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">İletişime Geçin</a>
+    <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
+      <a href="index.html" class="text-gray-300 hover:text-white">ENG</a>
+      <span class="text-gray-500">/</span>
+      <a href="ana-sayfa.html" class="text-[#59CDD1]">TR</a>
+    </div>
+  </div>
+</nav>

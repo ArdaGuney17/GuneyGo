@@ -9,110 +9,136 @@
   <title>Bize Ulaşın | Artun Sağlık Danışmanlığı</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Tailwind'in kapsamadığı veya özel geçersiz kılmalar için özel stiller */
-    body {
-      font-family: 'Inter', sans-serif; /* Inter yazı tipi uygulandı */
-    }
-    /* Masaüstü navigasyon için açılır menü stili */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 20; /* Açılır menünün diğer öğelerin üzerinde olmasını sağlar */
-      border-radius: 0.5rem; /* Yuvarlak köşeler */
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-    /* 'active' sınıfı mevcut olduğunda menüyü göster */
-    .dropdown-menu.active {
-      display: block;
-    }
-    .dropdown-menu a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      border-radius: 0.5rem; /* Bireysel öğeler için yuvarlak köşeler */
-    }
-    .dropdown-menu a:hover {
-      background-color: #f1f1f1;
-    }
-    /* Duyarlı tasarım için mobil menü stili */
-    .mobile-menu {
-      flex-direction: column;
-      position: absolute;
-      top: 64px; /* Başlığın altına konumlandır */
-      left: 0;
+    html, body {
       width: 100%;
-      background-color: white;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 20; /* Açılır menünün diğer öğelerin üzerinde olmasını sağlar */
-      padding: 1rem;
-      border-radius: 0.5rem; /* Yuvarlak köşeler */
+      overflow-x: hidden;
     }
-    .mobile-menu a {
-      padding: 0.75rem 0;
-      text-align: center;
-      border-bottom: 1px solid #eee; /* Menü öğeleri için ayırıcı */
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
-    .mobile-menu a:last-child {
-      border-bottom: none; /* Son öğe için ayırıcı yok */
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .dropdown .dropdown-menu {
+      /* The `hidden` Tailwind class will handle hiding/showing */
+    }
+    .glassmorphism {
+      background-color: rgb(31 41 55 / 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgb(75 85 99 / 0.5);
+    }
+    .hero-section {
+      background-image: url('bosphorus.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .pulse-animation {
+      animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse-border {
+      0%, 100% { border-color: rgba(255, 255, 255, 0.2); }
+      50% { border-color: rgba(255, 255, 255, 0.7); }
+    }
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      will-change: opacity, transform;
+    }
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-on-scroll-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      will-change: opacity, transform;
+    }
+    .animate-on-scroll-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      will-change: opacity, transform;
+    }
+    .animate-on-scroll-left.is-visible,
+    .animate-on-scroll-right.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .hero-animate-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      will-change: opacity, transform;
+    }
+    .hero-animate-up.hero-animate-show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Hide the default file input button */
+    .file-input-wrapper input[type="file"] {
+      display: none;
     }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-<header class="fixed z-[9999] w-full main-header bg-gray-900 shadow-md py-4">
-  <div class="header-container container mx-auto flex justify-between items-center px-4">
-    <div class="logo flex items-center space-x-2">
-      <a href="ana-sayfa.html">
-        <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="w-50 h-10">
-      </a>
-    </div>
-    <nav class="hidden md:block">
-      <ul class="nav-links flex space-x-6 items-center">
-        <li><a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition duration-300">Ana Sayfa</a></li>
-        <li><a href="hakkımızda.html" class="text-gray-300 hover:text-white transition duration-300">Hakkımızda</a></li>
-        <li class="dropdown relative z-10">
-          <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-300 hover:text-white transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
-          <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 bg-gray-800 shadow-lg rounded-lg py-2">
-            <li><a href="hastalar-için.html" class="block px-4 py-2 text-[#59CDD1] hover:bg-gray-700 rounded-md">Hastalar İçin</a></li>
-            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 text-white hover:bg-gray-700 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
-            <li><a href="şirketler-için.html" class="block px-4 py-2 text-white hover:bg-gray-700 rounded-md">Şirketler İçin</a></li>
-          </ul>
-        </li>
-        <li><a href="iletişime-geçin.html" class="cta-button bg-[#59CDD1] text-white px-5 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md">İletişime Geçin</a></li>
-        <li class="lang-switcher text-gray-300 font-semibold space-x-2">
-          <a href="contact-for-companies.html">ENG</a>
-          <span>/</span>
-          <a href="şirketler-için-iletişim.html" class="text-[#59CDD1]">TR</a>
-        </li>
-      </ul>
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="index.html">
+      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-8">
+    </a>
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition-colors duration-300">Ana Sayfa</a>
+      <a href="hakkımızda.html" class="text-gray-300 hover:text-white transition-colors duration-300">Hakkımızda</a>
+      <div class="dropdown relative">
+        <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
+          Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </button>
+        <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+          <a href="hastalar-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
+          <a href="sağlık-turizmi-acenteleri-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
+          <a href="şirketler-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+        </div>
+      </div>
+      <a href="iletişime-geçin.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">İletişime Geçin</a>
+      <div class="lang-switcher text-gray-300 font-semibold space-x-2">
+        <a href="index.html">ENG</a>
+        <span>/</span>
+        <a href="ana-sayfa.html" class="text-[#59CDD1]">TR</a>
+      </div>
     </nav>
-    <div class="mobile-menu-btn md:hidden text-2xl text-gray-700 cursor-pointer">
+    <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
       <i class="fas fa-bars"></i>
-    </div>
+    </button>
   </div>
 </header>
-<nav id="mobile-menu" class="mobile-menu hidden md:hidden ...">
-  <a href="ana-sayfa.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Ana Sayfa</a>
-  <a href="hakkımızda.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">Hakkımızda</a>
-  <div class="relative py-2">
-    <a href="#" class="block px-4 py-2 text-gray-300 hover:bg-gray-800" onclick="toggleMobileDropdown(event)">
-      Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
-    </a>
-    <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
-      <li><a href="hastalar-için.html" class="block text-sm text-gray-400 hover:text-white">Hastalar İçin</a></li>
-      <li><a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-400 hover:text-white">Medikal Turizm Acenteleri İçin</a></li>
-      <li><a href="şirketler-için.html" class="block text-sm text-gray-400 hover:text-white">Şirketler İçin</a></li>
-    </ul>
-  </div>
-  <a href="iletişime-geçin.html" class="block px-4 py-2 text-gray-300 hover:bg-gray-800">İletişime Geçin</a>
-  <div class="flex justify-center space-x-2 mt-4">
-    <a href="contact-for-companies.html" class="text-gray-300 hover:text-white">ENG</a>
-    <span>/</span>
-    <a href="şirketler-için-iletişim.html" class="text-[#59CDD1] hover:text-[#45a8b3]">TR</a>
+
+<nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
+  <div class="flex flex-col space-y-2">
+    <a href="ana-sayfa.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Ana Sayfa</a>
+    <a href="hakkımızda.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hakkımızda</a>
+    <div>
+      <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
+        Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      </button>
+      <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
+        <a href="hastalar-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
+        <a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
+        <a href="şirketler-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+      </div>
+    </div>
+    <a href="iletişime-geçin.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">İletişime Geçin</a>
+    <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
+      <a href="index.html" class="text-gray-300 hover:text-white">ENG</a>
+      <span class="text-gray-500">/</span>
+      <a href="ana-sayfa.html" class="text-[#59CDD1]">TR</a>
+    </div>
   </div>
 </nav>
 
@@ -121,7 +147,7 @@
     <div class="section-container container mx-auto px-4 max-w-5xl">
       <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">İletişime Geçin</h2>
       <p class="text-lg text-gray-700 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
-        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir ortaklık ya da yatırım fırsatını görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
+        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir sağlık kuruluşu ile görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
       </p>
 
       <div class="grid md:grid-cols-[1.2fr_2fr] gap-12 items-start">
@@ -189,68 +215,66 @@
   </section>
 </main>
 
-<footer class="main-footer bg-gray-900 text-white py-8">
-  <div class="footer-container container mx-auto flex flex-col md:flex-row justify-between items-center px-4 space-y-4 md:space-y-0">
-    <div class="logo flex items-center space-x-2">
-      <img src="artun2.png" alt="Artun Danışmanlık Logosu" class="w-50 h-10">
+<footer class="bg-gray-900 text-white pt-8">
+  <div class="container mx-auto px-4">
+    <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
+        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">Bize Ulaşın</h3>
+        <a href="https://wa.me/905325673291" target="_blank" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-green-500 hover:text-white transition">
+          <i class="fab fa-whatsapp text-2xl"></i><span class="font-semibold">WhatsApp</span>
+        </a>
+        <a href="tel:+905325673291" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-blue-500 hover:text-white transition">
+          <i class="fas fa-phone-alt text-xl"></i><span class="font-semibold">Telefon</span>
+        </a>
+        <a href="mailto:artunhcc@gmail.com" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
+          <i class="fas fa-envelope text-xl"></i><span class="font-semibold">Email</span>
+        </a>
+      </div>
     </div>
-    <div class="footer-social flex space-x-6">
-      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+    <div class="border-b border-gray-700 pb-8 mb-6 flex justify-center items-center">
+      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-10">
     </div>
-  </div>
-  <div class="footer-bottom text-center text-gray-500 text-sm mt-6">
-    <p>&copy; 2025 Artun Danışmanlık Şirketi. Tüm hakları saklıdır.</p>
+    <div class="text-center text-gray-500 text-sm py-4">
+      <p>&copy; 2025 Artun Danışmanlık Şirketi. Tüm hakları saklıdır.</p>
+    </div>
   </div>
 </footer>
 
 <script>
-  // Mobil menü açma/kapama ve açılır menü işlevselliği için JavaScript
   document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
-    const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
 
-    // Mobil menüdeki hizmetler dropdown'ı için
-    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    // Mobile services dropdown toggle
+    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
     const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+    mobileServicesToggle.addEventListener('click', () => {
+      mobileServicesDropdown.classList.toggle('hidden');
+    });
 
-    // Mobil menüyü açıp kapama
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
+    // FIX: Desktop dropdown menu toggle with JavaScript
+    const servicesToggle = document.getElementById('services-toggle');
+    const servicesMenu = document.getElementById('services-menu');
 
-    // Hizmetler açılır menüsünü tıklamayla açma/kapama (masaüstü)
-    if (servicesDropdownToggle && servicesDropdownMenu) {
-      servicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        servicesDropdownMenu.classList.toggle('active');
-      });
+    servicesToggle.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevents the default action of the button/link
+      event.stopPropagation(); // Stops the click event from bubbling up to the document
+      servicesMenu.classList.toggle('hidden');
+    });
 
-      // Dışarıya tıklandığında menüyü kapat (masaüstü)
-      document.addEventListener('click', (event) => {
-        if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
-          servicesDropdownMenu.classList.remove('active');
-        }
-      });
-    }
-
-    // Mobil menüdeki hizmetler dropdown'ı için tıklama işlevi
-    if (mobileServicesToggle && mobileServicesDropdown) {
-      mobileServicesToggle.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        mobileServicesDropdown.classList.toggle('hidden');
-      });
-    }
+    document.addEventListener('click', (event) => {
+      if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
+        servicesMenu.classList.add('hidden');
+      }
+    });
 
 
-    // İletişim formu gönderimi ve mesaj görüntüleme için JavaScript
+    // --- Form submission and message display logic ---
+
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
 
@@ -285,7 +309,6 @@
             formSubmissionMessage.textContent = 'Hata: ' + (resultText || 'Bilinmeyen bir hata oluştu.');
             formSubmissionMessage.style.backgroundColor = '#f44336';
           }
-
         } catch (error) {
           console.error('Ağ veya gönderim hatası:', error);
           formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';

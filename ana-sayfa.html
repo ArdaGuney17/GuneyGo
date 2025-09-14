@@ -34,39 +34,64 @@
     body {
       font-family: 'Poppins', sans-serif; /* Applied Poppins font */
     }
-
+    /* Dropdown menu styling for desktop navigation */
     .dropdown-menu {
-      display: none;
+      display: none; /* Hide element by default */
       position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      min-width: 220px;
+      /* CHANGE STARTS HERE */
+      background-color: rgb(31 41 55 / 0.7); /* Use Tailwind's gray-800 with 70% opacity */
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgb(75 85 99 / 0.5); /* Semi-transparent gray-600 border */
+      /* CHANGE ENDS HERE */
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 20;
+      border-radius: 0.5rem; /* Rounded corners */
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
+    /* Show the menu when the 'active' class is present */
     .dropdown-menu.active {
       display: block;
     }
 
+    .dropdown-menu a {
+      color: white; /* Changed font color to white for better contrast */
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-radius: 0.5rem; /* Rounded corners for individual items */
+    }
+    .dropdown-menu a:hover {
+      background-color: rgb(75 85 99 / 0.5);
+    }
     /* Mobile menu styling for responsive design */
     .mobile-menu {
       flex-direction: column;
       position: absolute;
-      top: 64px;
+      top: 64px; /* Position below the header */
       left: 0;
       width: 100%;
+      /* CHANGE STARTS HERE */
+      background-color: rgb(31 41 55 / 0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgb(75 85 99 / 0.5);
+      /* CHANGE ENDS HERE */
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 20;
+      z-index: 20; /* Increased z-index to ensure it's on top */
       padding: 1rem;
-      border-radius: 0.5rem;
+      border-radius: 0.5rem; /* Rounded corners */
     }
     .mobile-menu a {
       padding: 0.75rem 0;
       text-align: center;
-      border-bottom: 1px solid #2d3748; /* Darker border for mobile menu */
+      border-bottom: 1px solid rgb(75 85 99 / 0.5); /* Separator for menu items */
+      color: white; /* Changed font color for better contrast */
     }
     .mobile-menu a:last-child {
-      border-bottom: none;
+      border-bottom: none; /* No separator for the last item */
     }
 
     /* Hero section background image with overlay */
@@ -109,7 +134,6 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
 <header class="fixed z-[9999] w-full main-header bg-gray-900 shadow-md py-4">
   <div class="header-container container mx-auto flex justify-between items-center px-4">
     <div class="logo flex items-center space-x-2">
@@ -123,10 +147,10 @@
         <li><a href="hakkımızda.html" class="text-gray-300 hover:text-white transition duration-300">Hakkımızda</a></li>
         <li class="dropdown relative z-10">
           <a href="#" id="servicesDropdownToggle" class="dropdown-toggle text-gray-300 hover:text-white transition duration-300 flex items-center">Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
-          <ul id="servicesDropdownMenu" class="dropdown-menu mt-2 bg-gray-800 bg-opacity-70 backdrop-blur-sm border border-gray-700 rounded-lg py-2">
-            <li><a href="hastalar-için.html" class="block px-6 py-3 text-white hover:bg-gray-700 transition duration-300 rounded-lg">Hastalar İçin</a></li>
-            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-6 py-3 text-white hover:bg-gray-700 transition duration-300 rounded-lg">Medikal Turizm Acenteleri İçin</a></li>
-            <li><a href="şirketler-için.html" class="block px-6 py-3 text-white hover:bg-gray-700 transition duration-300 rounded-lg">Şirketler İçin</a></li>
+          <ul id="servicesDropdownMenu" class="dropdown-menu absolute top-full left-0 mt-2 shadow-lg rounded-lg py-2">
+            <li><a href="hastalar-için.html" class="block px-4 py-2 hover:bg-gray-700 rounded-md">Hastalar İçin</a></li>
+            <li><a href="sağlık-turizmi-acenteleri-için.html" class="block px-4 py-2 hover:bg-gray-700 rounded-md">Medikal Turizm Acenteleri İçin</a></li>
+            <li><a href="şirketler-için.html" class="block px-4 py-2 hover:bg-gray-700 rounded-md">Şirketler İçin</a></li>
           </ul>
         </li>
         <li><a href="iletişime-geçin.html" class="bg-[#59CDD1] bg-opacity-70 backdrop-blur-sm border border-[#59CDD1] border-opacity-80 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">İletişime Geçin</a></li>
@@ -142,20 +166,20 @@
     </div>
   </div>
 </header>
-<nav id="mobile-menu" class="mobile-menu hidden md:hidden bg-gray-900 bg-opacity-70 backdrop-blur-sm text-gray-300">
-  <a href="ana-sayfa.html" class="block px-4 py-2 hover:bg-gray-800 transition duration-300 rounded-md">Ana Sayfa</a>
-  <a href="hakkımızda.html" class="block px-4 py-2 hover:bg-gray-800 transition duration-300 rounded-md">Hakkımızda</a>
+<nav id="mobile-menu" class="mobile-menu hidden md:hidden">
+  <a href="ana-sayfa.html" class="block px-4 py-2 hover:bg-gray-800">Ana Sayfa</a>
+  <a href="hakkımızda.html" class="block px-4 py-2 hover:bg-gray-800">Hakkımızda</a>
   <div class="relative py-2">
-    <a href="#" class="block px-4 py-2 hover:bg-gray-800 transition duration-300 rounded-md" onclick="toggleMobileDropdown(event)">
+    <a href="#" class="block px-4 py-2 hover:bg-gray-800" onclick="toggleMobileDropdown(event)">
       Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
     </a>
     <ul id="mobile-services-dropdown" class="hidden pl-4 space-y-2 mt-2">
-      <li><a href="hastalar-için.html" class="block text-sm text-gray-400 hover:text-white transition duration-300">Hastalar İçin</a></li>
-      <li><a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-400 hover:text-white transition duration-300">Medikal Turizm Acenteleri İçin</a></li>
-      <li><a href="şirketler-için.html" class="block text-sm text-gray-400 hover:text-white transition duration-300">Şirketler İçin</a></li>
+      <li><a href="hastalar-için.html" class="block text-sm text-gray-400 hover:text-white">Hastalar İçin</a></li>
+      <li><a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-400 hover:text-white">Medikal Turizm Acenteleri İçin</a></li>
+      <li><a href="şirketler-için.html" class="block text-sm text-gray-400 hover:text-white">Şirketler İçin</a></li>
     </ul>
   </div>
-  <a href="iletişime-geçin.html" class="block px-4 py-2 hover:bg-gray-800 transition duration-300 rounded-md">İletişime Geçin</a>
+  <a href="iletişime-geçin.html" class="block px-4 py-2 hover:bg-gray-800">İletişime Geçin</a>
   <div class="flex justify-center space-x-2 mt-4">
     <a href="index.html" class="text-gray-300 hover:text-white">ENG</a>
     <span>/</span>
@@ -180,7 +204,7 @@
   <section
     class="section py-16 w-full bg-gradient-to-r from-[#59CDD1] to-[#45a8b3] text-white"
   >
-    <div class="container sm:blcok  mx-auto px-4 max-w-6xl">
+    <div class="container sm:blcok mx-auto px-4 max-w-6xl">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6" data-aos="fade-right">
           <h2 class="text-4xl font-bold leading-tight">Bizimle İletişime Geçin!</h2>

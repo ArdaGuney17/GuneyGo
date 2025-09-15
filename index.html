@@ -36,12 +36,7 @@
       font-family: 'Poppins', sans-serif;
     }
     /* --- Custom Styles --- */
-    .dropdown .dropdown-menu {
-      display: none;
-    }
-    .dropdown:hover .dropdown-menu {
-      display: block;
-    }
+    /* REMOVED .dropdown:hover .dropdown-menu { display: block; } */
     .glassmorphism {
       background-color: rgb(31 41 55 / 0.7);
       backdrop-filter: blur(8px);
@@ -123,10 +118,10 @@
       <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
       <a href="about-us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a>
       <div class="dropdown relative">
-        <button class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
+        <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
           Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        <div class="dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+        <div id="services-menu" class="dropdown-menu hidden absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
           <a href="for-patients.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
           <a href="for-agencies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
           <a href="for-companies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
@@ -330,6 +325,27 @@
     const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
     mobileServicesToggle.addEventListener('click', () => {
       mobileServicesDropdown.classList.toggle('hidden');
+    });
+
+    // FIX: Desktop dropdown menu toggle with JavaScript
+    const servicesToggle = document.getElementById('services-toggle');
+    const servicesMenu = document.getElementById('services-menu');
+    const desktopDropdown = document.querySelector('.dropdown');
+
+    desktopDropdown.addEventListener('click', (event) => {
+      // Prevent the click from propagating to the document body
+      event.stopPropagation();
+      servicesMenu.classList.toggle('hidden');
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (event) => {
+      if (!servicesMenu.contains(event.target) && !servicesToggle.contains(event.target)) {
+        servicesMenu.classList.add('hidden');
+      }
+      if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
     });
 
     // Contact Form Submission

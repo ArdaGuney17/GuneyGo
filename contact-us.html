@@ -17,20 +17,7 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 20;
-      border-radius: 0.5rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-    }
-    .dropdown-menu.active {
-      display: block;
-    }
+    /* Removed the conflicting .dropdown-menu CSS rule */
     .mobile-menu {
       flex-direction: column;
       position: absolute;
@@ -79,7 +66,7 @@
         <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
           Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+        <div id="services-menu" class="hidden absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
           <a href="for-patients.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
           <a href="for-agencies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
           <a href="for-companies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
@@ -196,17 +183,19 @@
     const servicesToggle = document.getElementById('services-toggle');
     const servicesMenu = document.getElementById('services-menu');
 
-    servicesToggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      servicesMenu.classList.toggle('hidden');
-    });
+    if (servicesToggle && servicesMenu) {
+      servicesToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        servicesMenu.classList.toggle('hidden');
+      });
 
-    document.addEventListener('click', (event) => {
-      if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
-        servicesMenu.classList.add('hidden');
-      }
-    });
+      document.addEventListener('click', (event) => {
+        if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
+          servicesMenu.classList.add('hidden');
+        }
+      });
+    }
 
     // Kaydırma animasyonları için JavaScript
     const animateElements = document.querySelectorAll('.animate-on-scroll');

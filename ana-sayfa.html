@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="tr" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Artun Sağlık Danışmanlığı | Türkiye'de Profesyonel Sağlık Danışmanlığı Hizmetleri</title>
-  <meta name="description" content="Artun Healthcare, Türkiye’deki hastalara, acentelere ve şirketlere profesyonel sağlık danışmanlığı ve iş birliği hizmetleri sunmaktadır. En iyi tıbbi çözümleri bizimle keşfedin." />
-  <meta name="keywords" content="Tahsin Güney, Tahsin Guney, tahsin güney,tahsin guney, sağlık danışmanlığı, sağlık turizmi, tıbbi çözümler, Türkiye, tıbbi danışmanlık, uluslararası hastalar, acente iş birliği, hastane yönetimi" />
+  <title>Artun Health Consulting | Professional Health Consulting Services in Turkey</title>
+  <meta name="description" content="Artun Healthcare provides professional health consulting and collaboration services to patients, agencies, and companies in Turkey. Discover the best medical solutions with us." />
+  <meta name="keywords" content="Tahsin Güney, Tahsin Guney, health consulting, health tourism, medical solutions, Turkey, medical consultation, international patients, agency collaboration, hospital management" />
   <link rel="canonical" href="https://artunhealthcare.com/index.html" />
   <meta name="robots" content="index, follow">
   <link rel="alternate" hreflang="en" href="https://artunhealthcare.com/index.html" />
   <link rel="alternate" hreflang="tr" href="https://artunhealthcare.com/ana-sayfa.html" />
-  <meta property="og:title" content="Artun Sağlık Danışmanlığı | Türkiye'de Sağlık Danılmanlığı" />
-  <meta property="og:description" content="Türkiye’deki hastalara, acentelere ve şirketlere profesyonel sağlık danışmanlığı ve iş birliği hizmetleri sunuyoruz." />
+  <meta property="og:title" content="Artun Health Consulting | Health Consulting in Turkey" />
+  <meta property="og:description" content="We offer professional health consulting and collaboration services to patients, agencies, and companies in Turkey." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://artunhealthcare.com/index.html" />
   <meta property="og:image" content="https://artunhealthcare.com/bosphorus.png" />
@@ -24,6 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* --- GLOBAL RULES TO PREVENT OVERFLOW --- */
     html, body {
       width: 100%;
       overflow-x: hidden;
@@ -34,9 +35,8 @@
     body {
       font-family: 'Poppins', sans-serif;
     }
-    .dropdown .dropdown-menu {
-      /* The `hidden` Tailwind class will handle hiding/showing */
-    }
+    /* --- Custom Styles --- */
+    /* REMOVED .dropdown:hover .dropdown-menu { display: block; } */
     .glassmorphism {
       background-color: rgb(31 41 55 / 0.7);
       backdrop-filter: blur(8px);
@@ -58,39 +58,49 @@
       0%, 100% { border-color: rgba(255, 255, 255, 0.2); }
       50% { border-color: rgba(255, 255, 255, 0.7); }
     }
+
+    /* --- SCROLL ANIMATION CSS (Up) --- */
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .animate-on-scroll.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* --- SCROLL ANIMATION CSS (Left & Right) --- */
     .animate-on-scroll-left {
       opacity: 0;
       transform: translateX(-50px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .animate-on-scroll-right {
       opacity: 0;
       transform: translateX(50px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .animate-on-scroll-left.is-visible,
     .animate-on-scroll-right.is-visible {
       opacity: 1;
       transform: translateX(0);
     }
+
+    /* --- ON-LOAD ANIMATION CSS --- */
     .hero-animate-up {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .hero-animate-up.hero-animate-show {
       opacity: 1;
       transform: translateY(0);
@@ -102,26 +112,26 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <a href="index.html">
-      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-8">
+      <img src="artun2.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-8">
     </a>
     <nav class="hidden md:flex items-center space-x-6">
-      <a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition-colors duration-300">Ana Sayfa</a>
-      <a href="hakkımızda.html" class="text-gray-300 hover:text-white transition-colors duration-300">Hakkımızda</a>
+      <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
+      <a href="about-us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a>
       <div class="dropdown relative">
         <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
-          Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
-          <a href="hastalar-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
-          <a href="sağlık-turizmi-acenteleri-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
-          <a href="şirketler-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+        <div id="services-menu" class="dropdown-menu hidden absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+          <a href="for-patients.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
+          <a href="for-agencies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
+          <a href="for-companies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
         </div>
       </div>
-      <a href="iletişime-geçin.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md hover:scale-105">İletişime Geçin</a>
+      <a href="contact-us.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md hover:scale-105">Contact Us</a>
       <div class="lang-switcher text-gray-300 font-semibold space-x-2">
-        <a href="index.html">ENG</a>
+        <a href="index.html" class="text-[#59CDD1]">ENG</a>
         <span>/</span>
-        <a href="ana-sayfa.html" class="text-[#59CDD1]">TR</a>
+        <a href="ana-sayfa.html">TR</a>
       </div>
     </nav>
     <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
@@ -132,31 +142,33 @@
 
 <nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
   <div class="flex flex-col space-y-2">
-    <a href="ana-sayfa.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Ana Sayfa</a>
-    <a href="hakkımızda.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hakkımızda</a>
+    <a href="index.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Home</a>
+    <a href="about-us.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">About Us</a>
     <div>
       <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
-        Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
       </button>
       <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
-        <a href="hastalar-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
-        <a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
-        <a href="şirketler-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+        <a href="for-patients.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
+        <a href="for-agencies.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
+        <a href="for-companies.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
       </div>
     </div>
-    <a href="iletişime-geçin.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">İletişime Geçin</a>
+    <a href="contact-us.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Contact Us</a>
     <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
-      <a href="index.html" class="text-gray-300 hover:text-white">ENG</a>
-      <span class="text-gray-500">/</span>
-      <a href="ana-sayfa.html" class="text-[#59CDD1]">TR</a>
+      <a href="index.html" class="text-[#59CDD1]">ENG</a>
+      <span>/</span>
+      <a href="ana-sayfa.html" class="text-gray-300 hover:text-white">TR</a>
     </div>
   </div>
 </nav>
 
-<main>
+
+<main class="pt-16">
+
   <section class="hero-section relative h-screen flex items-center justify-center text-center text-white">
     <div class="hero-overlay absolute top-0 left-0 w-full h-full"></div>
-    <div class="relative z-10 p-4 max-w-4xl mx-auto">
+    <div class="relative z-10 p-4 max-w-4xl mx-auto flex flex-col items-center">
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-xl hero-animate-up">Türkiye'de Birinci Sınıf Sağlık Çözümleri ve İşbirliği</h1>
       <p class="text-xl md:text-2xl mb-8 hero-animate-up">Hastaların, acentelerin ve sağlık şirketlerinin ihtiyaçlarına özel hizmetler.</p>
       <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 hero-animate-up">
@@ -164,28 +176,29 @@
         <a href="sağlık-turizmi-acenteleri-için.html" class="bg-[#59CDD1] bg-opacity-70 border border-[#59CDD1]/80 px-8 py-3 rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg font-semibold hover:scale-105">Acenteler İçin</a>
         <a href="şirketler-için.html" class="bg-[#59CDD1] bg-opacity-70 border border-[#59CDD1]/80 px-8 py-3 rounded-full hover:bg-opacity-90 transition duration-300 shadow-lg font-semibold hover:scale-105">Şirketler İçin</a>
       </div>
-      <a href="#bizimle_iletisime_gecin" class="mt-8 text-white flex flex-col items-center hero-animate-up">
+
+      <a href="#contact_us" class="mt-8 text-white flex flex-col items-center">
         <span class="block text-sm font-semibold mb-1">İletişime Geçmek için Aşağı Kaydırın!</span>
         <i class="fas fa-chevron-down text-2xl animate-bounce"></i>
       </a>
     </div>
   </section>
 
-  <section id="bizimle_iletisime_gecin" class="py-16 bg-gradient-to-r from-[#59CDD1] to-[#45a8b3] text-white">
+  <section id="contact_us" class="py-16 bg-gradient-to-r from-[#59CDD1] to-[#45a8b3] text-white">
     <div class="container mx-auto px-4 max-w-6xl">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div class="space-y-6 animate-on-scroll-left">
           <h2 class="text-4xl font-bold leading-tight">Bizimle İletişime Geçin!</h2>
           <p class="hidden md:block text-lg leading-relaxed opacity-90">
-            Türkiye'de sağlık hizmeti arayışınızda yanınızdayız. Artun Healthcare olarak, sağlık yolculuğunuzda size özel çözümler sunmak için buradayız. Aklınızdaki tüm soruları sormak, randevu oluşturmak veya hizmetlerimiz hakkında daha fazla bilgi edinmek için bize yazın.
+            Türkiye'de sağlık hizmeti arayışınızda yanınızdayız. Artun Healthcare olarak, sağlık yolculuğunuzda size özel çözümler sunmak için buradayız. Her türlü sorunuzu sormak, randevu almak veya hizmetlerimiz hakkında daha fazla bilgi edinmek için bize yazın.
           </p>
         </div>
         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 pulse-animation animate-on-scroll-right">
-          <h3 class="text-2xl font-semibold mb-6 text-center">Hemen Başlayın</h3>
+          <h3 class="text-2xl font-semibold mb-6 text-center">Şimdi Başlayın</h3>
           <form id="contactForm" class="space-y-6" action="https://script.google.com/macros/s/AKfycbyPt8bF4tvPwJoQu7DY335H30-9BuzFeG7xx5Od9VHDuIPrIs0H5AyQYCwFLggaRmok8g/exec" method="POST">
             <div>
-              <label for="name" class="block text-sm font-medium mb-1">Adınız Soyadınız</label>
-              <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" class="w-full px-4 py-3 rounded-lg bg-[#59CDD1]/70 border border-[#59CDD1]/80 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-white transition" required />
+              <label for="name" class="block text-sm font-medium mb-1">Ad Soyad</label>
+              <input type="text" id="name" name="name" placeholder="Ad Soyad" class="w-full px-4 py-3 rounded-lg bg-[#59CDD1]/70 border border-[#59CDD1]/80 text-white placeholder-white/80 focus:outline-none focus:ring-2 focus:ring-white transition" required />
             </div>
             <div>
               <label for="phone" class="block text-sm font-medium mb-1">Telefon Numarası</label>
@@ -197,7 +210,7 @@
             </div>
             <div id="formSubmissionMessage" class="hidden p-4 rounded-lg text-center font-bold text-white shadow-md"></div>
             <button type="submit" class="w-full bg-white/20 border border-white/30 text-white px-6 py-3 rounded-full hover:bg-white/30 transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2 hover:scale-105">
-              <span>Mesaj Gönder</span>
+              <span>Mesajı Gönder</span>
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
@@ -210,15 +223,15 @@
     <div class="container mx-auto px-4 max-w-6xl">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div class="flex justify-center animate-on-scroll-left">
-          <img src="consulting_health%20(2).jpg" alt="Danışmanlık hizmeti" class="rounded-lg shadow-lg w-full max-w-md">
+          <img src="consulting_health%20(2).jpg" alt="Consulting service" class="rounded-lg shadow-lg w-full max-w-md">
         </div>
         <div class="text-center md:text-left animate-on-scroll-right">
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">Türkiye'nin Sağlık Alanındaki Güvenilir Ortağınız</h2>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Türkiye Sağlık Sektöründe Güvenilir Partneriniz</h2>
           <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Artun Healthcare, ulusal ve uluslararası düzeyde sağlık turizmi, hastane yönetimi ve geri ödeme sistemleri konusunda uzmanlaşmış güvenilir bir danışmanlık ekibidir. Misyonumuz, en yüksek kalitede sağlık hizmetlerine erişiminizi kolaylaştırmaktır.
+            Artun Healthcare olarak, ulusal ve uluslararası düzeyde sağlık turizmi, hastane yönetimi ve geri ödeme sistemleri konularında uzmanlaşmış güvenilir bir danışmanlık ekibiyiz. Misyonumuz, en kaliteli sağlık hizmetlerine erişiminizi kolaylaştırmaktır.
           </p>
           <a href="hakkımızda.html" class="inline-flex items-center space-x-2 bg-[#59CDD1] text-white px-8 py-3 rounded-full hover:bg-[#45a8b3] transition duration-300 shadow-md font-semibold text-lg hover:scale-105">
-            <span>Hakkımızda Daha Fazla Bilgi</span>
+            <span>Hakkımızda Daha Fazla Bilgi Edinin</span>
             <i class="fas fa-arrow-right"></i>
           </a>
         </div>
@@ -231,15 +244,15 @@
       <h2 class="text-3xl font-bold text-center text-gray-900 mb-12 animate-on-scroll">Neden Türkiye?</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <ul class="space-y-4 text-lg text-gray-700 animate-on-scroll-left">
-          <li class="flex items-start"><i class="fas fa-plane text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span><strong>Size yakın,</strong> birçok destinasyondan direkt uçuş imkanı</span></li>
-          <li class="flex items-start"><i class="fas fa-hospital-alt text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Uluslararası akredite hastaneler</span></li>
+          <li class="flex items-start"><i class="fas fa-plane text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span><strong>Size yakın,</strong> birçok destinasyondan direkt uçuş imkanı ile</span></li>
+          <li class="flex items-start"><i class="fas fa-hospital-alt text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Uluslararası akreditasyona sahip hastaneler</span></li>
           <li class="flex items-start"><i class="fas fa-user-md text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Deneyimli sağlık profesyonelleri</span></li>
           <li class="flex items-start"><i class="fas fa-microscope text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Modern tıbbi teknoloji</span></li>
-          <li class="flex items-start"><i class="fas fa-hand-holding-usd text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Ekonomik tedavi</span></li>
-          <li class="flex items-start"><i class="fas fa-landmark text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Zengin kültür ve turizm</span></li>
+          <li class="flex items-start"><i class="fas fa-hand-holding-usd text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Uygun fiyatlı tedavi imkanları</span></li>
+          <li class="flex items-start"><i class="fas fa-landmark text-[#59CDD1] mr-3 mt-1 w-6 text-center"></i><span>Zengin kültür ve turizm olanakları</span></li>
         </ul>
         <div class="flex justify-center animate-on-scroll-right">
-          <img src="turkey_middle.jpg" alt="Türkiye'de medikal turizm" class="rounded-lg shadow-lg w-full max-w-md">
+          <img src="turkey_middle.jpg" alt="Medical tourism in Turkey" class="rounded-lg shadow-lg w-full max-w-md">
         </div>
       </div>
     </div>
@@ -252,7 +265,7 @@
         <div class="bg-white p-6 rounded-lg shadow-lg text-center flex flex-col items-center animate-on-scroll">
           <i class="fas fa-user-injured text-5xl text-[#59CDD1] mb-4"></i>
           <h3 class="text-xl font-semibold text-gray-900 mb-3">Hastalar İçin</h3>
-          <p class="text-gray-700 mb-6 flex-grow">Medikal hizmetler, estetik cerrahi, diş tedavisi & protezi ve saç ekimi.</p>
+          <p class="text-gray-700 mb-6 flex-grow">Medikal hizmetler, estetik cerrahi, diş tedavisi ve protezi, saç ekimi.</p>
           <a href="hastalar-için.html" class="mt-auto bg-[#59CDD1] text-white px-6 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 font-semibold hover:scale-105">Daha Fazla Bilgi</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-lg text-center flex flex-col items-center animate-on-scroll">
@@ -264,7 +277,7 @@
         <div class="bg-white p-6 rounded-lg shadow-lg text-center flex flex-col items-center animate-on-scroll">
           <i class="fas fa-building text-5xl text-[#59CDD1] mb-4"></i>
           <h3 class="text-xl font-semibold text-gray-900 mb-3">Şirketler İçin</h3>
-          <p class="text-gray-700 mb-6 flex-grow">Sağlık yatırımı, hastane yönetimi, geri ödeme danışmanlığı.</p>
+          <p class="text-gray-700 mb-6 flex-grow">Sağlık yatırım danışmanlığı, hastane yönetimi, geri ödeme danışmanlığı.</p>
           <a href="şirketler-için.html" class="mt-auto bg-[#59CDD1] text-white px-6 py-2 rounded-full hover:bg-[#45a8b3] transition duration-300 font-semibold hover:scale-105">Daha Fazla Bilgi</a>
         </div>
       </div>
@@ -277,7 +290,7 @@
   <div class="container mx-auto px-4">
     <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
-        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">Bize Ulaşın</h3>
+        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">İletişim</h3>
         <a href="https://wa.me/905325673291" target="_blank" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-green-500 hover:text-white transition">
           <i class="fab fa-whatsapp text-2xl"></i><span class="font-semibold">WhatsApp</span>
         </a>
@@ -285,15 +298,15 @@
           <i class="fas fa-phone-alt text-xl"></i><span class="font-semibold">Telefon</span>
         </a>
         <a href="mailto:artunhcc@gmail.com" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
-          <i class="fas fa-envelope text-xl"></i><span class="font-semibold">Email</span>
+          <i class="fas fa-envelope text-xl"></i><span class="font-semibold">E-posta</span>
         </a>
       </div>
     </div>
     <div class="border-b border-gray-700 pb-8 mb-6 flex justify-center items-center">
-      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-10">
+      <img src="artun2.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-10">
     </div>
     <div class="text-center text-gray-500 text-sm py-4">
-      <p>&copy; 2025 Artun Sağlık Hizmetleri Danışmanlığı. Tüm hakları saklıdır.</p>
+      <p>&copy; 2025 Artun Healthcare Consultancy. Tüm hakları saklıdır.</p>
     </div>
   </div>
 </footer>
@@ -317,17 +330,22 @@
     // FIX: Desktop dropdown menu toggle with JavaScript
     const servicesToggle = document.getElementById('services-toggle');
     const servicesMenu = document.getElementById('services-menu');
+    const desktopDropdown = document.querySelector('.dropdown');
 
-    servicesToggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      servicesMenu.classList.toggle('hidden');
-    });
+    if (servicesToggle && servicesMenu) {
+      desktopDropdown.addEventListener('click', (event) => {
+        // Prevent the click from propagating to the document body
+        event.stopPropagation();
+        servicesMenu.classList.toggle('hidden');
+      });
 
-    document.addEventListener('click', (event) => {
-      if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
-        servicesMenu.classList.add('hidden');
-      }
-    });
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!servicesMenu.contains(event.target) && !servicesToggle.contains(event.target)) {
+          servicesMenu.classList.add('hidden');
+        }
+      });
+    }
 
     // Contact Form Submission
     const contactForm = document.getElementById('contactForm');
@@ -340,19 +358,19 @@
         const messageDiv = formSubmissionMessage;
 
         messageDiv.classList.remove('hidden');
-        messageDiv.textContent = 'Mesajınız gönderiliyor...';
+        messageDiv.textContent = 'Mesajınız Gönderiliyor...';
         messageDiv.style.backgroundColor = '#59CDD1';
 
         fetch(contactForm.action, {
           method: 'POST',
           body: formData,
-          mode: 'no-cors'
+          mode: 'no-cors' // Required for Google Scripts
         }).then(response => {
           messageDiv.textContent = 'Başarılı! Mesajınız gönderildi.';
           messageDiv.style.backgroundColor = '#4CAF50';
           contactForm.reset();
         }).catch(error => {
-          messageDiv.textContent = 'Hata! Mesaj gönderilemedi.';
+          messageDiv.textContent = 'Hata! Mesajınız gönderilemedi.';
           messageDiv.style.backgroundColor = '#f44336';
         }).finally(() => {
           setTimeout(() => {
@@ -386,7 +404,7 @@
       setTimeout(() => {
         element.classList.add('hero-animate-show');
       }, delay);
-      delay += 200;
+      delay += 200; // Adds a 200ms delay for each element
     });
   });
 </script>

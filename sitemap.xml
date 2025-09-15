@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
+<urlse
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
@@ -12,46 +12,91 @@
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>1.00</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/ana-sayfa</loc>
+    <lastmod>2025-08-11T15:15:32+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/about</loc>
+  <loc>https://artunhealthcare.com/about-us</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/hakk%C4%B1m%C4%B1zda.html</loc>
+    <lastmod>2025-08-11T15:15:32+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/patients</loc>
+  <loc>https://artunhealthcare.com/for-patients</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/hastalar-i%C3%A7in</loc>
+    <lastmod>2025-09-15T15:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/agencies</loc>
+  <loc>https://artunhealthcare.com/for-agencies</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/sa%C4%9Fl%C4%B1k-turizmi-acenteleri-i%C3%A7in.html</loc>
+    <lastmod>2025-09-15T15:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/companies</loc>
+  <loc>https://artunhealthcare.com/for-companies</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/%C5%9Firketler-i%C3%A7in.html</loc>
+    <lastmod>2025-09-15T15:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/contact</loc>
+  <loc>https://artunhealthcare.com/contact-us</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/ileti%C5%9Fime-ge%C3%A7in.html</loc>
+    <lastmod>2025-09-15T15:00:00+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/contact_patient</loc>
+  <loc>https://artunhealthcare.com/contact-for-patients</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/hastalar-i%C3%A7in-ileti%C5%9Fim.html</loc>
+    <lastmod>2025-09-15T15:00:00+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/contact_agency</loc>
+  <loc>https://artunhealthcare.com/contact-for-agencies</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/acenteler-i%C3%A7in-ileti%C5%9Fim.html</loc>
+    <lastmod>2025-09-15T15:00:00+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 <url>
-  <loc>https://artunhealthcare.com/contact_company</loc>
+  <loc>https://artunhealthcare.com/contact-for-companies</loc>
   <lastmod>2025-08-11T15:15:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
+  <url>
+    <loc>https://artunhealthcare.com/%C5%9Firketler-i%C3%A7in-ileti%C5%9Fim.html</loc>
+    <lastmod>2025-09-15T15:00:00+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 
 
-</urlset>
+</urlse>

@@ -46,7 +46,6 @@
       font-family: 'Poppins', sans-serif;
     }
     /* --- Custom Styles --- */
-    /* REMOVED .dropdown:hover .dropdown-menu { display: block; } */
     .glassmorphism {
       background-color: rgb(31 41 55 / 0.7);
       backdrop-filter: blur(8px);
@@ -70,96 +69,74 @@
     }
 
     /* --- intl-tel-input Custom Styles (to match your theme) --- */
-    /* The main input and the dropdown container */
     .iti {
-      width: 100%; /* Important: makes the field take full width inside its container */
+      width: 100%;
     }
-    /* This rule applies your input styling to the native input inside the plugin wrapper */
     .iti input.iti__tel-input {
-      padding: 12px 16px; /* py-3 px-4 */
-      border-radius: 8px; /* rounded-lg */
-      background-color: rgba(89, 205, 209, 0.7); /* bg-[#59CDD1]/70 */
-      border: 1px solid rgba(89, 205, 209, 0.8); /* border-[#59CDD1]/80 */
+      padding: 12px 16px;
+      border-radius: 8px;
+      background-color: rgba(89, 205, 209, 0.7);
+      border: 1px solid rgba(89, 205, 209, 0.8);
       color: white;
       caret-color: white;
       font-size: 1rem;
-      /* Ensure full width inside the parent .iti */
       width: 100% !important;
-      margin-left: 0; /* Override any plugin default margin */
+      margin-left: 0;
     }
-    /* Ensure the full container width is used */
     .iti__tel-input:focus {
-      box-shadow: 0 0 0 2px #fff; /* focus:ring-2 focus:ring-white transition */
+      box-shadow: 0 0 0 2px #fff;
     }
 
     /* 👇 AGGRESSIVE FIX FOR SEARCH INPUT VISIBILITY 👇 */
-
-    /* 1. Force the inner input element to have black text and white background */
-    /* This selector is highly specific and should override all conflicting defaults. */
     .iti__country-list input[type="text"] {
-      /* CRITICAL TEXT AND BACKGROUND COLORS */
       color: #000 !important;
       background-color: #fff !important;
-
-      /* Sizing and appearance cleanup */
       padding: 8px !important;
       margin: 0 !important;
       box-shadow: none !important;
       border: none !important;
       width: 100% !important;
-      height: auto !important; /* Ensure it's not collapsed */
+      height: auto !important;
       line-height: normal !important;
     }
-
-    /* 2. Style the outer search box container (the one with the magnifying glass) */
     .iti__country-list .iti__search-input {
-      background-color: #fff !important; /* Ensure the container color matches */
+      background-color: #fff !important;
       border: 1px solid #ccc !important;
       border-radius: 4px !important;
       margin: 8px !important;
-      padding: 0 !important; /* Padding is now on the inner input */
+      padding: 0 !important;
       width: calc(100% - 16px) !important;
     }
-
-    /* 3. Force placeholder text to be visible */
     .iti__country-list input::placeholder {
       color: #555 !important;
-      opacity: 1 !important; /* Fix for browser opacity issues */
+      opacity: 1 !important;
     }
-
-    /* 4. Optional: Ensure the search input is on top (prevent text hiding behind icons/borders) */
     .iti__country-list input[type="text"]:focus {
       z-index: 61 !important;
     }
-
     /* 👆 END AGGRESSIVE FIX 👆 */
 
-
-    /* Country list/Dropdown container styling */
     .iti__country-list {
-      z-index: 60 !important; /* Ensure dropdown is above other content */
-      background-color: rgb(31 41 55 / 0.9); /* Darker background */
+      z-index: 60 !important;
+      background-color: rgb(31 41 55 / 0.9);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      /* Fix for not being able to scroll */
-      max-height: 200px !important; /* Set a fixed height */
-      overflow-y: auto !important; /* Enable vertical scroll */
+      max-height: 200px !important;
+      overflow-y: auto !important;
     }
-
     .iti__selected-flag {
       background-color: transparent !important;
     }
     .iti__country-list {
-      color: #fff; /* Text color inside the dropdown for countries */
+      color: #fff;
     }
     .iti__highlight {
-      background-color: #59CDD1; /* Highlight selected country */
+      background-color: #59CDD1;
     }
     .iti__country {
       padding-top: 8px;
       padding-bottom: 8px;
     }
-    /* Styling for error state on the input itself (now only used for empty check) */
     .iti.error .iti__tel-input {
       border-color: #f44336 !important;
       box-shadow: 0 0 0 2px #f44336 !important;
@@ -213,6 +190,25 @@
     }
 
     /* === FLOATING CONTACT BUTTONS STYLES === */
+    /* NOTE: Tailwind classes for position (fixed, right-4, bottom-6) are removed
+       from the HTML and are now managed by JS and custom CSS below. */
+    .floating-btn-container {
+      position: fixed; /* Default state: fixed */
+      bottom: 24px;    /* Equivalent to Tailwind bottom-6 */
+      right: 16px;     /* Equivalent to Tailwind right-4 */
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px; /* Equivalent to Tailwind space-y-3 */
+    }
+    /* Media queries for larger screens (md:right-8, md:bottom-8) */
+    @media (min-width: 768px) {
+      .floating-btn-container {
+        right: 32px; /* Equivalent to Tailwind md:right-8 (32px) */
+        bottom: 32px; /* Equivalent to Tailwind md:bottom-8 (32px) */
+      }
+    }
+
     .floating-btn {
       width: 56px;
       height: 56px;
@@ -233,7 +229,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      border: 3px solid rgba(76, 175, 80, 0.8); /* Slightly darker green for border */
+      border: 3px solid rgba(76, 175, 80, 0.8);
       border-radius: 50%;
       animation: pulsate-whatsapp 2s ease-out infinite;
     }
@@ -469,7 +465,7 @@
 
 </main>
 
-<footer class="bg-gray-900 text-white pt-8">
+<footer id="page-footer" class="bg-gray-900 text-white pt-8">
   <div class="container mx-auto px-4">
     <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
@@ -494,17 +490,17 @@
   </div>
 </footer>
 
-<div class="fixed bottom-6 right-4 z-50 flex flex-col space-y-3 md:right-8 md:bottom-8">
+<div id="floating-buttons-container" class="floating-btn-container animate-on-scroll-right">
 
-  <a href="https://wa.me/905325673291" target="_blank" class="floating-btn bg-green-500 text-white shadow-xl hover:bg-green-600 transition duration-300 transform hover:scale-110 pulse-whatsapp" aria-label="Contact via WhatsApp">
+  <a href="https://wa.me/905325673291" target="_blank" class="floating-btn bg-green-500/70 text-white shadow-xl hover:bg-green-600 transition duration-300 transform hover:scale-110 pulse-whatsapp" aria-label="Contact via WhatsApp">
     <i class="fab fa-whatsapp text-2xl"></i>
   </a>
 
-  <a href="tel:+905325673291" class="floating-btn bg-blue-500 text-white shadow-xl hover:bg-blue-600 transition duration-300 transform hover:scale-110 pulse-phone" aria-label="Call us by Phone">
+  <a href="tel:+905325673291" class="floating-btn bg-blue-500/70 text-white shadow-xl hover:bg-blue-600 transition duration-300 transform hover:scale-110 pulse-phone" aria-label="Call us by Phone">
     <i class="fas fa-phone-alt text-xl"></i>
   </a>
 
-  <a href="mailto:artunhcc@gmail.com" class="floating-btn bg-orange-500 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
+  <a href="mailto:artunhcc@gmail.com" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
     <i class="fas fa-envelope text-xl"></i>
   </a>
 </div>
@@ -513,23 +509,22 @@
 <script>
   // Global variable for the phone input instance
   let phoneInputInstance = null;
+  const DEFAULT_BOTTOM_SPACING_PX = 24; // Equivalent to Tailwind 'bottom-6'
 
   document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle logic
+    // --- Menu Toggle Logic ---
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Mobile services dropdown toggle logic
     const mobileServicesToggle = document.getElementById('mobile-services-toggle');
     const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
     mobileServicesToggle.addEventListener('click', () => {
       mobileServicesDropdown.classList.toggle('hidden');
     });
 
-    // Desktop dropdown menu toggle logic
     const servicesToggle = document.getElementById('services-toggle');
     const servicesMenu = document.getElementById('services-menu');
     const desktopDropdown = document.querySelector('.dropdown');
@@ -539,7 +534,6 @@
       servicesMenu.classList.toggle('hidden');
     });
 
-    // Close dropdowns when clicking outside logic
     document.addEventListener('click', (event) => {
       if (!servicesMenu.contains(event.target) && !servicesToggle.contains(event.target)) {
         servicesMenu.classList.add('hidden');
@@ -548,28 +542,24 @@
         mobileMenu.classList.add('hidden');
       }
     });
+    // --- End Menu Toggle Logic ---
 
-    // === intl-tel-input Initialization (All Countries, No Preferred) ===
+    // === intl-tel-input Initialization ===
     const phoneInputField = document.querySelector("#phone");
     const phoneErrorMsg = document.querySelector("#phone-error-msg");
-    const fullPhoneNumberInput = document.querySelector("#full_phone_number");
 
-    // Initialize the plugin
     phoneInputInstance = window.intlTelInput(phoneInputField, {
       initialCountry: "auto",
       geoIpLookup: function(callback) {
         fetch("https://ipapi.co/json")
           .then(res => res.json())
-          // Default to Turkey if lookup fails
           .then(data => callback(data.country_code || "tr"))
           .catch(() => callback("tr"));
       },
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.1/build/js/utils.js",
       separateDialCode: true,
-      // No 'onlyCountries' or 'preferredCountries' specified here to include all countries.
     });
 
-    // Function to clear any residual error styling
     const resetValidation = () => {
       phoneInputField.closest('.iti').classList.remove("error");
       phoneErrorMsg.style.display = "none";
@@ -578,11 +568,10 @@
 
     phoneInputField.addEventListener('change', resetValidation);
     phoneInputField.addEventListener('keyup', resetValidation);
-
     // ==========================================
 
 
-    // Contact Form Submission
+    // --- Contact Form Submission ---
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
 
@@ -590,16 +579,12 @@
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         const messageDiv = formSubmissionMessage;
-
-        // Manually combine country dial code + input value
         const countryData = phoneInputInstance.getSelectedCountryData();
         const fullNumber = `+${countryData.dialCode}${phoneInputField.value.trim()}`;
 
-        // Build form data
         const formData = new FormData(contactForm);
         formData.set('phone', fullNumber);
 
-        // Show sending message
         messageDiv.classList.remove('hidden');
         messageDiv.textContent = 'Sending your message...';
         messageDiv.style.backgroundColor = '#59CDD1';
@@ -613,7 +598,6 @@
           messageDiv.style.backgroundColor = '#4CAF50';
           contactForm.reset();
 
-          // Reset phone input state
           if (phoneInputInstance) {
             phoneInputInstance.setNumber("");
             phoneInputInstance.setCountry("tr");
@@ -627,10 +611,11 @@
           }, 5000);
         });
       });
-
     }
+    // --- End Contact Form Submission ---
 
-    // SCROLL ANIMATION JAVASCRIPT logic...
+
+    // --- SCROLL ANIMATION JAVASCRIPT logic ---
     const animateElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -646,7 +631,6 @@
       observer.observe(element);
     });
 
-    // ON-LOAD HERO SECTION ANIMATION JAVASCRIPT logic...
     const heroElements = document.querySelectorAll('.hero-animate-up');
     let delay = 0;
     heroElements.forEach(element => {
@@ -655,6 +639,74 @@
       }, delay);
       delay += 200;
     });
+    // --- End Scroll Animation Logic ---
+
+
+    // =========================================================================
+    // ✨ CORRECTED FLOATING BUTTONS & FOOTER DOCKING LOGIC ✨
+    // =========================================================================
+
+    const buttonContainer = document.getElementById('floating-buttons-container');
+    const footer = document.getElementById('page-footer');
+
+    // Get the default bottom spacing based on screen size (24px or 32px)
+    const getDefaultBottomSpacing = () => {
+      // Use a hidden temporary div to check the actual value of a Tailwind class (e.g., md:bottom-8)
+      if (window.innerWidth >= 768) {
+        return 32; // md:bottom-8 is 2rem (32px)
+      }
+      return DEFAULT_BOTTOM_SPACING_PX; // bottom-6 is 1.5rem (24px)
+    };
+
+    // We will update the default spacing on resize for responsiveness
+    window.addEventListener('resize', () => {
+      // Force a reposition if the fixed spacing changes on resize (e.g., crossing 768px breakpoint)
+      if (footer && buttonContainer && footer.getBoundingClientRect().top < window.innerHeight) {
+        // Only recalculate if the footer is currently visible
+        updateButtonPosition();
+      }
+    });
+
+    const updateButtonPosition = () => {
+      if (!buttonContainer || !footer) return;
+
+      const footerTopRelativeToViewport = footer.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+      const currentFixedBottom = getDefaultBottomSpacing(); // Get 24px or 32px
+
+      // If the footer is visible and its top edge is within the viewport
+      if (footerTopRelativeToViewport < viewportHeight) {
+
+        // Get the button container's height (includes internal padding/margins)
+        const buttonsHeight = buttonContainer.offsetHeight;
+
+        // Get the footer's distance from the top of the entire *document*
+        const footerTopRelativeToDocument = footer.offsetTop;
+
+        // Calculate the absolute 'top' position for the buttons to sit above the footer
+        // Position = (Footer Top) - (Buttons Height) - (Desired Gap)
+        const finalAbsoluteTopPosition = footerTopRelativeToDocument - buttonsHeight - currentFixedBottom;
+
+        // Apply absolute positioning and the calculated top value
+        buttonContainer.style.position = 'absolute';
+        buttonContainer.style.top = `${finalAbsoluteTopPosition}px`;
+        buttonContainer.style.bottom = 'auto'; // Clear bottom for absolute mode
+
+      } else {
+        // Reset to fixed position (when scrolling up or at the top of the page)
+        buttonContainer.style.position = 'fixed';
+        buttonContainer.style.top = 'auto'; // Clear absolute top
+        // Set the responsive fixed position based on screen size
+        buttonContainer.style.bottom = `${getDefaultBottomSpacing()}px`;
+      }
+    };
+
+    // Attach the update function to the scroll event
+    window.addEventListener('scroll', updateButtonPosition);
+    // Run once on load to set initial position
+    updateButtonPosition();
+
+    // =========================================================================
   });
 </script>
 

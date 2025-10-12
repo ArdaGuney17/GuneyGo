@@ -211,9 +211,68 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* === FLOATING CONTACT BUTTONS STYLES === */
+    .floating-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* WhatsApp Pulse Animation (Outer Ring) */
+    .pulse-whatsapp {
+      position: relative;
+    }
+    .pulse-whatsapp::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 3px solid rgba(76, 175, 80, 0.8); /* Slightly darker green for border */
+      border-radius: 50%;
+      animation: pulsate-whatsapp 2s ease-out infinite;
+    }
+    @keyframes pulsate-whatsapp {
+      0% {
+        transform: scale(0.6);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Phone/Call Ring Animation (Shaking) */
+    .pulse-phone {
+      animation: phone-ring 1s ease-in-out infinite alternate;
+    }
+    @keyframes phone-ring {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      100% {
+        transform: rotate(10deg) scale(1.05);
+      }
+    }
+
+    /* Email Wiggle Animation (Subtle movement) */
+    .pulse-mail {
+      animation: mail-wiggle 4s ease-in-out infinite;
+    }
+    @keyframes mail-wiggle {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.05) rotate(2deg); }
+      50% { transform: scale(1.05) rotate(-2deg); }
+      75% { transform: scale(1.05) rotate(2deg); }
+    }
   </style>
 
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8JV8K0B72">
   </script>
   <script>
@@ -435,6 +494,20 @@
   </div>
 </footer>
 
+<div class="fixed bottom-6 right-4 z-50 flex flex-col space-y-3 md:right-8 md:bottom-8">
+
+  <a href="https://wa.me/905325673291" target="_blank" class="floating-btn bg-green-500 text-white shadow-xl hover:bg-green-600 transition duration-300 transform hover:scale-110 pulse-whatsapp" aria-label="WhatsApp ile iletişime geçin">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <a href="tel:+905325673291" class="floating-btn bg-blue-500 text-white shadow-xl hover:bg-blue-600 transition duration-300 transform hover:scale-110 pulse-phone" aria-label="Telefonla arayın">
+    <i class="fas fa-phone-alt text-xl"></i>
+  </a>
+
+  <a href="mailto:artunhcc@gmail.com" class="floating-btn bg-orange-500 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="E-posta gönderin">
+    <i class="fas fa-envelope text-xl"></i>
+  </a>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.1/build/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.1/build/js/utils.js"></script>
 <script>

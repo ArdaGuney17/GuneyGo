@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <meta name="theme-color" content="#59CDD1">
@@ -11,40 +12,59 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    html, body {
+    html,
+    body {
       width: 100%;
       overflow-x: hidden;
     }
-    *, *::before, *::after {
+
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
     }
+
     .dropdown .dropdown-menu {
       /* The `hidden` Tailwind class will handle hiding/showing */
     }
+
     .glassmorphism {
       background-color: rgb(31 41 55 / 0.7);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgb(75 85 99 / 0.5);
     }
+
     .hero-section {
       background-image: url('bosphorus.png');
       background-size: cover;
       background-position: center;
     }
+
     .hero-overlay {
       background-color: rgba(0, 0, 0, 0.5);
     }
+
     .pulse-animation {
       animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     }
+
     @keyframes pulse-border {
-      0%, 100% { border-color: rgba(255, 255, 255, 0.2); }
-      50% { border-color: rgba(255, 255, 255, 0.7); }
+
+      0%,
+      100% {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      50% {
+        border-color: rgba(255, 255, 255, 0.7);
+      }
     }
+
     /* Kaydırma animasyonları */
     .animate-on-scroll {
       opacity: 0;
@@ -52,33 +72,39 @@
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .animate-on-scroll.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .animate-on-scroll-left {
       opacity: 0;
       transform: translateX(-50px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .animate-on-scroll-right {
       opacity: 0;
       transform: translateX(50px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .animate-on-scroll-left.is-visible,
     .animate-on-scroll-right.is-visible {
       opacity: 1;
       transform: translateX(0);
     }
+
     .hero-animate-up {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
       will-change: opacity, transform;
     }
+
     .hero-animate-up.hero-animate-show {
       opacity: 1;
       transform: translateY(0);
@@ -90,245 +116,306 @@
   </script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-T8JV8K0B72');
   </script>
 
 </head>
+
 <body class="bg-gray-50 text-gray-800">
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
-  <div class="container mx-auto px-4 flex justify-between items-center">
-    <a href="ana-sayfa.html">
-      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-8">
-    </a>
-    <nav class="hidden md:flex items-center space-x-6">
-      <a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition-colors duration-300">Ana Sayfa</a>
-      <a href="hakkımızda.html" class="text-gray-300 hover:text-white transition-colors duration-300">Hakkımızda</a>
-      <div class="dropdown relative">
-        <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="ana-sayfa.html">
+        <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-8">
+      </a>
+      <nav class="hidden md:flex items-center space-x-6">
+        <a href="ana-sayfa.html" class="text-gray-300 hover:text-white transition-colors duration-300">Ana Sayfa</a>
+        <a href="hakkımızda.html" class="text-gray-300 hover:text-white transition-colors duration-300">Hakkımızda</a>
+        <div class="dropdown relative">
+          <button id="services-toggle"
+            class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
+            Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
+          </button>
+          <div id="services-menu"
+            class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+            <a href="hastalar-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Hastalar
+              İçin</a>
+            <a href="sağlık-turizmi-acenteleri-için.html"
+              class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
+            <a href="şirketler-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Şirketler
+              İçin</a>
+          </div>
+        </div>
+        <a href="iletişime-geçin.html"
+          class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">İletişime
+          Geçin</a>
+        <div class="lang-switcher text-gray-300 font-semibold space-x-2">
+          <a href="about-us.html">ENG</a>
+          <span>/</span>
+          <a href="hakkımızda.html" class="text-[#59CDD1]">TR</a>
+        </div>
+      </nav>
+      <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
+    <div class="flex flex-col space-y-2">
+      <a href="ana-sayfa.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Ana Sayfa</a>
+      <a href="hakkımızda.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hakkımızda</a>
+      <div>
+        <button id="mobile-services-toggle"
+          class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
           Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
-          <a href="hastalar-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
-          <a href="sağlık-turizmi-acenteleri-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
-          <a href="şirketler-için.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+        <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
+          <a href="hastalar-için.html"
+            class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hastalar
+            İçin</a>
+          <a href="sağlık-turizmi-acenteleri-için.html"
+            class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Medikal
+            Turizm Acenteleri İçin</a>
+          <a href="şirketler-için.html"
+            class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Şirketler
+            İçin</a>
         </div>
       </div>
-      <a href="iletişime-geçin.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">İletişime Geçin</a>
-      <div class="lang-switcher text-gray-300 font-semibold space-x-2">
-        <a href="about-us.html">ENG</a>
+      <a href="iletişime-geçin.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">İletişime
+        Geçin</a>
+      <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
+        <a href="about-us.html" class="text-gray-300 hover:text-white">ENG</a>
         <span>/</span>
         <a href="hakkımızda.html" class="text-[#59CDD1]">TR</a>
       </div>
-    </nav>
-    <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
+    </div>
+  </nav>
 
-<nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
-  <div class="flex flex-col space-y-2">
-    <a href="ana-sayfa.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Ana Sayfa</a>
-    <a href="hakkımızda.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hakkımızda</a>
-    <div>
-      <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
-        Hizmetlerimiz <i class="fas fa-chevron-down ml-1 text-xs"></i>
-      </button>
-      <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
-        <a href="hastalar-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Hastalar İçin</a>
-        <a href="sağlık-turizmi-acenteleri-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Medikal Turizm Acenteleri İçin</a>
-        <a href="şirketler-için.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Şirketler İçin</a>
+  <main class="pt-16">
+    <section id="intro-text" class="section py-16 bg-white animate-on-scroll">
+      <div class="section-container container mx-auto px-4 max-w-4xl text-center">
+        <h2 class="section-title text-3xl font-bold text-gray-900 mb-8">Misyonumuz ve Uzmanlığımız</h2>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+          Ulusal ve uluslararası düzeyde <strong>Türkiye'de sağlık turizmi</strong>, <strong>sağlık yatırım
+            danışmanlığı</strong>, <strong>hastane yönetimi</strong> ve <strong>geri ödeme sistemleri</strong> konusunda
+          uzmanlıkla <strong>danışmanlık hizmeti vermekteyiz</strong>.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+          Misyonumuz, hem bireysel hastalara hem de sağlık kuruluşları ve yatırımıcılara <strong>stratejik
+            rehberlik</strong> sağlayarak, <strong>en yüksek kalitede</strong>, <strong>en uygun maliyetle</strong>
+          hizmetlere ve hedeflerine ulaşmalarına yardımcı olmaktır.
+        </p>
+        <p class="text-lg text-gray-700 leading-relaxed text-justify">
+          Uzmanlığımız, <strong>Türk sağlık sektörü</strong>, <strong>uluslararası hasta hizmetleri</strong> ve
+          <strong>kamu-özel sağlık işbirliği modelleri</strong> alanındaki güçlü bir temel üzerine inşa edilmiştir.
+        </p>
       </div>
-    </div>
-    <a href="iletişime-geçin.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">İletişime Geçin</a>
-    <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
-      <a href="about-us.html" class="text-gray-300 hover:text-white">ENG</a>
-      <span>/</span>
-      <a href="hakkımızda.html" class="text-[#59CDD1]">TR</a>
-    </div>
-  </div>
-</nav>
+    </section>
 
-<main class="pt-16">
-  <section id="intro-text" class="section py-16 bg-white animate-on-scroll">
-    <div class="section-container container mx-auto px-4 max-w-4xl text-center">
-      <h2 class="section-title text-3xl font-bold text-gray-900 mb-8">Misyonumuz ve Uzmanlığımız</h2>
-      <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
-        Ulusal ve uluslararası düzeyde <strong>Türkiye'de sağlık turizmi</strong>, <strong>sağlık yatırım danışmanlığı</strong>, <strong>hastane yönetimi</strong> ve <strong>geri ödeme sistemleri</strong> konusunda uzmanlıkla <strong>danışmanlık hizmeti vermekteyiz</strong>.
-      </p>
-      <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
-        Misyonumuz, hem bireysel hastalara hem de sağlık kuruluşları ve yatırımıcılara <strong>stratejik rehberlik</strong> sağlayarak, <strong>en yüksek kalitede</strong>, <strong>en uygun maliyetle</strong> hizmetlere ve hedeflerine ulaşmalarına yardımcı olmaktır.
-      </p>
-      <p class="text-lg text-gray-700 leading-relaxed text-justify">
-        Uzmanlığımız, <strong>Türk sağlık sektörü</strong>, <strong>uluslararası hasta hizmetleri</strong> ve <strong>kamu-özel sağlık işbirliği modelleri</strong> alanındaki güçlü bir temel üzerine inşa edilmiştir.
-      </p>
-    </div>
-  </section>
-
-  <section id="contact-cta" class="section py-16 bg-[#59CDD1] text-white text-center animate-on-scroll">
-    <div class="section-container container mx-auto px-4 max-w-3xl">
-      <h2 class="text-4xl font-bold mb-4 animate-on-scroll-left">İletişime Geçin</h2>
-      <p class="text-xl leading-relaxed mb-8 animate-on-scroll-left">
-        Sorularınız mı var veya sağlık ihtiyaçlarınızı ya da işbirliği fırsatlarını görüşmeye hazır mısınız? Biz, kişiselleştirilmiş destek ve uzman rehberlik sağlamak için buradayız.
-      </p>
-      <a href="iletişime-geçin.html" class="bg-white text-[#59CDD1] px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-lg shadow-lg animate-on-scroll-right">Şimdi İletişime Geçin</a>
-    </div>
-  </section>
-
-  <section id="about-founder" class="section py-16 bg-gray-100 animate-on-scroll">
-    <div class="section-container container mx-auto px-4 max-w-5xl text-center">
-      <h2 class="section-title text-3xl font-bold text-gray-900 mb-8">Kurucumuz ile Tanışın</h2>
-
-      <div class="flex justify-center mb-8">
-        <img src="founder.jpg" alt="Tahsin Güney" class="rounded-full shadow-lg w-48 h-48 md:w-64 md:h-64 object-cover">
+    <section id="contact-cta" class="section py-16 bg-[#59CDD1] text-white text-center animate-on-scroll">
+      <div class="section-container container mx-auto px-4 max-w-3xl">
+        <h2 class="text-4xl font-bold mb-4 animate-on-scroll-left">İletişime Geçin</h2>
+        <p class="text-xl leading-relaxed mb-8 animate-on-scroll-left">
+          Sorularınız mı var veya sağlık ihtiyaçlarınızı ya da işbirliği fırsatlarını görüşmeye hazır mısınız? Biz,
+          kişiselleştirilmiş destek ve uzman rehberlik sağlamak için buradayız.
+        </p>
+        <a href="iletişime-geçin.html"
+          class="bg-white text-[#59CDD1] px-8 py-4 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-lg shadow-lg animate-on-scroll-right">Şimdi
+          İletişime Geçin</a>
       </div>
+    </section>
 
-      <div class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-        <h3 class="text-2xl font-semibold text-gray-900 mb-4">Tahsin Güney</h3>
-        <p class="mb-4 text-justify">
-          Tahsin Güney, genel sağlık sigortası, sosyal güvenlik sistemleri, özel sağlık yönetimi ve hastane operasyonları alanında 35 yılı aşkın tecrübeye sahip <strong>kıdemli bir sağlık yöneticisidir</strong>. Türkiye'nin özel sağlık sektöründe <strong>tanınmış bir figür</strong> olup, sağlık yatırım danışmanlığı, sağlık turizmi stratejisi ve kamu-özel sağlık entegrasyonu konularında kapsamlı deneyime sahiptir.
-        </p>
-        <p class="mb-4 text-justify">
-          <strong>Sosyal Güvenlik Kurumu'nda (SGK)</strong> <strong>Başkan Yardımcılığı</strong> ve bir süre <strong>Vekil Başkan ve Yönetim Kurulu Başkanı</strong> olarak görev yapmış, emeklilik modellemesi, sağlık sigortası sistemleri ve sağlık geri ödeme yapılarındaki <strong>önemli reformlarda</strong> kilit rol oynamıştır.
-        </p>
-        <p class="mb-4 text-justify">
-          Özel sektörde ise Türkiye'nin önde gelen özel hastane zincirlerinden <strong>Acıbadem Sağlık Grubu'nda</strong> üst düzey yöneticilik görevlerinde bulunmuştur. <strong>CEO</strong> olarak <strong>yurtiçi ve yurtdışı hastane operasyonlarını</strong> yönetmiş, <strong>stratejik büyümeye</strong> katılmış ve <strong>kamu sektörü ile ilişkileri</strong> yürütmüştür.
-        </p>
-        <div class="our-support-section mt-16 bg-white p-8 rounded-lg shadow-inner">
-          <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center flex items-center justify-center">
-            Profesyonel uzmanlık alanları:
-          </h3>
-          <ul class="list-none space-y-2 text-left mx-auto max-w-prose">
-            <li class="flex items-start animate-on-scroll-left"><i class="fas fa-coins text-[#59CDD1] mr-2 mt-1"></i><strong>Sağlık finansmanı ve yatırım danışmanlığı</strong></li>
-            <li class="flex items-start animate-on-scroll-left"><i class="fas fa-hospital-user text-[#59CDD1] mr-2 mt-1"></i><strong>Hastane yönetimi ve operasyonel verimlilik</strong></li>
-            <li class="flex items-start animate-on-scroll-left"><i class="fas fa-user-tie text-[#59CDD1] mr-2 mt-1"></i><strong>Hekim ücretlendirme modelleri</strong></li>
-            <li class="flex items-start animate-on-scroll-left"><i class="fas fa-file-contract text-[#59CDD1] mr-2 mt-1"></i><strong>Sağlık politikası ve sosyal güvenlik reformu</strong></li>
-            <li class="flex items-start animate-on-scroll-left"><i class="fas fa-link text-[#59CDD1] mr-2 mt-1"></i><strong>Kamu ve özel sağlık sistemlerinin entegrasyonu</strong></li>
-            <li class="flex items-start animate-on-scroll-left"><i class="fas fa-file-contract text-[#59CDD1] mr-2 mt-1"></i><strong>Özel sağlık sigortası şirketleriyle sözleşme yönetimi</strong></li>
-            <li class="flex items-start animate-on-scroll-left"><i class="fas fa-globe-americas text-[#59CDD1] mr-2 mt-1"></i><strong>Sağlık turizmi projesi geliştirme</strong></li>
-          </ul>
+    <section id="about-founder" class="section py-16 bg-gray-100 animate-on-scroll">
+      <div class="section-container container mx-auto px-4 max-w-5xl text-center">
+        <h2 class="section-title text-3xl font-bold text-gray-900 mb-8">Kurucumuz ile Tanışın</h2>
+
+        <div class="flex justify-center mb-8">
+          <img src="tahsinguney_new.jpg" alt="Tahsin Güney"
+            class="rounded-full shadow-lg w-48 h-48 md:w-64 md:h-64 object-cover">
         </div>
-        <p class="mt-6 mb-4 text-justify">
-          Tahsin Güney, lisans eğitimini <strong>Orta Doğu Teknik Üniversitesi</strong> (Ankara, Türkiye) Kamu Yönetimi ve Siyaset Bilimi bölümünde, yüksek lisansını ise <strong>City University of London</strong>'da Aktüerya Bilimi ve İstatistik alanında tamamladı. <strong>Sosyal Güvenlik Kurumu'nda</strong> 20 yıl, <strong>Acıbadem Sağlık Grubu'nda</strong> ise 16 yıl görev yapmıştır.
-        </p>
-        <p class="font-semibold text-justify">
-          Halen, özel sağlık sigortası şirketleri, hastaneler, sağlık yatırımcıları ve Türkiye ile yakın bölgelerin sağlık pazarlarına girmek veya bu pazarlarda büyümek isteyen uluslararası acentelere <strong>danışmanlık hizmetleri</strong> vermektedir.
-        </p>
+
+        <div class="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+          <h3 class="text-2xl font-semibold text-gray-900 mb-4">Tahsin Güney</h3>
+          <p class="mb-4 text-justify">
+            Tahsin Güney, genel sağlık sigortası, sosyal güvenlik sistemleri, özel sağlık yönetimi ve hastane
+            operasyonları alanında 35 yılı aşkın tecrübeye sahip <strong>kıdemli bir sağlık yöneticisidir</strong>.
+            Türkiye'nin özel sağlık sektöründe <strong>tanınmış bir figür</strong> olup, sağlık yatırım danışmanlığı,
+            sağlık turizmi stratejisi ve kamu-özel sağlık entegrasyonu konularında kapsamlı deneyime sahiptir.
+          </p>
+          <p class="mb-4 text-justify">
+            <strong>Sosyal Güvenlik Kurumu'nda (SGK)</strong> <strong>Başkan Yardımcılığı</strong> ve bir süre
+            <strong>Vekil Başkan ve Yönetim Kurulu Başkanı</strong> olarak görev yapmış, emeklilik modellemesi, sağlık
+            sigortası sistemleri ve sağlık geri ödeme yapılarındaki <strong>önemli reformlarda</strong> kilit rol
+            oynamıştır.
+          </p>
+          <p class="mb-4 text-justify">
+            Özel sektörde ise Türkiye'nin önde gelen özel hastane zincirlerinden <strong>Acıbadem Sağlık
+              Grubu'nda</strong> üst düzey yöneticilik görevlerinde bulunmuştur. <strong>CEO</strong> olarak
+            <strong>yurtiçi ve yurtdışı hastane operasyonlarını</strong> yönetmiş, <strong>stratejik büyümeye</strong>
+            katılmış ve <strong>kamu sektörü ile ilişkileri</strong> yürütmüştür.
+          </p>
+          <div class="our-support-section mt-16 bg-white p-8 rounded-lg shadow-inner">
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6 text-center flex items-center justify-center">
+              Profesyonel uzmanlık alanları:
+            </h3>
+            <ul class="list-none space-y-2 text-left mx-auto max-w-prose">
+              <li class="flex items-start animate-on-scroll-left"><i
+                  class="fas fa-coins text-[#59CDD1] mr-2 mt-1"></i><strong>Sağlık finansmanı ve yatırım
+                  danışmanlığı</strong></li>
+              <li class="flex items-start animate-on-scroll-left"><i
+                  class="fas fa-hospital-user text-[#59CDD1] mr-2 mt-1"></i><strong>Hastane yönetimi ve operasyonel
+                  verimlilik</strong></li>
+              <li class="flex items-start animate-on-scroll-left"><i
+                  class="fas fa-user-tie text-[#59CDD1] mr-2 mt-1"></i><strong>Hekim ücretlendirme modelleri</strong>
+              </li>
+              <li class="flex items-start animate-on-scroll-left"><i
+                  class="fas fa-file-contract text-[#59CDD1] mr-2 mt-1"></i><strong>Sağlık politikası ve sosyal güvenlik
+                  reformu</strong></li>
+              <li class="flex items-start animate-on-scroll-left"><i
+                  class="fas fa-link text-[#59CDD1] mr-2 mt-1"></i><strong>Kamu ve özel sağlık sistemlerinin
+                  entegrasyonu</strong></li>
+              <li class="flex items-start animate-on-scroll-left"><i
+                  class="fas fa-file-contract text-[#59CDD1] mr-2 mt-1"></i><strong>Özel sağlık sigortası şirketleriyle
+                  sözleşme yönetimi</strong></li>
+              <li class="flex items-start animate-on-scroll-left"><i
+                  class="fas fa-globe-americas text-[#59CDD1] mr-2 mt-1"></i><strong>Sağlık turizmi projesi
+                  geliştirme</strong></li>
+            </ul>
+          </div>
+          <p class="mt-6 mb-4 text-justify">
+            Tahsin Güney, lisans eğitimini <strong>Orta Doğu Teknik Üniversitesi</strong> (Ankara, Türkiye) Kamu
+            Yönetimi ve Siyaset Bilimi bölümünde, yüksek lisansını ise <strong>City University of London</strong>'da
+            Aktüerya Bilimi ve İstatistik alanında tamamladı. <strong>Sosyal Güvenlik Kurumu'nda</strong> 20 yıl,
+            <strong>Acıbadem Sağlık Grubu'nda</strong> ise 16 yıl görev yapmıştır.
+          </p>
+          <p class="font-semibold text-justify">
+            Halen, özel sağlık sigortası şirketleri, hastaneler, sağlık yatırımcıları ve Türkiye ile yakın bölgelerin
+            sağlık pazarlarına girmek veya bu pazarlarda büyümek isteyen uluslararası acentelere <strong>danışmanlık
+              hizmetleri</strong> vermektedir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="core-principles" class="section py-16 bg-white animate-on-scroll">
+      <div class="section-container container mx-auto px-4 max-w-4xl">
+        <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-12">Temel İlkelerimiz</h2>
+        <ol class="list-none space-y-8 text-lg text-gray-700">
+          <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-left">
+            <i class="fas fa-lightbulb text-[#59CDD1] text-3xl mr-4 mt-1"></i>
+            <div>
+              <strong class="block text-xl text-gray-900 mb-2">1. Bilgi ve Deneyimi Akıllıca Uygulamak</strong>
+              Müşterilerimizin <strong>en doğru kararları</strong> vermesine yardımcı olmak için <strong>kapsamlı
+                uzmanlığımızı ve sektör bilgimizi</strong> kullanırız, bunu her zaman <strong>stratejik ve etik bir
+                yaklaşımla</strong> yaparız.
+            </div>
+          </li>
+          <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-right">
+            <i class="fas fa-handshake text-[#59CDD1] text-3xl mr-4 mt-1"></i>
+            <div>
+              <strong class="block text-xl text-gray-900 mb-2">2. Güvenilirlik</strong>
+              “Kendin için istediğini başkaları için de iste” ilkesiyle hareket ederek, hem ortak kurumlarımıza hem de
+              hastalarımıza <strong>şeffaf, dürüst ve güvenilir hizmetler</strong> sunarız.
+            </div>
+          </li>
+          <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-left">
+            <i class="fas fa-eye text-[#59CDD1] text-3xl mr-4 mt-1"></i>
+            <div>
+              <strong class="block text-xl text-gray-900 mb-2">3. Öngörü</strong>
+              Sağlık trendlerini ve sektör dinamiklerini yakından takip ederek, <strong>bilgi ve deneyime dayalı
+                stratejik öngörüler</strong> sunar, böylece müşterilerimizin <strong>geleceğe güvenle
+                hazırlanmasını</strong> sağlarız.
+            </div>
+          </li>
+          <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-right">
+            <i class="fas fa-medal text-[#59CDD1] text-3xl mr-4 mt-1"></i>
+            <div>
+              <strong class="block text-xl text-gray-900 mb-2">4. Kalite</strong>
+              Doğru tesislerle çalışarak ve verimli süreç yönetimiyle, müşterilerimizin <strong>en yüksek kalitede
+                hizmeti</strong> <strong>uygun fiyatlarla</strong> almasını sağlarız.
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-white pt-8">
+    <div class="container mx-auto px-4">
+      <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
+          <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">Bize Ulaşın</h3>
+          <a href="mailto:artunhcc@gmail.com"
+            class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
+            <i class="fas fa-envelope text-xl"></i><span class="font-semibold">Email</span>
+          </a>
+        </div>
+      </div>
+      <div class="border-b border-gray-700 pb-8 mb-6 flex justify-center items-center">
+        <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-10">
+      </div>
+      <div class="text-center text-gray-500 text-sm py-4">
+        <p>&copy; 2025 Artun Sağlık Hizmetleri Danışmanlığı. Tüm hakları saklıdır.</p>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <section id="core-principles" class="section py-16 bg-white animate-on-scroll">
-    <div class="section-container container mx-auto px-4 max-w-4xl">
-      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-12">Temel İlkelerimiz</h2>
-      <ol class="list-none space-y-8 text-lg text-gray-700">
-        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-left">
-          <i class="fas fa-lightbulb text-[#59CDD1] text-3xl mr-4 mt-1"></i>
-          <div>
-            <strong class="block text-xl text-gray-900 mb-2">1. Bilgi ve Deneyimi Akıllıca Uygulamak</strong>
-            Müşterilerimizin <strong>en doğru kararları</strong> vermesine yardımcı olmak için <strong>kapsamlı uzmanlığımızı ve sektör bilgimizi</strong> kullanırız, bunu her zaman <strong>stratejik ve etik bir yaklaşımla</strong> yaparız.
-          </div>
-        </li>
-        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-right">
-          <i class="fas fa-handshake text-[#59CDD1] text-3xl mr-4 mt-1"></i>
-          <div>
-            <strong class="block text-xl text-gray-900 mb-2">2. Güvenilirlik</strong>
-            “Kendin için istediğini başkaları için de iste” ilkesiyle hareket ederek, hem ortak kurumlarımıza hem de hastalarımıza <strong>şeffaf, dürüst ve güvenilir hizmetler</strong> sunarız.
-          </div>
-        </li>
-        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-left">
-          <i class="fas fa-eye text-[#59CDD1] text-3xl mr-4 mt-1"></i>
-          <div>
-            <strong class="block text-xl text-gray-900 mb-2">3. Öngörü</strong>
-            Sağlık trendlerini ve sektör dinamiklerini yakından takip ederek, <strong>bilgi ve deneyime dayalı stratejik öngörüler</strong> sunar, böylece müşterilerimizin <strong>geleceğe güvenle hazırlanmasını</strong> sağlarız.
-          </div>
-        </li>
-        <li class="flex items-start bg-gray-50 p-6 rounded-lg shadow-sm animate-on-scroll-right">
-          <i class="fas fa-medal text-[#59CDD1] text-3xl mr-4 mt-1"></i>
-          <div>
-            <strong class="block text-xl text-gray-900 mb-2">4. Kalite</strong>
-            Doğru tesislerle çalışarak ve verimli süreç yönetimiyle, müşterilerimizin <strong>en yüksek kalitede hizmeti</strong> <strong>uygun fiyatlarla</strong> almasını sağlarız.
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-</main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobil menü geçişi
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
 
-<footer class="bg-gray-900 text-white pt-8">
-  <div class="container mx-auto px-4">
-    <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
-        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">Bize Ulaşın</h3>
-        <a href="mailto:artunhcc@gmail.com" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
-          <i class="fas fa-envelope text-xl"></i><span class="font-semibold">Email</span>
-        </a>
-      </div>
-    </div>
-    <div class="border-b border-gray-700 pb-8 mb-6 flex justify-center items-center">
-      <img src="ArtuntrW.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-10">
-    </div>
-    <div class="text-center text-gray-500 text-sm py-4">
-      <p>&copy; 2025 Artun Sağlık Hizmetleri Danışmanlığı. Tüm hakları saklıdır.</p>
-    </div>
-  </div>
-</footer>
+      // Mobil hizmetler açılır menü geçişi
+      const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+      const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
+      mobileServicesToggle.addEventListener('click', () => {
+        mobileServicesDropdown.classList.toggle('hidden');
+      });
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Mobil menü geçişi
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+      // Masaüstü açılır menü geçişi
+      const servicesToggle = document.getElementById('services-toggle');
+      const servicesMenu = document.getElementById('services-menu');
 
-    // Mobil hizmetler açılır menü geçişi
-    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-    mobileServicesToggle.addEventListener('click', () => {
-      mobileServicesDropdown.classList.toggle('hidden');
-    });
+      servicesToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        servicesMenu.classList.toggle('hidden');
+      });
 
-    // Masaüstü açılır menü geçişi
-    const servicesToggle = document.getElementById('services-toggle');
-    const servicesMenu = document.getElementById('services-menu');
-
-    servicesToggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      servicesMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
-        servicesMenu.classList.add('hidden');
-      }
-    });
-
-    // Kaydırma animasyonları için JavaScript
-    const animateElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target); // Animasyon bir kez çalışsın
+      document.addEventListener('click', (event) => {
+        if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
+          servicesMenu.classList.add('hidden');
         }
       });
-    }, {
-      rootMargin: '0px',
-      threshold: 0.2 // Elemanın %20'si görünürse tetikle
-    });
 
-    animateElements.forEach(element => {
-      observer.observe(element);
+      // Kaydırma animasyonları için JavaScript
+      const animateElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // Animasyon bir kez çalışsın
+          }
+        });
+      }, {
+        rootMargin: '0px',
+        threshold: 0.2 // Elemanın %20'si görünürse tetikle
+      });
+
+      animateElements.forEach(element => {
+        observer.observe(element);
+      });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>

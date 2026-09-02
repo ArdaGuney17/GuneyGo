@@ -25,8 +25,8 @@
   
   
 
-  <link rel="stylesheet" href="css/style.css">
-  <script src="components/head.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../components/head.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 <div id="navbar-root"></div>
@@ -36,12 +36,12 @@
 
 
 
-<main class="pt-24">
+<main class="pt-16">
   <section id="contact" class="section py-16 bg-white">
     <div class="section-container container mx-auto px-4 max-w-5xl">
       <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">Get In Touch</h2>
       <p class="text-lg text-gray-700 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
-        We're here to help! Whether you have a question, need support, or want to reach out to a healthcare company, feel free to reach out to us.
+        We're here to help! Whether you have a question, need support, want to discuss a partnership or investment opportunity, feel free to reach out to us.
       </p>
 
       <div class="grid md:grid-cols-[1.2fr_2fr] gap-12 items-start">
@@ -66,8 +66,8 @@
             <h3 class="text-2xl font-semibold text-gray-900 mb-4">Send Us a Message</h3>
 
             <div class="form-group">
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Agency Name</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter the name of the agency" required>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter the name of the company" required>
             </div>
             <div class="form-group">
               <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
@@ -80,26 +80,6 @@
             <div class="form-group">
               <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
               <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="How can we help you?" required></textarea>
-            </div>
-
-            <div class="form-group flex items-start space-x-3 mt-4">
-              <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
-              <label for="consentContact" class="text-sm text-gray-700">
-                Data Sharing Consent: By submitting this form, we confirm that we have obtained the explicit consent of the patient for the sharing of their personal and medical information with authorized personnel at the relevant healthcare facilities.
-                The patient’s information is shared solely for the purpose of evaluating their request and facilitating the provision of appropriate medical services.<br><br>
-              </label>
-            </div>
-
-            <div class="form-group flex items-start space-x-3 mt-4">
-              <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
-              <label for="consentContact1" class="text-sm text-gray-700">
-                Data Sharing Consent: We give our consent for the sharing of our own corporate contact and process-related information (such as service requests, coordination details, and other relevant operational data) with the relevant healthcare institutions for the purpose of managing the medical travel process efficiently.
-                We confirm that none of the information neither the patient’s nor ours will be shared with any third parties outside the involved healthcare institutions, and will not be used for any purposes other than communication and process management.
-              </label>
-            </div>
-
-            <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
-              Please check at least one of the consent boxes to continue.
             </div>
 
             <div class="form-group flex items-start space-x-2 mt-4">
@@ -163,29 +143,25 @@
     // Contact form submission and message display
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
-    const consentCheckbox1 = document.getElementById('consentContact');
-    const consentCheckbox2 = document.getElementById('consentContact1');
-    const consentErrorDiv = document.getElementById('consentError');
 
     if (contactForm && formSubmissionMessage) {
       contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        if (!consentCheckbox1.checked && !consentCheckbox2.checked) {
-          consentErrorDiv.textContent = 'Please check at least one of the consent boxes to continue.';
-          consentErrorDiv.classList.remove('hidden');
-          consentErrorDiv.style.opacity = '1';
+        // Check if the kvkk consent box is checked
+        const kvkkOnay = document.getElementById('kvkk_onay');
+        if (!kvkkOnay.checked) {
+          formSubmissionMessage.textContent = 'Please read and accept the Information Notice.';
+          formSubmissionMessage.style.backgroundColor = '#f44336';
+          formSubmissionMessage.classList.remove('hidden');
+          formSubmissionMessage.style.opacity = '1';
           setTimeout(() => {
-            consentErrorDiv.style.opacity = '0';
-            consentErrorDiv.addEventListener('transitionend', () => {
-              consentErrorDiv.classList.add('hidden');
-            }, { once: true });
+            formSubmissionMessage.style.opacity = '0';
+            formSubmissionMessage.classList.add('hidden');
           }, 7000);
-          return;
+          return; // Stop the function
         }
 
-        consentErrorDiv.classList.add('hidden');
-        consentErrorDiv.style.opacity = '0';
         formSubmissionMessage.style.opacity = '0';
         formSubmissionMessage.classList.add('hidden');
         formSubmissionMessage.textContent = 'Sending your message...';
@@ -199,6 +175,7 @@
             method: 'POST',
             body: formData
           });
+
           const resultText = await response.text();
           const successPattern = /success/i;
 
@@ -228,9 +205,9 @@
 </script>
 
 <div id="footer-root"></div>
-<script src="components/navbar.js"></script>
-<script src="components/footer.js"></script>
-<script src="js/shared.js"></script>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="../js/shared.js"></script>
 <script>
     renderNavbar('en');
     renderFooter('en');

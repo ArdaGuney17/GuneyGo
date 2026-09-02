@@ -45,14 +45,14 @@ function renderNavbar(lang = 'en') {
     reverseMap[tr] = en;
   }
   
-  const linkEN = isTR ? (reverseMap[currentPage] || 'index.html') : currentPage;
-  const linkTR = isTR ? currentPage : (pageMap[currentPage] || 'ana-sayfa.html');
+  const linkEN = isTR ? '../en/' + (reverseMap[currentPage] || 'index.html') : currentPage;
+  const linkTR = isTR ? currentPage : '../tr/' + (pageMap[currentPage] || 'ana-sayfa.html');
 
   const html = `
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <a href="${links.home}">
-      <img src="artun2.png" alt="Artun Consultancy Logo" class="h-7 w-auto md:h-8">
+      <img src="../img/artun2.png" alt="Artun Consultancy Logo" class="h-7 w-auto md:h-8">
     </a>
     <nav class="hidden md:flex items-center space-x-6">
       <a href="${links.home}" class="text-gray-300 hover:text-white transition-colors duration-300">${texts.home}</a>

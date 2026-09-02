@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bize Ulaşın | Artun Sağlık Danışmanlığı</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     html, body {
       width: 100%;
@@ -29,7 +30,7 @@
       border: 1px solid rgb(75 85 99 / 0.5);
     }
     .hero-section {
-      background-image: url('bosphorus.png');
+      background-image: url('../img/bosphorus.png');
       background-size: cover;
       background-position: center;
     }
@@ -80,18 +81,14 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* Hide the default file input button */
-    .file-input-wrapper input[type="file"] {
-      display: none;
-    }
   </style>
 
   <!-- Google tag (gtag.js) -->
   
   
 
-  <link rel="stylesheet" href="css/style.css">
-  <script src="components/head.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../components/head.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 <div id="navbar-root"></div>
@@ -106,7 +103,7 @@
     <div class="section-container container mx-auto px-4 max-w-5xl">
       <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">İletişime Geçin</h2>
       <p class="text-lg text-gray-700 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
-        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir sağlık kuruluşu ile görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
+        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir sağlık kuruluşuyla görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
       </p>
 
       <div class="grid md:grid-cols-[1.2fr_2fr] gap-12 items-start">
@@ -128,15 +125,15 @@
 
         <div class="bg-gray-50 p-8 rounded-lg shadow-lg space-y-8">
           <form id="contactForm" class="contact-form space-y-6" action="https://script.google.com/macros/s/AKfycbyPt8bF4tvPwJoQu7DY335H30-9BuzFeG7xx5Od9VHDuIPrIs0H5AyQYCwFLggaRmok8g/exec" method="POST">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Bize Bir Mesaj Gönderin</h3>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Bize Mesaj Gönderin</h3>
 
             <div class="form-group">
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Şirketin Adı</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Şirket adını girin" required>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Acente Adı</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Acente adını girin" required>
             </div>
             <div class="form-group">
               <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numarası</label>
-              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodu ile telefon numarasını girin" required>
+              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodlu telefon numaranızı girin" required>
             </div>
             <div class="form-group">
               <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresi</label>
@@ -147,10 +144,28 @@
               <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Size nasıl yardımcı olabiliriz?" required></textarea>
             </div>
 
+            <div class="form-group flex items-start space-x-3 mt-4">
+              <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
+              <label for="consentContact" class="text-sm text-gray-700">
+                Veri Paylaşım Onayı: Bu formu göndererek, hastanın kişisel ve tıbbi bilgilerinin, taleplerinin değerlendirilmesi ve uygun tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık kuruluşlarındaki yetkili kişilerle paylaşılmasına açık rızasını aldığımızı onaylarız.<br><br>
+              </label>
+            </div>
+
+            <div class="form-group flex items-start space-x-3 mt-4">
+              <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
+              <label for="consentContact1" class="text-sm text-gray-700">
+                Veri Paylaşım Onayı: Kurumsal iletişim ve süreçle ilgili bilgilerimizin (hizmet talepleri, koordinasyon detayları ve diğer ilgili operasyonel veriler gibi) tıbbi seyahat sürecini verimli bir şekilde yönetmek amacıyla ilgili sağlık kurumlarıyla paylaşılmasına izin veriyoruz. Ne hastanın ne de bizim bilgilerimizin ilgili sağlık kurumları dışındaki üçüncü taraflarla paylaşılmayacağını ve iletişim ve süreç yönetimi dışında başka hiçbir amaçla kullanılmayacağını onaylarız.
+              </label>
+            </div>
+
+            <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
+              Lütfen devam etmek için en az bir onay kutusunu işaretleyin.
+            </div>
+
             <div class="form-group flex items-start space-x-2 mt-4">
               <input type="checkbox" id="kvkk_onay" name="kvkk_onay" class="mt-1" required>
               <label for="kvkk_onay" class="text-sm text-gray-600">
-                <a href="aydinlatmametni_tr.html" target="_blank" class="text-[#59CDD1] hover:underline font-medium">Kişisel Verilerin Korunması ve İşlenmesi Hakkında Aydınlatma Metni</a>'ni okudum ve anladım.
+                <a href="aydinlatmametni_tr.html" target="_blank" class="text-[#59CDD1] hover:underline font-medium">Kişisel Verilerin Korunması ve İşlenmesi Hakkında Aydınlatma Metnini</a> okudum ve anladım.
               </label>
             </div>
 
@@ -158,7 +173,7 @@
             </div>
 
             <button type="submit" class="w-full bg-[#59CDD1] text-white px-6 py-3 rounded-md hover:bg-[#45a8b3] transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2">
-              <span>Mesaj Gönder</span>
+              <span>Mesajı Gönder</span>
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
@@ -186,35 +201,53 @@
       mobileServicesDropdown.classList.toggle('hidden');
     });
 
-    // FIX: Desktop dropdown menu toggle with JavaScript
+    // Desktop dropdown menu toggle
     const servicesToggle = document.getElementById('services-toggle');
     const servicesMenu = document.getElementById('services-menu');
-
     servicesToggle.addEventListener('click', (event) => {
-      event.preventDefault(); // Prevents the default action of the button/link
-      event.stopPropagation(); // Stops the click event from bubbling up to the document
+      event.preventDefault();
+      event.stopPropagation();
       servicesMenu.classList.toggle('hidden');
     });
 
+    // Close dropdowns when clicking outside
     document.addEventListener('click', (event) => {
       if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
         servicesMenu.classList.add('hidden');
       }
+      if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+      }
     });
 
-
-    // --- Form submission and message display logic ---
-
+    // Contact form submission and message display
     const contactForm = document.getElementById('contactForm');
     const formSubmissionMessage = document.getElementById('formSubmissionMessage');
+    const consentCheckbox1 = document.getElementById('consentContact');
+    const consentCheckbox2 = document.getElementById('consentContact1');
+    const consentErrorDiv = document.getElementById('consentError');
 
     if (contactForm && formSubmissionMessage) {
       contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
+        if (!consentCheckbox1.checked && !consentCheckbox2.checked) {
+          consentErrorDiv.textContent = 'Lütfen devam etmek için en az bir onay kutusunu işaretleyin.';
+          consentErrorDiv.classList.remove('hidden');
+          consentErrorDiv.style.opacity = '1';
+          setTimeout(() => {
+            consentErrorDiv.style.opacity = '0';
+            consentErrorDiv.addEventListener('transitionend', () => {
+              consentErrorDiv.classList.add('hidden');
+            }, { once: true });
+          }, 7000);
+          return;
+        }
+
+        consentErrorDiv.classList.add('hidden');
+        consentErrorDiv.style.opacity = '0';
         formSubmissionMessage.style.opacity = '0';
         formSubmissionMessage.classList.add('hidden');
-
         formSubmissionMessage.textContent = 'Mesajınız gönderiliyor...';
         formSubmissionMessage.style.backgroundColor = '#59CDD1';
         formSubmissionMessage.classList.remove('hidden');
@@ -222,12 +255,10 @@
 
         try {
           const formData = new FormData(contactForm);
-
           const response = await fetch(contactForm.action, {
             method: 'POST',
             body: formData
           });
-
           const resultText = await response.text();
           const successPattern = /success/i;
 
@@ -240,13 +271,12 @@
             formSubmissionMessage.style.backgroundColor = '#f44336';
           }
         } catch (error) {
-          console.error('Ağ veya gönderim hatası:', error);
+          console.error('Network or submission error:', error);
           formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
           formSubmissionMessage.style.backgroundColor = '#f44336';
         } finally {
           formSubmissionMessage.classList.remove('hidden');
           formSubmissionMessage.style.opacity = '1';
-
           setTimeout(() => {
             formSubmissionMessage.style.opacity = '0';
             formSubmissionMessage.classList.add('hidden');
@@ -258,9 +288,9 @@
 </script>
 
 <div id="footer-root"></div>
-<script src="components/navbar.js"></script>
-<script src="components/footer.js"></script>
-<script src="js/shared.js"></script>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="../js/shared.js"></script>
 <script>
     renderNavbar('tr');
     renderFooter('tr');

@@ -1,27 +1,17 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <meta name="theme-color" content="#59CDD1">
   <link rel="manifest" href="/site.webmanifest">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bize Ulaşın | Artun Sağlık Danışmanlığı</title>
+  <title>Contact Us | Artun Healthcare Consultancy</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      width: 100%;
-      overflow-x: hidden;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
     body {
       font-family: 'Poppins', sans-serif;
-    }
-    .dropdown .dropdown-menu {
-      /* The `hidden` Tailwind class will handle hiding/showing */
     }
     .glassmorphism {
       background-color: rgb(31 41 55 / 0.7);
@@ -29,66 +19,14 @@
       -webkit-backdrop-filter: blur(8px);
       border: 1px solid rgb(75 85 99 / 0.5);
     }
-    .hero-section {
-      background-image: url('bosphorus.png');
-      background-size: cover;
-      background-position: center;
-    }
-    .hero-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-    .pulse-animation {
-      animation: pulse-border 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
-    @keyframes pulse-border {
-      0%, 100% { border-color: rgba(255, 255, 255, 0.2); }
-      50% { border-color: rgba(255, 255, 255, 0.7); }
-    }
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      will-change: opacity, transform;
-    }
-    .animate-on-scroll.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .animate-on-scroll-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      will-change: opacity, transform;
-    }
-    .animate-on-scroll-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      will-change: opacity, transform;
-    }
-    .animate-on-scroll-left.is-visible,
-    .animate-on-scroll-right.is-visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .hero-animate-up {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      will-change: opacity, transform;
-    }
-    .hero-animate-up.hero-animate-show {
-      opacity: 1;
-      transform: translateY(0);
-    }
   </style>
 
   <!-- Google tag (gtag.js) -->
   
   
 
-  <link rel="stylesheet" href="css/style.css">
-  <script src="components/head.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../components/head.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 <div id="navbar-root"></div>
@@ -98,18 +36,18 @@
 
 
 
-<main class="pt-16">
+<main class="pt-24">
   <section id="contact" class="section py-16 bg-white">
     <div class="section-container container mx-auto px-4 max-w-5xl">
-      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">İletişime Geçin</h2>
+      <h2 class="section-title text-3xl font-bold text-center text-gray-900 mb-4">Get In Touch</h2>
       <p class="text-lg text-gray-700 leading-relaxed text-center mb-12 max-w-2xl mx-auto">
-        Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir sağlık kuruluşuyla görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
+        We're here to help! Whether you have a question, need support, or want to reach out to a healthcare company, feel free to reach out to us.
       </p>
 
       <div class="grid md:grid-cols-[1.2fr_2fr] gap-12 items-start">
         <div>
           <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-6">İletişim Bilgileri</h3>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
             <div class="space-y-4">
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <i class="fas fa-envelope text-[#59CDD1] text-xl"></i>
@@ -117,7 +55,7 @@
               </div>
               <div class="contact-method flex items-center space-x-3 text-lg text-gray-700">
                 <i class="fas fa-map-marker-alt text-[#59CDD1] text-xl"></i>
-                <span>İstanbul, Türkiye</span>
+                <span>Istanbul, Turkey</span>
               </div>
             </div>
           </div>
@@ -125,47 +63,49 @@
 
         <div class="bg-gray-50 p-8 rounded-lg shadow-lg space-y-8">
           <form id="contactForm" class="contact-form space-y-6" action="https://script.google.com/macros/s/AKfycbyPt8bF4tvPwJoQu7DY335H30-9BuzFeG7xx5Od9VHDuIPrIs0H5AyQYCwFLggaRmok8g/exec" method="POST">
-            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Bize Mesaj Gönderin</h3>
+            <h3 class="text-2xl font-semibold text-gray-900 mb-4">Send Us a Message</h3>
 
             <div class="form-group">
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Acente Adı</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Acente adını girin" required>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Agency Name</label>
+              <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter the name of the agency" required>
             </div>
             <div class="form-group">
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numarası</label>
-              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodlu telefon numaranızı girin" required>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="text" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter phone number with country code" required>
             </div>
             <div class="form-group">
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresi</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="E-posta adresinizi girin" required>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesajınız</label>
-              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Size nasıl yardımcı olabiliriz?" required></textarea>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+              <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="How can we help you?" required></textarea>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
               <label for="consentContact" class="text-sm text-gray-700">
-                Veri Paylaşım Onayı: Bu formu göndererek, hastanın kişisel ve tıbbi bilgilerinin, taleplerinin değerlendirilmesi ve uygun tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık kuruluşlarındaki yetkili kişilerle paylaşılmasına açık rızasını aldığımızı onaylarız.<br><br>
+                Data Sharing Consent: By submitting this form, we confirm that we have obtained the explicit consent of the patient for the sharing of their personal and medical information with authorized personnel at the relevant healthcare facilities.
+                The patient’s information is shared solely for the purpose of evaluating their request and facilitating the provision of appropriate medical services.<br><br>
               </label>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
               <label for="consentContact1" class="text-sm text-gray-700">
-                Veri Paylaşım Onayı: Kurumsal iletişim ve süreçle ilgili bilgilerimizin (hizmet talepleri, koordinasyon detayları ve diğer ilgili operasyonel veriler gibi) tıbbi seyahat sürecini verimli bir şekilde yönetmek amacıyla ilgili sağlık kurumlarıyla paylaşılmasına izin veriyoruz. Ne hastanın ne de bizim bilgilerimizin ilgili sağlık kurumları dışındaki üçüncü taraflarla paylaşılmayacağını ve iletişim ve süreç yönetimi dışında başka hiçbir amaçla kullanılmayacağını onaylarız.
+                Data Sharing Consent: We give our consent for the sharing of our own corporate contact and process-related information (such as service requests, coordination details, and other relevant operational data) with the relevant healthcare institutions for the purpose of managing the medical travel process efficiently.
+                We confirm that none of the information neither the patient’s nor ours will be shared with any third parties outside the involved healthcare institutions, and will not be used for any purposes other than communication and process management.
               </label>
             </div>
 
             <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
-              Lütfen devam etmek için en az bir onay kutusunu işaretleyin.
+              Please check at least one of the consent boxes to continue.
             </div>
 
             <div class="form-group flex items-start space-x-2 mt-4">
               <input type="checkbox" id="kvkk_onay" name="kvkk_onay" class="mt-1" required>
               <label for="kvkk_onay" class="text-sm text-gray-600">
-                <a href="aydinlatmametni_tr.html" target="_blank" class="text-[#59CDD1] hover:underline font-medium">Kişisel Verilerin Korunması ve İşlenmesi Hakkında Aydınlatma Metnini</a> okudum ve anladım.
+                I have read and understood the <a href="aydinlatmametni.html" target="_blank" class="text-[#59CDD1] hover:underline font-medium">Information Notice Regarding the Protection and Processing of Personal Data</a>.
               </label>
             </div>
 
@@ -173,7 +113,7 @@
             </div>
 
             <button type="submit" class="w-full bg-[#59CDD1] text-white px-6 py-3 rounded-md hover:bg-[#45a8b3] transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2">
-              <span>Mesajı Gönder</span>
+              <span>Send Message</span>
               <i class="fas fa-paper-plane"></i>
             </button>
           </form>
@@ -232,7 +172,7 @@
         e.preventDefault();
 
         if (!consentCheckbox1.checked && !consentCheckbox2.checked) {
-          consentErrorDiv.textContent = 'Lütfen devam etmek için en az bir onay kutusunu işaretleyin.';
+          consentErrorDiv.textContent = 'Please check at least one of the consent boxes to continue.';
           consentErrorDiv.classList.remove('hidden');
           consentErrorDiv.style.opacity = '1';
           setTimeout(() => {
@@ -248,7 +188,7 @@
         consentErrorDiv.style.opacity = '0';
         formSubmissionMessage.style.opacity = '0';
         formSubmissionMessage.classList.add('hidden');
-        formSubmissionMessage.textContent = 'Mesajınız gönderiliyor...';
+        formSubmissionMessage.textContent = 'Sending your message...';
         formSubmissionMessage.style.backgroundColor = '#59CDD1';
         formSubmissionMessage.classList.remove('hidden');
         formSubmissionMessage.style.opacity = '1';
@@ -263,16 +203,16 @@
           const successPattern = /success/i;
 
           if (response.ok && successPattern.test(resultText)) {
-            formSubmissionMessage.textContent = 'Başarılı! Mesajınız gönderildi.';
+            formSubmissionMessage.textContent = 'Success! Your message has been sent.';
             formSubmissionMessage.style.backgroundColor = '#4CAF50';
             contactForm.reset();
           } else {
-            formSubmissionMessage.textContent = 'Hata: ' + (resultText || 'Bilinmeyen bir hata oluştu.');
+            formSubmissionMessage.textContent = 'Error: ' + (resultText || 'An unknown error occurred.');
             formSubmissionMessage.style.backgroundColor = '#f44336';
           }
         } catch (error) {
           console.error('Network or submission error:', error);
-          formSubmissionMessage.textContent = 'Ağ hatası. Lütfen tekrar deneyin.';
+          formSubmissionMessage.textContent = 'Network error. Please try again.';
           formSubmissionMessage.style.backgroundColor = '#f44336';
         } finally {
           formSubmissionMessage.classList.remove('hidden');
@@ -288,12 +228,12 @@
 </script>
 
 <div id="footer-root"></div>
-<script src="components/navbar.js"></script>
-<script src="components/footer.js"></script>
-<script src="js/shared.js"></script>
+<script src="../components/navbar.js"></script>
+<script src="../components/footer.js"></script>
+<script src="../js/shared.js"></script>
 <script>
-    renderNavbar('tr');
-    renderFooter('tr');
+    renderNavbar('en');
+    renderFooter('en');
 </script>
 </body>
 </html>

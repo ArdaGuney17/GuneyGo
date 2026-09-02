@@ -21,19 +21,37 @@ function renderFloatingMailButton() {
                 .floating-btn-container { right: 32px; bottom: 32px; }
             }
             .floating-btn {
-                width: 56px;
-                height: 56px;
+                width: 60px;
+                height: 60px;
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                font-size: 1.25rem;
             }
-            .pulse-mail { animation: mail-wiggle 4s ease-in-out infinite; }
-            @keyframes mail-wiggle {
-                0%, 100% { transform: scale(1) rotate(0deg); }
-                25% { transform: scale(1.05) rotate(2deg); }
-                50% { transform: scale(1.05) rotate(-2deg); }
-                75% { transform: scale(1.05) rotate(2deg); }
+            @media (min-width: 768px) {
+                .floating-btn { width: 76px; height: 76px; font-size: 1.75rem; }
+            }
+            .pulse-mail {
+                position: relative;
+                animation: mail-pulse-scale 2s ease-in-out infinite;
+            }
+            .pulse-mail::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                border: 3px solid rgba(234, 88, 12, 0.85);
+                border-radius: 50%;
+                animation: mail-pulse-ring 2s ease-out infinite;
+                pointer-events: none;
+            }
+            @keyframes mail-pulse-scale {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.1); }
+            }
+            @keyframes mail-pulse-ring {
+                0% { transform: scale(0.8); opacity: 1; }
+                100% { transform: scale(1.7); opacity: 0; }
             }
         `;
         document.head.appendChild(style);
@@ -44,7 +62,7 @@ function renderFloatingMailButton() {
     container.className = 'floating-btn-container animate-on-scroll-right';
     container.innerHTML = `
         <a href="mailto:artunhcc@gmail.com" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
-            <i class="fas fa-envelope text-xl"></i>
+            <i class="fas fa-envelope"></i>
         </a>
     `;
     document.body.appendChild(container);

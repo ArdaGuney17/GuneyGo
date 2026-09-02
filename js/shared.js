@@ -61,7 +61,7 @@ function renderFloatingMailButton() {
     container.id = 'floating-buttons-container';
     container.className = 'floating-btn-container animate-on-scroll-right';
     container.innerHTML = `
-        <a href="mailto:artunhcc@gmail.com" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
+        <a href="mailto:info@artunhealthcare.com" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
             <i class="fas fa-envelope"></i>
         </a>
     `;

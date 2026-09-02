@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "name": "Tahsin Güney"
             },
             "areaServed": "Turkey",
-            "email": "artunhcc@gmail.com"
+            "email": "info@artunhealthcare.com"
         });
         document.head.appendChild(ld);
     }

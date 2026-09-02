@@ -17,7 +17,7 @@ function renderFooter(lang = 'en') {
     <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
       <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-center">
         <h3 class="text-2xl font-bold tracking-wide">${texts.contact}</h3>
-        <a href="mailto:artunhcc@gmail.com" class="flex items-center justify-center gap-3 bg-white text-gray-900 px-8 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
+        <a href="mailto:info@artunhealthcare.com" class="flex items-center justify-center gap-3 bg-white text-gray-900 px-8 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
           <i class="fas fa-envelope text-xl"></i><span class="font-semibold">${texts.email}</span>
         </a>
       </div>

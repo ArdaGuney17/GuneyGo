@@ -246,7 +246,6 @@
   
   
 
-  <link rel="stylesheet" href="../css/style.css">
   <script src="../components/head.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -400,37 +399,7 @@
   let phoneInputInstance = null;
 
   document.addEventListener('DOMContentLoaded', () => {
-    // --- Mobile/Desktop Menu Toggle Logic ---
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-    mobileServicesToggle.addEventListener('click', () => {
-      mobileServicesDropdown.classList.toggle('hidden');
-    });
-
-    const servicesToggle = document.getElementById('services-toggle');
-    const servicesMenu = document.getElementById('services-menu');
-    const desktopDropdown = document.querySelector('.dropdown');
-
-    desktopDropdown.addEventListener('click', (event) => {
-      event.stopPropagation();
-      servicesMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!servicesMenu.contains(event.target) && !servicesToggle.contains(event.target)) {
-        servicesMenu.classList.add('hidden');
-      }
-      if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
-        mobileMenu.classList.add('hidden');
-      }
-    });
-    // --- End Menu Toggle Logic ---
+    // Menu toggle logic lives in js/shared.js — do not duplicate it here.
 
     // === intl-tel-input Initialization ===
     const phoneInputField = document.querySelector("#phone");

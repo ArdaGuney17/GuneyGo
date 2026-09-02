@@ -14,14 +14,14 @@
       max-width: 800px;
     }
   </style>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="components/head.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
+<div id="navbar-root"></div>
 
-<header class="bg-[#59CDD1] text-white py-6 shadow-md">
-  <div class="container mx-auto px-4">
-    <h1 class="text-3xl font-bold">Artun Healthcare Consultancy</h1>
-  </div>
-</header>
+
+
 
 <main class="py-12">
   <div class="container mx-auto px-4">
@@ -92,16 +92,16 @@
   </div>
 </main>
 
-<footer class="bg-gray-900 text-gray-400 py-8 text-center">
-  <div class="container mx-auto px-4">
-    <p>&copy; 2025 Artun Healthcare Consultancy. All rights reserved.</p>
-    <p class="mt-2 text-sm">
-      <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a> |
-      <a href="#" class="hover:text-white transition-colors duration-300">Terms of Use</a> |
-      <a href="your_information_notice_page.html" class="hover:text-white transition-colors duration-300">Information Notice</a>
-    </p>
-  </div>
-</footer>
 
+
+
+<div id="footer-root"></div>
+<script src="components/navbar.js"></script>
+<script src="components/footer.js"></script>
+<script src="js/shared.js"></script>
+<script>
+    renderNavbar('en');
+    renderFooter('en');
+</script>
 </body>
 </html>

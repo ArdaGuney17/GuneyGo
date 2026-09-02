@@ -22,72 +22,19 @@
   </style>
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8JV8K0B72">
-  </script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  
+  
 
-    gtag('config', 'G-T8JV8K0B72');
-  </script>
-
+  <link rel="stylesheet" href="css/style.css">
+  <script src="components/head.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
+<div id="navbar-root"></div>
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
-  <div class="container mx-auto px-4 flex justify-between items-center">
-    <a href="index.html">
-      <img src="artun2.png" alt="Artun Consultancy Logo" class="h-7 w-auto md:h-8">
-    </a>
-    <nav class="hidden md:flex items-center space-x-6">
-      <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-300">Home</a>
-      <a href="about-us.html" class="text-gray-300 hover:text-white transition-colors duration-300">About Us</a>
-      <div class="dropdown relative">
-        <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
-          Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
-        </button>
-        <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
-          <a href="for-patients.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
-          <a href="for-agencies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
-          <a href="for-companies.html" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
-        </div>
-      </div>
-      <a href="contact-us.html" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">Contact Us</a>
-      <div class="lang-switcher text-gray-300 font-semibold space-x-2">
-        <a href="contact-for-companies.html" class="text-[#59CDD1]">ENG</a>
-        <span class="text-gray-500">/</span>
-        <a href="şirketler-için-iletişim.html" class="text-gray-300 hover:text-white">TR</a>
-      </div>
-    </nav>
-    <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
-      <i class="fas fa-bars"></i>
-    </button>
-  </div>
-</header>
 
-<nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
-  <div class="flex flex-col space-y-2">
-    <a href="index.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Home</a>
-    <a href="about-us.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">About Us</a>
-    <div>
-      <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
-        Our Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
-      </button>
-      <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
-        <a href="for-patients.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Patients</a>
-        <a href="for-agencies.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Medical Tourism Agencies</a>
-        <a href="for-companies.html" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">For Companies</a>
-      </div>
-    </div>
-    <a href="contact-us.html" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">Contact Us</a>
-    <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
-      <a href="contact-for-companies.html" class="text-[#59CDD1]">ENG</a>
-      <span class="text-gray-500">/</span>
-      <a href="şirketler-için-iletişim.html" class="text-gray-300 hover:text-white">TR</a>
-    </div>
-  </div>
-</nav>
+
+
+
 
 <main class="pt-16">
   <section id="contact" class="section py-16 bg-white">
@@ -156,24 +103,7 @@
   </section>
 </main>
 
-<footer class="bg-gray-900 text-white pt-8">
-  <div class="container mx-auto px-4">
-    <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
-        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">Contact Us</h3>
-        <a href="mailto:artunhcc@gmail.com" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
-          <i class="fas fa-envelope text-xl"></i><span class="font-semibold">Email</span>
-        </a>
-      </div>
-    </div>
-    <div class="border-b border-gray-700 pb-8 mb-6 flex justify-center items-center">
-      <img src="artun2.png" alt="Artun Consultancy Logo TR" class="h-7 w-auto md:h-10">
-    </div>
-    <div class="text-center text-gray-500 text-sm py-4">
-      <p>&copy; 2025 Artun Healthcare Consultancy. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -272,6 +202,15 @@
       });
     }
   });
+</script>
+
+<div id="footer-root"></div>
+<script src="components/navbar.js"></script>
+<script src="components/footer.js"></script>
+<script src="js/shared.js"></script>
+<script>
+    renderNavbar('en');
+    renderFooter('en');
 </script>
 </body>
 </html>

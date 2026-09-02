@@ -61,7 +61,7 @@ function renderNavbar(lang = 'en') {
         <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
           ${texts.services} <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        <div id="services-menu" class="hidden dropdown-menu absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+        <div id="services-menu" class="hidden absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
           <a href="${links.forPatients}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.forPatients}</a>
           <a href="${links.forAgencies}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.forAgencies}</a>
           <a href="${links.forCompanies}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.forCompanies}</a>

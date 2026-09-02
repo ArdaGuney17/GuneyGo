@@ -185,15 +185,9 @@
       transform: translateY(0);
     }
 
-    /* === FLOATING CONTACT BUTTONS STYLES & ANIMATIONS === */
-    .floating-btn {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    /* Floating "Send us an Email" button styles/markup live in js/shared.js —
+       rendered on every page. Do not duplicate here. */
+
     /* WhatsApp Pulse Animation (Outer Ring) */
     .pulse-whatsapp {
       position: relative;
@@ -230,16 +224,6 @@
       100% {
         transform: rotate(10deg) scale(1.05);
       }
-    }
-    /* Email Wiggle Animation (Subtle movement) */
-    .pulse-mail {
-      animation: mail-wiggle 4s ease-in-out infinite;
-    }
-    @keyframes mail-wiggle {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      25% { transform: scale(1.05) rotate(2deg); }
-      50% { transform: scale(1.05) rotate(-2deg); }
-      75% { transform: scale(1.05) rotate(2deg); }
     }
   </style>
 
@@ -387,11 +371,6 @@
 
 
 
-<div id="floating-buttons-container" class="fixed bottom-6 right-4 z-50 flex flex-col space-y-3 md:right-8 md:bottom-8 animate-on-scroll-right">
-  <a href="mailto:artunhcc@gmail.com" target="_blank" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
-    <i class="fas fa-envelope text-xl"></i>
-  </a>
-</div>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.1/build/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.1/build/js/utils.js"></script>
 <script>
@@ -499,73 +478,8 @@
     });
     // --- End Scroll Animation Logic ---
 
-
-    // =========================================================================
-    // ✨ CORRECTED FLOATING BUTTONS & FOOTER DOCKING LOGIC ✨
-    // =========================================================================
-
-    const buttonContainer = document.getElementById('floating-buttons-container');
-    const footer = document.getElementById('page-footer');
-
-    if (buttonContainer && footer) {
-      // The fixed bottom spacing from the Tailwind class 'bottom-6' is 1.5rem (24px)
-      const DEFAULT_BOTTOM_SPACING = 24;
-
-      // Create an Intersection Observer
-      const footerObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            // entry.isIntersecting is TRUE when the footer enters the viewport
-            if (entry.isIntersecting) {
-
-              // 1. Calculate the buttons' required position from the top of the *viewport*.
-              // The top of the buttons should align with the top of the footer, minus the button container's height,
-              // plus the desired bottom spacing.
-
-              // Get the current distance from the top of the viewport to the top of the footer
-              const footerTopRelativeToViewport = footer.getBoundingClientRect().top;
-
-              // If the footer is visible:
-
-              // Change from fixed to absolute positioning
-              buttonContainer.style.position = 'absolute';
-
-              // Calculate the 'top' position for the absolute element:
-              // The buttons should be positioned relative to the top of the document (body).
-              // The 'offsetTop' property gives the distance from the top of the document to the top of the footer.
-              const footerTopRelativeToDocument = footer.offsetTop;
-
-              // We want the buttons to sit *above* the footer, maintaining the 24px gap.
-              const buttonsHeight = buttonContainer.offsetHeight;
-
-              // The final absolute 'top' position should put the buttons right above the footer.
-              // Top = (Footer Top Position) - (Button Container Height) - (Desired Bottom Spacing)
-              const finalAbsoluteTopPosition = footerTopRelativeToDocument - buttonsHeight - DEFAULT_BOTTOM_SPACING;
-
-              buttonContainer.style.top = `${finalAbsoluteTopPosition}px`;
-              buttonContainer.style.bottom = 'auto'; // Clear bottom property
-
-            } else {
-              // When the footer is NOT intersecting (i.e., when scrolling up):
-
-              // Reset styles back to the original fixed state
-              buttonContainer.style.position = 'fixed';
-              buttonContainer.style.top = 'auto'; // Clear absolute top
-              buttonContainer.style.bottom = '24px'; // Tailwind bottom-6 equivalent (or use an empty string if you prefer the Tailwind class)
-            }
-          });
-        },
-        {
-          // We set the rootMargin to trigger the intersection slightly before the footer
-          // touches the bottom of the buttons. This can provide a smoother transition,
-          // but relying on threshold: 0.01 is often simpler.
-          threshold: 0.01
-        }
-      );
-
-      // Start observing the footer
-      footerObserver.observe(footer);
-    }
+    // Floating mail button + its footer-docking logic now live in js/shared.js
+    // (rendered on every page). Do not duplicate here.
   });
 </script>
 

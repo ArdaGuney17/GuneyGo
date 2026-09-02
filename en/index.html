@@ -189,34 +189,8 @@
       transform: translateY(0);
     }
 
-    /* === FLOATING CONTACT BUTTONS STYLES === */
-    /* NOTE: Tailwind classes for position (fixed, right-4, bottom-6) are removed
-       from the HTML and are now managed by JS and custom CSS below. */
-    .floating-btn-container {
-      position: fixed; /* Default state: fixed */
-      bottom: 24px;    /* Equivalent to Tailwind bottom-6 */
-      right: 16px;     /* Equivalent to Tailwind right-4 */
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-      row-gap: 12px; /* Equivalent to Tailwind space-y-3 */
-    }
-    /* Media queries for larger screens (md:right-8, md:bottom-8) */
-    @media (min-width: 768px) {
-      .floating-btn-container {
-        right: 32px; /* Equivalent to Tailwind md:right-8 (32px) */
-        bottom: 32px; /* Equivalent to Tailwind md:bottom-8 (32px) */
-      }
-    }
-
-    .floating-btn {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    /* Floating "Send us an Email" button styles/markup live in js/shared.js —
+       rendered on every page. Do not duplicate here. */
 
     /* WhatsApp Pulse Animation (Outer Ring) */
     .pulse-whatsapp {
@@ -257,16 +231,6 @@
       }
     }
 
-    /* Email Wiggle Animation (Subtle movement) */
-    .pulse-mail {
-      animation: mail-wiggle 4s ease-in-out infinite;
-    }
-    @keyframes mail-wiggle {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      25% { transform: scale(1.05) rotate(2deg); }
-      50% { transform: scale(1.05) rotate(-2deg); }
-      75% { transform: scale(1.05) rotate(2deg); }
-    }
   </style>
 
   
@@ -413,12 +377,6 @@
 
 
 
-<div id="floating-buttons-container" class="floating-btn-container animate-on-scroll-right">
-
-  <a href="mailto:artunhcc@gmail.com" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
-    <i class="fas fa-envelope text-xl"></i>
-  </a>
-</div>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.1/build/js/intlTelInput.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.10.1/build/js/utils.js"></script>
 <script>
@@ -526,72 +484,8 @@
     });
     // --- End Scroll Animation Logic ---
 
-
-    // =========================================================================
-    // ✨ CORRECTED FLOATING BUTTONS & FOOTER DOCKING LOGIC ✨
-    // =========================================================================
-
-    const buttonContainer = document.getElementById('floating-buttons-container');
-    const footer = document.getElementById('page-footer');
-
-    // Get the default bottom spacing based on screen size (24px or 32px)
-    const getDefaultBottomSpacing = () => {
-      // Use a hidden temporary div to check the actual value of a Tailwind class (e.g., md:bottom-8)
-      if (window.innerWidth >= 768) {
-        return 32; // md:bottom-8 is 2rem (32px)
-      }
-      return DEFAULT_BOTTOM_SPACING_PX; // bottom-6 is 1.5rem (24px)
-    };
-
-    // We will update the default spacing on resize for responsiveness
-    window.addEventListener('resize', () => {
-      // Force a reposition if the fixed spacing changes on resize (e.g., crossing 768px breakpoint)
-      if (footer && buttonContainer && footer.getBoundingClientRect().top < window.innerHeight) {
-        // Only recalculate if the footer is currently visible
-        updateButtonPosition();
-      }
-    });
-
-    const updateButtonPosition = () => {
-      if (!buttonContainer || !footer) return;
-
-      const footerTopRelativeToViewport = footer.getBoundingClientRect().top;
-      const viewportHeight = window.innerHeight;
-      const currentFixedBottom = getDefaultBottomSpacing(); // Get 24px or 32px
-
-      // If the footer is visible and its top edge is within the viewport
-      if (footerTopRelativeToViewport < viewportHeight) {
-
-        // Get the button container's height (includes internal padding/margins)
-        const buttonsHeight = buttonContainer.offsetHeight;
-
-        // Get the footer's distance from the top of the entire *document*
-        const footerTopRelativeToDocument = footer.offsetTop;
-
-        // Calculate the absolute 'top' position for the buttons to sit above the footer
-        // Position = (Footer Top) - (Buttons Height) - (Desired Gap)
-        const finalAbsoluteTopPosition = footerTopRelativeToDocument - buttonsHeight - currentFixedBottom;
-
-        // Apply absolute positioning and the calculated top value
-        buttonContainer.style.position = 'absolute';
-        buttonContainer.style.top = `${finalAbsoluteTopPosition}px`;
-        buttonContainer.style.bottom = 'auto'; // Clear bottom for absolute mode
-
-      } else {
-        // Reset to fixed position (when scrolling up or at the top of the page)
-        buttonContainer.style.position = 'fixed';
-        buttonContainer.style.top = 'auto'; // Clear absolute top
-        // Set the responsive fixed position based on screen size
-        buttonContainer.style.bottom = `${getDefaultBottomSpacing()}px`;
-      }
-    };
-
-    // Attach the update function to the scroll event
-    window.addEventListener('scroll', updateButtonPosition);
-    // Run once on load to set initial position
-    updateButtonPosition();
-
-    // =========================================================================
+    // Floating mail button + its footer-docking logic now live in js/shared.js
+    // (rendered on every page). Do not duplicate here.
   });
 </script>
 

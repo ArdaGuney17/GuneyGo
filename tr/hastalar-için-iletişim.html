@@ -208,66 +208,8 @@
 
 
 <script>
-  // JavaScript for mobile menu toggle and dropdown functionality
   document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const servicesDropdownToggle = document.getElementById('servicesDropdownToggle');
-    const servicesDropdownMenu = document.getElementById('servicesDropdownMenu');
-    // For the mobile services dropdown
-    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
-    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-
-    // Toggle the mobile menu by toggling the 'hidden' class
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-    }
-
-    // Toggle the desktop services dropdown menu on click
-    if (servicesDropdownToggle && servicesDropdownMenu) {
-      servicesDropdownToggle.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the link from navigating
-        event.stopPropagation(); // Stop the click from propagating to the document listener
-        servicesDropdownMenu.classList.toggle('active');
-      });
-
-      // Close the desktop dropdown when clicking outside of it
-      document.addEventListener('click', (event) => {
-        if (!servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
-          servicesDropdownMenu.classList.remove('active');
-        }
-      });
-    }
-
-    // Toggle the mobile services dropdown
-    if (mobileServicesToggle && mobileServicesDropdown) {
-      mobileServicesToggle.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        mobileServicesDropdown.classList.toggle('hidden');
-      });
-    }
-
-    // Close all dropdowns and menus when clicking outside
-    document.addEventListener('click', (event) => {
-      // For desktop services dropdown
-      if (servicesDropdownToggle && servicesDropdownMenu && !servicesDropdownToggle.contains(event.target) && !servicesDropdownMenu.contains(event.target)) {
-        servicesDropdownMenu.classList.remove('active');
-      }
-
-      // For mobile menu and its dropdown
-      const isClickInsideMobileMenu = mobileMenu.contains(event.target);
-      const isClickOnMobileButton = mobileMenuBtn.contains(event.target);
-      if (mobileMenu && mobileMenuBtn && !isClickInsideMobileMenu && !isClickOnMobileButton) {
-        mobileMenu.classList.add('hidden');
-        // Also close the mobile dropdown if the mobile menu is closed
-        if (mobileServicesDropdown) {
-          mobileServicesDropdown.classList.add('hidden');
-        }
-      }
-    });
+    // Menu toggle logic lives in js/shared.js — do not duplicate it here.
 
     // JavaScript for form submission and message display for the contact form
     const contactForm = document.getElementById('contactForm');

@@ -184,58 +184,7 @@
 
 
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Mobil menü geçişi
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Mobil hizmetler açılır menü geçişi
-    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-    mobileServicesToggle.addEventListener('click', () => {
-      mobileServicesDropdown.classList.toggle('hidden');
-    });
-
-    // Masaüstü açılır menü geçişi
-    const servicesToggle = document.getElementById('services-toggle');
-    const servicesMenu = document.getElementById('services-menu');
-
-    servicesToggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      servicesMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (event) => {
-      if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
-        servicesMenu.classList.add('hidden');
-      }
-    });
-
-    // Kaydırma animasyonları için JavaScript
-    const animateElements = document.querySelectorAll('.animate-on-scroll, .animate-on-scroll-left, .animate-on-scroll-right');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      rootMargin: '0px',
-      threshold: 0.1
-    });
-
-    animateElements.forEach(element => {
-      observer.observe(element);
-    });
-  });
-</script>
+<!-- Menu toggle + scroll-animation logic live in js/shared.js (rendered on every page). Do not duplicate here. -->
 
 <div id="footer-root"></div>
 <script src="../components/navbar.js"></script>

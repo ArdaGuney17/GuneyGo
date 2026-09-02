@@ -106,38 +106,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Mobile services dropdown toggle
-    const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-    const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-    mobileServicesToggle.addEventListener('click', () => {
-      mobileServicesDropdown.classList.toggle('hidden');
-    });
-
-    // Desktop dropdown menu toggle
-    const servicesToggle = document.getElementById('services-toggle');
-    const servicesMenu = document.getElementById('services-menu');
-    servicesToggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      servicesMenu.classList.toggle('hidden');
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', (event) => {
-      if (!servicesToggle.contains(event.target) && !servicesMenu.contains(event.target)) {
-        servicesMenu.classList.add('hidden');
-      }
-      if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
-        mobileMenu.classList.add('hidden');
-      }
-    });
+    // Menu toggle logic lives in js/shared.js — do not duplicate it here.
 
     // Contact form submission and message display
     const contactForm = document.getElementById('contactForm');

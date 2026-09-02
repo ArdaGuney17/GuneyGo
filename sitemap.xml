@@ -84,4 +84,28 @@
     <loc>https://artunhealthcare.com/tr/aydinlatmametni_tr</loc>
     <priority>0.40</priority>
   </url>
+  <url>
+    <loc>https://artunhealthcare.com/en/hair-transplant</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/tr/sa%C3%A7-ekimi</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/en/dental-treatment</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/tr/di%C5%9F-tedavisi</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/en/cancer-treatment</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/tr/kanser-tedavisi</loc>
+    <priority>0.90</priority>
+  </url>
 </urlset>

@@ -28,7 +28,10 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       contactForPatients: 'contact-for-patients',
       contactForAgencies: 'contact-for-agencies',
       contactForCompanies: 'contact-for-companies',
-      privacy: 'aydinlatmametni'
+      privacy: 'aydinlatmametni',
+      hairTransplant: 'hair-transplant',
+      dentalTreatment: 'dental-treatment',
+      cancerTreatment: 'cancer-treatment'
     },
     tr: {
       home: '',
@@ -40,7 +43,10 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       contactForPatients: 'hastalar-için-iletişim',
       contactForAgencies: 'acenteler-için-iletişim',
       contactForCompanies: 'şirketler-için-iletişim',
-      privacy: 'aydinlatmametni_tr'
+      privacy: 'aydinlatmametni_tr',
+      hairTransplant: 'saç-ekimi',
+      dentalTreatment: 'diş-tedavisi',
+      cancerTreatment: 'kanser-tedavisi'
     }
   };
 

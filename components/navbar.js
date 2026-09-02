@@ -1,5 +1,5 @@
 // components/navbar.js
-function renderNavbar(lang = 'en') {
+function renderNavbar(lang = 'en', pageKey = 'home') {
   const root = document.getElementById('navbar-root');
   if (!root) return;
 
@@ -15,38 +15,54 @@ function renderNavbar(lang = 'en') {
     contact: isTR ? 'İletişime Geçin' : 'Contact Us'
   };
 
-  const links = {
-    home: isTR ? 'ana-sayfa.html' : 'index.html',
-    about: isTR ? 'hakkımızda.html' : 'about-us.html',
-    forPatients: isTR ? 'hastalar-için.html' : 'for-patients.html',
-    forAgencies: isTR ? 'sağlık-turizmi-acenteleri-için.html' : 'for-agencies.html',
-    forCompanies: isTR ? 'şirketler-için.html' : 'for-companies.html',
-    contact: isTR ? 'iletişime-geçin.html' : 'contact-us.html'
+  // Clean (extension-less) slugs per language, keyed by a stable page identifier.
+  // '' means that language's homepage, served at /en/ or /tr/.
+  const slugs = {
+    en: {
+      home: '',
+      about: 'about-us',
+      forPatients: 'for-patients',
+      forAgencies: 'for-agencies',
+      forCompanies: 'for-companies',
+      contact: 'contact-us',
+      contactForPatients: 'contact-for-patients',
+      contactForAgencies: 'contact-for-agencies',
+      contactForCompanies: 'contact-for-companies',
+      privacy: 'aydinlatmametni'
+    },
+    tr: {
+      home: '',
+      about: 'hakkımızda',
+      forPatients: 'hastalar-için',
+      forAgencies: 'sağlık-turizmi-acenteleri-için',
+      forCompanies: 'şirketler-için',
+      contact: 'iletişime-geçin',
+      contactForPatients: 'hastalar-için-iletişim',
+      contactForAgencies: 'acenteler-için-iletişim',
+      contactForCompanies: 'şirketler-için-iletişim',
+      privacy: 'aydinlatmametni_tr'
+    }
   };
 
-  const path = window.location.pathname;
-  let currentPage = path.split('/').pop() || (isTR ? 'ana-sayfa.html' : 'index.html');
-  
-  const pageMap = {
-    'index.html': 'ana-sayfa.html',
-    'about-us.html': 'hakkımızda.html',
-    'for-patients.html': 'hastalar-için.html',
-    'for-agencies.html': 'sağlık-turizmi-acenteleri-için.html',
-    'for-companies.html': 'şirketler-için.html',
-    'contact-us.html': 'iletişime-geçin.html',
-    'contact-for-patients.html': 'hastalar-için-iletişim.html',
-    'contact-for-agencies.html': 'acenteler-için-iletişim.html',
-    'contact-for-companies.html': 'şirketler-için-iletişim.html',
-    'aydinlatmametni.html': 'aydinlatmametni_tr.html'
+  // Build a relative href to `key` in `targetLang`, from a page rendered in `lang`.
+  // Every page lives one level deep (either /en/... or /tr/...), so this stays simple.
+  const hrefTo = (targetLang, key) => {
+    const slug = slugs[targetLang][key] ?? '';
+    if (targetLang === lang) return slug === '' ? './' : slug;
+    return '../' + targetLang + '/' + slug;
   };
-  
-  const reverseMap = {};
-  for (const [en, tr] of Object.entries(pageMap)) {
-    reverseMap[tr] = en;
-  }
-  
-  const linkEN = isTR ? '../en/' + (reverseMap[currentPage] || 'index.html') : currentPage;
-  const linkTR = isTR ? currentPage : '../tr/' + (pageMap[currentPage] || 'ana-sayfa.html');
+
+  const links = {
+    home: hrefTo(lang, 'home'),
+    about: hrefTo(lang, 'about'),
+    forPatients: hrefTo(lang, 'forPatients'),
+    forAgencies: hrefTo(lang, 'forAgencies'),
+    forCompanies: hrefTo(lang, 'forCompanies'),
+    contact: hrefTo(lang, 'contact')
+  };
+
+  const linkEN = hrefTo('en', pageKey);
+  const linkTR = hrefTo('tr', pageKey);
 
   const html = `
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">

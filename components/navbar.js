@@ -87,7 +87,7 @@ function renderNavbar(lang = 'en') {
       <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
         ${texts.services} <i class="fas fa-chevron-down ml-1 text-xs"></i>
       </button>
-      <div id="mobile-services-dropdown" class="hidden flex-col space-y-2 mt-2 px-4">
+      <div id="mobile-services-dropdown" class="hidden flex flex-col space-y-2 mt-2 px-4">
         <a href="${links.forPatients}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.forPatients}</a>
         <a href="${links.forAgencies}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.forAgencies}</a>
         <a href="${links.forCompanies}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.forCompanies}</a>

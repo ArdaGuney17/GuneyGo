@@ -15,9 +15,9 @@ function renderFooter(lang = 'en') {
 <footer id="page-footer" class="bg-gray-900 text-white pt-8 mt-auto">
   <div class="container mx-auto px-4">
     <div class="bg-[#59CDD1] rounded-2xl shadow-lg p-6 mb-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center text-center">
-        <h3 class="md:col-span-1 text-2xl font-bold tracking-wide">${texts.contact}</h3>
-        <a href="mailto:artunhcc@gmail.com" class="md:col-span-1 flex items-center justify-center gap-3 bg-white text-gray-900 px-5 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6 text-center">
+        <h3 class="text-2xl font-bold tracking-wide">${texts.contact}</h3>
+        <a href="mailto:artunhcc@gmail.com" class="flex items-center justify-center gap-3 bg-white text-gray-900 px-8 py-3 rounded-xl shadow-md hover:scale-105 hover:bg-orange-500 hover:text-white transition">
           <i class="fas fa-envelope text-xl"></i><span class="font-semibold">${texts.email}</span>
         </a>
       </div>

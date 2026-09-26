@@ -43,3 +43,37 @@
 .menu-icon-pulse {
   animation: menu-icon-pulse 1.8s ease-in-out infinite;
 }
+
+/* ============================================================
+   Mobile density pass: below the md breakpoint (768px), shrink
+   heading sizes and vertical rhythm so pages read like they're
+   designed for a phone instead of a scaled-down desktop layout.
+   Desktop sizes (md: and up) are untouched -- Tailwind's own
+   md:* utilities still apply there since this block only fires
+   under max-width: 767px.
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Headings & large display text */
+  .text-5xl { font-size: 2rem; line-height: 2.25rem; }
+  .text-4xl { font-size: 1.75rem; line-height: 2.1rem; }
+  .text-3xl { font-size: 1.5rem; line-height: 1.9rem; }
+  .text-2xl { font-size: 1.25rem; line-height: 1.6rem; }
+  .text-xl  { font-size: 1.125rem; line-height: 1.5rem; }
+  .text-lg  { font-size: 1rem; line-height: 1.5rem; }
+
+  /* Section / block vertical rhythm */
+  .py-16 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .py-12 { padding-top: 2rem; padding-bottom: 2rem; }
+  .mb-12 { margin-bottom: 1.75rem; }
+  .mb-10 { margin-bottom: 1.5rem; }
+  .mb-8 { margin-bottom: 1.25rem; }
+  .space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem; }
+  .space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.25rem; }
+
+  /* Card / panel padding */
+  .p-8 { padding: 1.5rem; }
+  .p-6 { padding: 1.25rem; }
+
+  /* Selector-page role cards */
+  .min-h-\[150px\] { min-height: 120px; }
+}

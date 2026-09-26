@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes heartbeat-cta {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(89, 205, 209, 0.7); }
+  14% { transform: scale(1.06); box-shadow: 0 0 18px 6px rgba(89, 205, 209, 0.55); }
+  28% { transform: scale(1); box-shadow: 0 0 0 0 rgba(89, 205, 209, 0.7); }
+  42% { transform: scale(1.06); box-shadow: 0 0 18px 6px rgba(89, 205, 209, 0.55); }
+  70% { transform: scale(1); box-shadow: 0 0 0 0 rgba(89, 205, 209, 0.7); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(89, 205, 209, 0.7); }
+}
+.heartbeat-cta {
+  animation: heartbeat-cta 2.2s ease-in-out infinite;
+}
+
+/* Same pulse, but a light/white glow for white buttons sitting on a teal band. */
+@keyframes heartbeat-cta-light {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85); }
+  14% { transform: scale(1.06); box-shadow: 0 0 18px 6px rgba(255, 255, 255, 0.9); }
+  28% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85); }
+  42% { transform: scale(1.06); box-shadow: 0 0 18px 6px rgba(255, 255, 255, 0.9); }
+  70% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85); }
+}
+.heartbeat-cta-light {
+  animation: heartbeat-cta-light 2.2s ease-in-out infinite;
+}

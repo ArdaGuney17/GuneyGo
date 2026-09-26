@@ -89,7 +89,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
           <a href="${links.forCompanies}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.forCompanies}</a>
         </div>
       </div>
-      <a href="${links.contact}" class="bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">${texts.contact}</a>
+      <a href="${links.contact}" class="heartbeat-cta bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">${texts.contact}</a>
       <div class="lang-switcher text-gray-300 font-semibold space-x-2">
         <a href="${linkEN}" class="${!isTR ? 'text-[#59CDD1]' : ''}">ENG</a>
         <span>/</span>

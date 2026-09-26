@@ -26,3 +26,12 @@
 .heartbeat-cta-light {
   animation: heartbeat-cta-light 2.2s ease-in-out infinite;
 }
+
+@keyframes text-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.text-pulse {
+  display: inline-block;
+  animation: text-pulse 1.8s ease-in-out infinite;
+}

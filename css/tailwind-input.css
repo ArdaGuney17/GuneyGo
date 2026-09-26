@@ -58,10 +58,15 @@
   0%, 45% { transform: translateX(-120%) skewX(-20deg); }
   70%, 100% { transform: translateX(220%) skewX(-20deg); }
 }
+@keyframes gentle-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025); }
+}
 .shimmer-cta,
 .shimmer-cta-light {
   position: relative;
   overflow: hidden;
+  animation: gentle-breathe 2.4s ease-in-out infinite;
 }
 .shimmer-cta::after,
 .shimmer-cta-light::after {

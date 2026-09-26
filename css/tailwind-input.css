@@ -64,6 +64,11 @@
   /* Section / block vertical rhythm */
   .py-16 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
   .py-12 { padding-top: 2rem; padding-bottom: 2rem; }
+  .pt-16 { padding-top: 2.5rem; }
+  .pb-16 { padding-bottom: 2.5rem; }
+  .pt-12 { padding-top: 2rem; }
+  .pb-12 { padding-bottom: 2rem; }
+  .pt-\[6rem\] { padding-top: 2.5rem; }
   .mb-12 { margin-bottom: 1.75rem; }
   .mb-10 { margin-bottom: 1.5rem; }
   .mb-8 { margin-bottom: 1.25rem; }

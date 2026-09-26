@@ -64,7 +64,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
     forPatients: hrefTo(lang, 'forPatients'),
     forAgencies: hrefTo(lang, 'forAgencies'),
     forCompanies: hrefTo(lang, 'forCompanies'),
-    contact: hrefTo(lang, 'contact')
+    contact: hrefTo(lang, 'contactForPatients')
   };
 
   const linkEN = hrefTo('en', pageKey);

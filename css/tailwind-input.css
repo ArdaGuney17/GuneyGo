@@ -35,3 +35,11 @@
   display: inline-block;
   animation: text-pulse 1.8s ease-in-out infinite;
 }
+
+@keyframes menu-icon-pulse {
+  0%, 100% { color: #9ca3af; transform: scale(1); text-shadow: 0 0 0 rgba(89, 205, 209, 0); }
+  50% { color: #59CDD1; transform: scale(1.18); text-shadow: 0 0 10px rgba(89, 205, 209, 0.85); }
+}
+.menu-icon-pulse {
+  animation: menu-icon-pulse 1.8s ease-in-out infinite;
+}

@@ -96,7 +96,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
         <a href="${linkTR}" class="${isTR ? 'text-[#59CDD1]' : ''}">TR</a>
       </div>
     </nav>
-    <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-400">
+    <button id="mobile-menu-btn" class="menu-icon-pulse md:hidden text-2xl text-gray-400">
       <i class="fas fa-bars"></i>
     </button>
   </div>
@@ -115,7 +115,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
         <a href="${links.forCompanies}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.forCompanies}</a>
       </div>
     </div>
-    <a href="${links.contact}" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.contact}</a>
+    <a href="${links.contact}" class="heartbeat-cta bg-[#59CDD1] bg-opacity-70 text-white text-center py-2 rounded-full hover:bg-opacity-90">${texts.contact}</a>
     <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
       <a href="${linkEN}" class="${!isTR ? 'text-[#59CDD1]' : 'text-gray-300 hover:text-white'}">ENG</a>
       <span class="text-gray-500">/</span>

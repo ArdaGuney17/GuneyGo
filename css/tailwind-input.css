@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Justified text stretches spaces unevenly on narrow lines (especially on
+   mobile), leaving ugly gaps between words. Left-align everywhere instead. */
+.text-justify {
+  text-align: left;
+}
+
 @keyframes heartbeat-cta {
   0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(89, 205, 209, 0.7); }
   14% { transform: scale(1.06); box-shadow: 0 0 18px 6px rgba(89, 205, 209, 0.55); }

@@ -23,7 +23,7 @@ function renderFooter(lang = 'en') {
       </div>
     </div>
     <div class="border-b border-gray-700 pb-8 mb-6 flex justify-center items-center">
-      <img src="../img/artun2.png" alt="Artun Consultancy Logo" class="h-7 w-auto md:h-10">
+      <img src="../img/${isTR ? 'ArtuntrW' : 'artun2'}.png" alt="${isTR ? 'Artun Sağlık Danışmanlığı Logosu' : 'Artun Consultancy Logo'}" class="h-7 w-auto md:h-10">
     </div>
     <div class="text-center text-gray-500 text-sm py-4">
       <p>${texts.rights}</p>

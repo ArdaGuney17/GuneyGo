@@ -74,7 +74,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <a href="${links.home}">
-      <img src="../img/artun2.png" alt="Artun Consultancy Logo" class="h-7 w-auto md:h-8">
+      <img src="../img/${isTR ? 'ArtuntrW' : 'artun2'}.png" alt="${isTR ? 'Artun Sağlık Danışmanlığı Logosu' : 'Artun Consultancy Logo'}" class="h-7 w-auto md:h-8">
     </a>
     <nav class="hidden md:flex items-center space-x-6">
       <a href="${links.home}" class="text-gray-300 hover:text-white transition-colors duration-300">${texts.home}</a>

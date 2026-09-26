@@ -50,6 +50,40 @@
   animation: menu-icon-pulse 1.8s ease-in-out infinite;
 }
 
+/* Attention effect for "Send Message" submit buttons -- a light sweep
+   across the button, deliberately different from .heartbeat-cta (which
+   is reserved for "Contact Us" CTAs) so the two don't compete for the
+   eye on the same page. */
+@keyframes shimmer-sweep {
+  0%, 45% { transform: translateX(-120%) skewX(-20deg); }
+  70%, 100% { transform: translateX(220%) skewX(-20deg); }
+}
+.shimmer-cta,
+.shimmer-cta-light {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-cta::after,
+.shimmer-cta-light::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  transform: translateX(-120%) skewX(-20deg);
+  animation: shimmer-sweep 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+/* Teal shimmer for white buttons (the contact-form pages). */
+.shimmer-cta::after {
+  background: linear-gradient(115deg, transparent, rgba(89, 205, 209, 0.45), transparent);
+}
+/* White shimmer for translucent teal buttons (homepage contact band). */
+.shimmer-cta-light::after {
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+}
+
 /* ============================================================
    Mobile density pass: below the md breakpoint (768px), shrink
    heading sizes and vertical rhythm so pages read like they're

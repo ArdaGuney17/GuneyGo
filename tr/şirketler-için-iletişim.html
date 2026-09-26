@@ -101,45 +101,48 @@
 
 
 <main class="pt-16">
-  <section id="contact" class="section pt-6 pb-4 bg-white">
+  <section id="contact" class="section pt-6 pb-10 bg-gray-50">
     <div class="section-container container mx-auto px-4 max-w-5xl">
       <h2 class="section-title text-xl font-bold text-center text-gray-900 mb-1">İletişime Geçin</h2>
-      <p class="text-xs text-gray-700 leading-relaxed text-center mb-2 max-w-2xl mx-auto">
+      <p class="text-xs text-gray-600 leading-relaxed text-center mb-4 max-w-2xl mx-auto">
         Yardım etmek için buradayız! Bir sorunuz varsa, desteğe ihtiyacınız varsa veya bir sağlık kuruluşu ile görüşmek isterseniz, bize ulaşmaktan çekinmeyin.
       </p>
 
-      <div class="grid md:grid-cols-[1.2fr_2fr] gap-4 items-start">
-        <div>
-          <div class="bg-gray-50 p-3 rounded-lg shadow-lg">
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">İletişim Bilgileri</h3>
-            <div class="space-y-1">
-              <div class="contact-method flex items-center space-x-3 text-sm text-gray-700">
-                <i class="fas fa-envelope text-[#59CDD1] text-xl"></i>
+      <div class="grid md:grid-cols-[1fr_1.6fr] rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto">
+        <div class="bg-gradient-to-br from-[#59CDD1] to-[#3f9fa3] text-white p-5 flex flex-col justify-between">
+          <div>
+            <h3 class="text-lg font-semibold mb-3">İletişim Bilgileri</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 text-sm">
+                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 shrink-0"><i class="fas fa-envelope"></i></span>
                 <span>info@artunhealthcare.com</span>
               </div>
-              <div class="contact-method flex items-center space-x-3 text-sm text-gray-700">
-                <i class="fas fa-map-marker-alt text-[#59CDD1] text-xl"></i>
+              <div class="flex items-center gap-3 text-sm">
+                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-white/20 shrink-0"><i class="fas fa-map-marker-alt"></i></span>
                 <span>İstanbul, Türkiye</span>
               </div>
             </div>
           </div>
+          <p class="text-xs text-white/80 mt-6 flex items-center gap-2"><i class="fas fa-shield-alt"></i> Genellikle 24 saat içinde yanıt veriyoruz.</p>
         </div>
 
-        <div class="bg-gray-50 p-3 rounded-lg shadow-lg space-y-2">
+        <div class="bg-white p-5">
           <form id="contactForm" class="contact-form space-y-2" action="https://script.google.com/macros/s/AKfycbyPt8bF4tvPwJoQu7DY335H30-9BuzFeG7xx5Od9VHDuIPrIs0H5AyQYCwFLggaRmok8g/exec" method="POST">
             <h3 class="text-lg font-semibold text-gray-900 mb-2">Bize Bir Mesaj Gönderin</h3>
 
-            <div class="form-group">
-              <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Şirketin Adı</label>
-              <input type="text" id="name" name="name" class="w-full px-4 py-1.5 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Şirket adını girin" required>
-            </div>
-            <div class="form-group">
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numarası</label>
-              <input type="text" id="phone" name="phone" class="w-full px-4 py-1.5 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Ülke kodu ile telefon numarasını girin" required>
+            <div class="grid sm:grid-cols-2 gap-2">
+              <div class="form-group">
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Şirketin Adı</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-1.5 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="Şirket adı" required>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefon Numarası</label>
+                <input type="text" id="phone" name="phone" class="w-full px-4 py-1.5 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="+90 555 123 4567" required>
+              </div>
             </div>
             <div class="form-group">
               <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-posta Adresi</label>
-              <input type="email" id="email" name="email" class="w-full px-4 py-1.5 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="E-posta adresinizi girin" required>
+              <input type="email" id="email" name="email" class="w-full px-4 py-1.5 border border-gray-300 rounded-md focus:ring-[#59CDD1] focus:border-[#59CDD1]" placeholder="ornek@eposta.com" required>
             </div>
             <div class="form-group">
               <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mesajınız</label>

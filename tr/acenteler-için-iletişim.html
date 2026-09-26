@@ -145,16 +145,20 @@
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
-              <label for="consentContact" class="text-sm text-gray-700">
-                Hastanın kişisel ve tıbbi bilgilerinin, talebinin değerlendirilmesi amacıyla ilgili sağlık kuruluşlarıyla paylaşılması için açık rızasını aldığımızı onaylarız.
-              </label>
+              <div class="text-sm text-gray-700">
+                <label for="consentContact" class="cursor-pointer font-medium">Hastanın Veri Paylaşım Onayı</label>
+                <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+                <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">Bu formu göndererek, hastanın kişisel ve tıbbi bilgilerinin, taleplerinin değerlendirilmesi ve uygun tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık kuruluşlarındaki yetkili kişilerle paylaşılmasına açık rızasını aldığımızı onaylarız.</p>
+              </div>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
-              <label for="consentContact1" class="text-sm text-gray-700">
-                Kurumsal iletişim ve süreç bilgilerimizin, tıbbi seyahat sürecini yönetmek amacıyla ilgili sağlık kurumlarıyla paylaşılmasına izin veriyoruz.
-              </label>
+              <div class="text-sm text-gray-700">
+                <label for="consentContact1" class="cursor-pointer font-medium">Kurumsal Veri Paylaşım Onayı</label>
+                <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+                <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">Kurumsal iletişim ve süreçle ilgili bilgilerimizin (hizmet talepleri, koordinasyon detayları ve diğer ilgili operasyonel veriler gibi) tıbbi seyahat sürecini verimli bir şekilde yönetmek amacıyla ilgili sağlık kurumlarıyla paylaşılmasına izin veriyoruz. Ne hastanın ne de bizim bilgilerimizin ilgili sağlık kurumları dışındaki üçüncü taraflarla paylaşılmayacağını ve iletişim ve süreç yönetimi dışında başka hiçbir amaçla kullanılmayacağını onaylarız.</p>
+              </div>
             </div>
 
             <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
@@ -187,6 +191,16 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // Menu toggle logic lives in js/shared.js — do not duplicate it here.
+
+    document.querySelectorAll('.consent-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const full = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        full.classList.toggle('hidden');
+        btn.textContent = expanded ? '...' : '▲';
+      });
+    });
 
     // Contact form submission and message display
     const contactForm = document.getElementById('contactForm');

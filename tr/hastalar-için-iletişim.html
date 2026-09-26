@@ -158,9 +158,11 @@
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded" required>
-              <label for="consentContact" class="text-sm text-gray-700">
-                Kişisel ve tıbbi bilgilerimin, talebimin değerlendirilmesi ve gerekli tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık kuruluşlarıyla paylaşılmasını kabul ediyorum.
-              </label>
+              <div class="text-sm text-gray-700">
+                <label for="consentContact" class="cursor-pointer font-medium">Veri Paylaşım Onayı</label>
+                <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+                <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">Bu formu göndererek, sağlamış olduğum kişisel ve tıbbi bilgilerin, talebimin değerlendirilmesi ve gerekli tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık tesislerindeki yetkili personel ile paylaşılmasına açıkça rıza gösteriyorum. Bilgilerimin üçüncü şahıslarla paylaşılmayacağını ve süreç yönetimi ile iletişim dışında herhangi bir amaçla kullanılmayacağını kabul ediyorum.</p>
+              </div>
             </div>
 
             <div class="form-group flex items-start space-x-2 mt-4">
@@ -195,9 +197,11 @@
 
           <div class="form-group flex items-start space-x-3 mt-4">
             <input type="checkbox" id="consentUpload" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded" required>
-            <label for="consentUpload" class="text-sm text-gray-700">
-              Kişisel ve tıbbi bilgilerimin, talebimin değerlendirilmesi ve gerekli tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık kuruluşlarıyla paylaşılmasını kabul ediyorum.
-            </label>
+            <div class="text-sm text-gray-700">
+              <label for="consentUpload" class="cursor-pointer font-medium">Veri Paylaşım Onayı</label>
+              <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+              <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">Bu formu göndererek, sağlamış olduğum kişisel ve tıbbi bilgilerin, talebimin değerlendirilmesi ve gerekli tıbbi hizmetlerin sağlanması amacıyla ilgili sağlık tesislerindeki yetkili personel ile paylaşılmasına açıkça rıza gösteriyorum. Bilgilerimin üçüncü şahıslarla paylaşılmayacağını ve süreç yönetimi ile iletişim dışında herhangi bir amaçla kullanılmayacağını kabul ediyorum.</p>
+            </div>
           </div>
 
           <button type="submit" class="w-full bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400 transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2">
@@ -216,6 +220,16 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // Menu toggle logic lives in js/shared.js — do not duplicate it here.
+
+    document.querySelectorAll('.consent-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const full = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        full.classList.toggle('hidden');
+        btn.textContent = expanded ? '...' : '▲';
+      });
+    });
 
     // JavaScript for form submission and message display for the contact form
     const contactForm = document.getElementById('contactForm');

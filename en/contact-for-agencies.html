@@ -83,16 +83,20 @@
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
-              <label for="consentContact" class="text-sm text-gray-700">
-                We confirm we have the patient's consent for their personal and medical information to be shared with the relevant healthcare facilities to evaluate this request.
-              </label>
+              <div class="text-sm text-gray-700">
+                <label for="consentContact" class="cursor-pointer font-medium">Patient's Data Sharing Consent</label>
+                <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+                <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">By submitting this form, we confirm that we have obtained the explicit consent of the patient for the sharing of their personal and medical information with authorized personnel at the relevant healthcare facilities. The patient's information is shared solely for the purpose of evaluating their request and facilitating the provision of appropriate medical services.</p>
+              </div>
             </div>
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact1" name="consent1" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded">
-              <label for="consentContact1" class="text-sm text-gray-700">
-                We consent to our own corporate contact and process-related information being shared with the relevant healthcare institutions to manage this request.
-              </label>
+              <div class="text-sm text-gray-700">
+                <label for="consentContact1" class="cursor-pointer font-medium">Our Data Sharing Consent</label>
+                <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+                <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">We give our consent for the sharing of our own corporate contact and process-related information (such as service requests, coordination details, and other relevant operational data) with the relevant healthcare institutions for the purpose of managing the medical travel process efficiently. We confirm that none of the information neither the patient's nor ours will be shared with any third parties outside the involved healthcare institutions, and will not be used for any purposes other than communication and process management.</p>
+              </div>
             </div>
 
             <div id="consentError" class="hidden p-3 rounded-lg text-sm text-red-700 bg-red-100 transition-opacity duration-300 opacity-0">
@@ -125,6 +129,16 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // Menu toggle logic lives in js/shared.js — do not duplicate it here.
+
+    document.querySelectorAll('.consent-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const full = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        full.classList.toggle('hidden');
+        btn.textContent = expanded ? '...' : '▲';
+      });
+    });
 
     // Contact form submission and message display
     const contactForm = document.getElementById('contactForm');

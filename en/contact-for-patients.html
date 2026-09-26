@@ -158,9 +158,11 @@
 
             <div class="form-group flex items-start space-x-3 mt-4">
               <input type="checkbox" id="consentContact" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded" required>
-              <label for="consentContact" class="text-sm text-gray-700">
-                I consent to my personal and medical information being shared with the relevant healthcare facilities solely to evaluate my request and provide the necessary medical services.
-              </label>
+              <div class="text-sm text-gray-700">
+                <label for="consentContact" class="cursor-pointer font-medium">Data Sharing Consent</label>
+                <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+                <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">By submitting this form, I give my explicit consent for the personal and medical information I have provided to be shared only with authorized personnel at the relevant healthcare facilities for the purpose of evaluating my request and providing the necessary medical services. I acknowledge that my information will not be shared with third parties or used for any purpose other than managing the process and ensuring communication.</p>
+              </div>
             </div>
 
             <div class="form-group flex items-start space-x-2 mt-4">
@@ -195,9 +197,11 @@
 
           <div class="form-group flex items-start space-x-3 mt-4">
             <input type="checkbox" id="consentUpload" name="consent" class="mt-1 form-checkbox h-4 w-4 text-[#59CDD1] rounded" required>
-            <label for="consentUpload" class="text-sm text-gray-700">
-              I consent to my personal and medical information being shared with the relevant healthcare facilities solely to evaluate my request and provide the necessary medical services.
-            </label>
+            <div class="text-sm text-gray-700">
+              <label for="consentUpload" class="cursor-pointer font-medium">Data Sharing Consent</label>
+              <button type="button" class="consent-toggle text-[#59CDD1] hover:underline ml-1" aria-expanded="false">...</button>
+              <p class="consent-full hidden mt-1 text-gray-600 leading-relaxed">By submitting this form, I give my explicit consent for the personal and medical information I have provided to be shared only with authorized personnel at the relevant healthcare facilities for the purpose of evaluating my request and providing the necessary medical services. I acknowledge that my information will not be shared with third parties or used for any purpose other than managing the process and ensuring communication.</p>
+            </div>
           </div>
 
           <button type="submit" class="w-full bg-gray-300 text-gray-800 px-6 py-3 rounded-md hover:bg-gray-400 transition duration-300 font-semibold shadow-md flex items-center justify-center space-x-2">
@@ -216,6 +220,16 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     // Menu toggle logic lives in js/shared.js — do not duplicate it here.
+
+    document.querySelectorAll('.consent-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const full = btn.nextElementSibling;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        full.classList.toggle('hidden');
+        btn.textContent = expanded ? '...' : '▲';
+      });
+    });
 
     // JavaScript for form submission and message display for the contact form
     const contactForm = document.getElementById('contactForm');

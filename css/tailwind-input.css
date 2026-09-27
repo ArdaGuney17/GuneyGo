@@ -47,6 +47,16 @@
   animation: wave-cta 6s ease-in-out infinite;
 }
 
+/* Same wave timing, but a light/white glow for white buttons on a colored card. */
+@keyframes wave-cta-light {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85); }
+  7% { transform: scale(1.08); box-shadow: 0 0 20px 8px rgba(255, 255, 255, 0.9); }
+  14% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85); }
+}
+.wave-cta-light {
+  animation: wave-cta-light 6s ease-in-out infinite;
+}
+
 @keyframes wave-icon-glow {
   0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0)); }
   7% { filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.95)); }

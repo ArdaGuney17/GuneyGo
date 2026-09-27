@@ -42,6 +42,27 @@
   animation: text-pulse 1.8s ease-in-out infinite;
 }
 
+/* Glow instead of scale, for highlighted text that sits next to other
+   scale-based animations (e.g. heartbeat-cta buttons) -- keeps the
+   color emphasis without adding a second "growing" thing on screen. */
+@keyframes text-glow-pulse {
+  0%, 100% { text-shadow: 0 0 0 rgba(89, 205, 209, 0); }
+  50% { text-shadow: 0 0 12px rgba(89, 205, 209, 0.75); }
+}
+.text-glow {
+  display: inline-block;
+  animation: text-glow-pulse 2s ease-in-out infinite;
+}
+
+/* Icon shine for CTA card icons. */
+@keyframes icon-glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0)); }
+  50% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)); }
+}
+.icon-glow {
+  animation: icon-glow-pulse 2s ease-in-out infinite;
+}
+
 @keyframes menu-icon-pulse {
   0%, 100% { color: #9ca3af; transform: scale(1); text-shadow: 0 0 0 rgba(89, 205, 209, 0); }
   50% { color: #59CDD1; transform: scale(1.18); text-shadow: 0 0 10px rgba(89, 205, 209, 0.85); }

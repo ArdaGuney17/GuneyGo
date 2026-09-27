@@ -104,29 +104,41 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        const mobileServicesToggle = document.getElementById('mobile-services-toggle');
-        const mobileServicesDropdown = document.getElementById('mobile-services-dropdown');
-        
-        if (mobileServicesToggle && mobileServicesDropdown) {
-            mobileServicesToggle.addEventListener('click', () => {
-                mobileServicesDropdown.classList.toggle('hidden');
+        // Mobile nav dropdowns ("Our Services", "Popular Treatments", ...) --
+        // each toggle button controls the panel right after it.
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach((toggle) => {
+            const panel = toggle.nextElementSibling;
+            if (!panel) return;
+            toggle.addEventListener('click', () => {
+                panel.classList.toggle('hidden');
             });
-        }
+        });
 
-        const servicesToggle = document.getElementById('services-toggle');
-        const servicesMenu = document.getElementById('services-menu');
-        const desktopDropdown = document.querySelector('.dropdown');
+        // Desktop nav dropdowns -- same pattern, and clicking one closes the others.
+        const desktopDropdowns = document.querySelectorAll('.dropdown');
 
-        if (desktopDropdown && servicesMenu && servicesToggle) {
-            desktopDropdown.addEventListener('click', (event) => {
+        desktopDropdowns.forEach((dropdown) => {
+            const panel = dropdown.querySelector('.dropdown-panel');
+            if (!panel) return;
+            dropdown.addEventListener('click', (event) => {
                 event.stopPropagation();
-                servicesMenu.classList.toggle('hidden');
+                const wasHidden = panel.classList.contains('hidden');
+                desktopDropdowns.forEach((other) => {
+                    const otherPanel = other.querySelector('.dropdown-panel');
+                    if (otherPanel) otherPanel.classList.add('hidden');
+                });
+                if (wasHidden) panel.classList.remove('hidden');
             });
+        });
 
+        if (desktopDropdowns.length) {
             document.addEventListener('click', (event) => {
-                if (!servicesMenu.contains(event.target) && !servicesToggle.contains(event.target)) {
-                    servicesMenu.classList.add('hidden');
-                }
+                desktopDropdowns.forEach((dropdown) => {
+                    const panel = dropdown.querySelector('.dropdown-panel');
+                    if (panel && !dropdown.contains(event.target)) {
+                        panel.classList.add('hidden');
+                    }
+                });
             });
         }
 

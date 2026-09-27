@@ -12,6 +12,10 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
     forPatients: isTR ? 'Hastalar İçin' : 'For Patients',
     forAgencies: isTR ? 'Medikal Turizm Acenteleri İçin' : 'For Medical Tourism Agencies',
     forCompanies: isTR ? 'Şirketler İçin' : 'For Companies',
+    popularTreatments: isTR ? 'Popüler Tedaviler' : 'Popular Treatments',
+    hairTransplant: isTR ? 'Saç Ekimi' : 'Hair Transplant',
+    dentalTreatment: isTR ? 'Diş Tedavisi' : 'Dental Treatment',
+    cancerTreatment: isTR ? 'Kanser Tedavisi' : 'Cancer Treatment',
     contact: isTR ? 'İletişime Geçin' : 'Contact Us'
   };
 
@@ -64,6 +68,9 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
     forPatients: hrefTo(lang, 'forPatients'),
     forAgencies: hrefTo(lang, 'forAgencies'),
     forCompanies: hrefTo(lang, 'forCompanies'),
+    hairTransplant: hrefTo(lang, 'hairTransplant'),
+    dentalTreatment: hrefTo(lang, 'dentalTreatment'),
+    cancerTreatment: hrefTo(lang, 'cancerTreatment'),
     contact: hrefTo(lang, 'contact')
   };
 
@@ -80,13 +87,23 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       <a href="${links.home}" class="text-gray-300 hover:text-white transition-colors duration-300">${texts.home}</a>
       <a href="${links.about}" class="text-gray-300 hover:text-white transition-colors duration-300">${texts.about}</a>
       <div class="dropdown relative">
-        <button id="services-toggle" class="text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
+        <button class="dropdown-toggle text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
           ${texts.services} <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </button>
-        <div id="services-menu" class="hidden absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+        <div class="dropdown-panel hidden absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
           <a href="${links.forPatients}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.forPatients}</a>
           <a href="${links.forAgencies}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.forAgencies}</a>
           <a href="${links.forCompanies}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.forCompanies}</a>
+        </div>
+      </div>
+      <div class="dropdown relative">
+        <button class="dropdown-toggle text-gray-300 hover:text-white transition-colors duration-300 flex items-center">
+          ${texts.popularTreatments} <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </button>
+        <div class="dropdown-panel hidden absolute top-full left-0 mt-2 p-2 rounded-lg shadow-lg min-w-[240px] glassmorphism">
+          <a href="${links.hairTransplant}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.hairTransplant}</a>
+          <a href="${links.dentalTreatment}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.dentalTreatment}</a>
+          <a href="${links.cancerTreatment}" class="block text-white px-4 py-2 hover:bg-gray-700/50 rounded-md">${texts.cancerTreatment}</a>
         </div>
       </div>
       <a href="${links.contact}" class="heartbeat-cta bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">${texts.contact}</a>
@@ -106,13 +123,23 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
     <a href="${links.home}" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.home}</a>
     <a href="${links.about}" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.about}</a>
     <div>
-      <button id="mobile-services-toggle" class="w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
+      <button class="mobile-dropdown-toggle w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
         ${texts.services} <i class="fas fa-chevron-down ml-1 text-xs"></i>
       </button>
-      <div id="mobile-services-dropdown" class="hidden flex flex-col space-y-2 mt-2 px-4">
+      <div class="mobile-dropdown-panel hidden flex flex-col space-y-2 mt-2 px-4">
         <a href="${links.forPatients}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.forPatients}</a>
         <a href="${links.forAgencies}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.forAgencies}</a>
         <a href="${links.forCompanies}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.forCompanies}</a>
+      </div>
+    </div>
+    <div>
+      <button class="mobile-dropdown-toggle w-full text-white text-center py-2 hover:bg-gray-700/50 rounded-md flex items-center justify-center">
+        ${texts.popularTreatments} <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      </button>
+      <div class="mobile-dropdown-panel hidden flex flex-col space-y-2 mt-2 px-4">
+        <a href="${links.hairTransplant}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.hairTransplant}</a>
+        <a href="${links.dentalTreatment}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.dentalTreatment}</a>
+        <a href="${links.cancerTreatment}" class="block text-sm text-gray-300 hover:text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.cancerTreatment}</a>
       </div>
     </div>
     <a href="${links.contact}" class="heartbeat-cta bg-[#59CDD1] bg-opacity-70 text-white text-center py-2 rounded-full hover:bg-opacity-90">${texts.contact}</a>

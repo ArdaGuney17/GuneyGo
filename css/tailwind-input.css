@@ -89,13 +89,18 @@
   background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
 }
 
-/* "Learn more ->" style links: the arrow nudges forward on hover. */
+/* "Learn more ->" style links: the arrow nudges forward on a loop, since
+   :hover never fires on touch devices (mobile), where this got missed. */
+@keyframes arrow-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
 .arrow-cta i {
   display: inline-block;
-  transition: transform 0.25s ease;
+  animation: arrow-nudge 1.4s ease-in-out infinite;
 }
 .arrow-cta:hover i {
-  transform: translateX(6px);
+  animation-duration: 0.7s;
 }
 
 /* ============================================================

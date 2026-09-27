@@ -89,6 +89,15 @@
   background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
 }
 
+/* "Learn more ->" style links: the arrow nudges forward on hover. */
+.arrow-cta i {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.arrow-cta:hover i {
+  transform: translateX(6px);
+}
+
 /* ============================================================
    Mobile density pass: below the md breakpoint (768px), shrink
    heading sizes and vertical rhythm so pages read like they're

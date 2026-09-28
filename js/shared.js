@@ -169,6 +169,53 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
+    // --- Service Areas image carousel (autoplay + dots + arrows) ---
+    document.querySelectorAll('.service-carousel').forEach((carousel) => {
+        const track = carousel.querySelector('.service-carousel-track');
+        const slides = track ? [...track.children] : [];
+        const dots = [...carousel.querySelectorAll('.service-carousel-dot')];
+        const prevBtn = carousel.querySelector('.service-carousel-prev');
+        const nextBtn = carousel.querySelector('.service-carousel-next');
+        if (!track || slides.length === 0) return;
+
+        const count = slides.length;
+        let index = 0;
+        let timer = null;
+
+        function goTo(i) {
+            index = (i + count) % count;
+            track.style.transform = `translateX(-${index * (100 / count)}%)`;
+            dots.forEach((dot, di) => {
+                dot.classList.toggle('bg-white', di === index);
+                dot.classList.toggle('bg-white/50', di !== index);
+            });
+        }
+
+        function next() { goTo(index + 1); }
+        function prev() { goTo(index - 1); }
+
+        function startAutoplay() {
+            clearInterval(timer);
+            timer = setInterval(next, 5000);
+        }
+        function stopAutoplay() {
+            clearInterval(timer);
+        }
+
+        dots.forEach((dot, di) => {
+            dot.addEventListener('click', () => { goTo(di); startAutoplay(); });
+        });
+        if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startAutoplay(); });
+        if (nextBtn) nextBtn.addEventListener('click', () => { next(); startAutoplay(); });
+
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+
+        goTo(0);
+        startAutoplay();
+    });
+    // --- End Service Areas carousel ---
+
     const heroElements = document.querySelectorAll('.hero-animate-up');
     let delay = 0;
     heroElements.forEach(element => {

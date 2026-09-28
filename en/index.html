@@ -312,33 +312,57 @@
     <div class="container mx-auto px-4 max-w-5xl">
       <h2 class="text-xl md:text-3xl font-bold text-center text-gray-900 mb-2 md:mb-3">Our Service Areas</h2>
       <p class="text-sm md:text-lg text-gray-600 text-center mb-8 md:mb-12">We're by your side in <span class="text-[#59CDD1] font-semibold">every area</span> of your healthcare journey.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
-        <div class="bg-gradient-to-br from-[#59CDD1] to-[#4bb8bc] p-3 md:p-6 rounded-lg shadow-lg text-center flex flex-col items-center animate-on-scroll">
-          <i class="fas fa-user-injured wave-icon-glow text-2xl md:text-5xl text-white mb-2 md:mb-4" style="animation-delay: 0s"></i>
-          <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-3">For Patients</h3>
-          <p class="text-white/90 text-xs md:text-base mb-2 md:mb-6 flex-grow">Medical services, aesthetic surgery, dental treatment & prosthesis, and hair transplantation.</p>
-          <div class="flex flex-row gap-2 w-full mt-auto">
-            <a href="for-patients" class="flex-1 border-2 border-white text-white px-2 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-white hover:text-[#4bb8bc] transition duration-300 font-semibold text-xs md:text-sm">Learn More</a>
-            <a href="contact-for-patients" class="wave-cta-light flex-1 bg-white text-[#4bb8bc] px-2 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-xs md:text-sm hover:scale-105" style="animation-delay: 0s">Contact Us</a>
+      <div class="relative rounded-lg shadow-lg overflow-hidden service-carousel h-[420px] md:h-[480px] animate-on-scroll">
+        <div class="service-carousel-track flex h-full w-[300%] transition-transform duration-700 ease-in-out">
+          <div class="relative h-full w-1/3 flex-shrink-0">
+            <img src="../img/service-patients.png" alt="Doctor consulting with a patient" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+            <div class="relative h-full flex flex-col justify-end items-center text-center p-6 md:p-12">
+              <h3 class="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3">For Patients</h3>
+              <p class="text-white/90 text-sm md:text-lg mb-4 md:mb-6 max-w-md">Medical services, aesthetic surgery, dental treatment & prosthesis, and hair transplantation.</p>
+              <div class="flex flex-row gap-3">
+                <a href="for-patients" class="border-2 border-white text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full hover:bg-white hover:text-[#4bb8bc] transition duration-300 font-semibold text-sm md:text-base">Learn More</a>
+                <a href="contact-for-patients" class="wave-cta-light bg-white text-[#4bb8bc] px-4 md:px-6 py-2 md:py-2.5 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-sm md:text-base hover:scale-105" style="animation-delay: 0s">Contact Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative h-full w-1/3 flex-shrink-0">
+            <img src="../img/service-agencies.webp" alt="Globe, model airplane and passport representing medical tourism" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+            <div class="relative h-full flex flex-col justify-end items-center text-center p-6 md:p-12">
+              <h3 class="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3">For Medical Tourism Agencies</h3>
+              <p class="text-white/90 text-sm md:text-lg mb-4 md:mb-6 max-w-md">Patient referral, hospital agreements, on-site support.</p>
+              <div class="flex flex-row gap-3">
+                <a href="for-agencies" class="border-2 border-white text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full hover:bg-white hover:text-[#4bb8bc] transition duration-300 font-semibold text-sm md:text-base">Learn More</a>
+                <a href="contact-for-agencies" class="wave-cta-light bg-white text-[#4bb8bc] px-4 md:px-6 py-2 md:py-2.5 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-sm md:text-base hover:scale-105" style="animation-delay: 2s">Contact Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="relative h-full w-1/3 flex-shrink-0">
+            <img src="../img/service-companies.webp" alt="Modern office skyscrapers" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"></div>
+            <div class="relative h-full flex flex-col justify-end items-center text-center p-6 md:p-12">
+              <h3 class="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3">For Companies</h3>
+              <p class="text-white/90 text-sm md:text-lg mb-4 md:mb-6 max-w-md">Healthcare investment, hospital management, reimbursement consulting.</p>
+              <div class="flex flex-row gap-3">
+                <a href="for-companies" class="border-2 border-white text-white px-4 md:px-6 py-2 md:py-2.5 rounded-full hover:bg-white hover:text-[#4bb8bc] transition duration-300 font-semibold text-sm md:text-base">Learn More</a>
+                <a href="contact-for-companies" class="wave-cta-light bg-white text-[#4bb8bc] px-4 md:px-6 py-2 md:py-2.5 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-sm md:text-base hover:scale-105" style="animation-delay: 4s">Contact Us</a>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="bg-gradient-to-br from-[#59CDD1] to-[#4bb8bc] p-3 md:p-6 rounded-lg shadow-lg text-center flex flex-col items-center animate-on-scroll">
-          <i class="fas fa-plane-departure wave-icon-glow text-2xl md:text-5xl text-white mb-2 md:mb-4" style="animation-delay: 2s"></i>
-          <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-3">For Medical Tourism Agencies</h3>
-          <p class="text-white/90 text-xs md:text-base mb-2 md:mb-6 flex-grow">Patient referral, hospital agreements, on-site support.</p>
-          <div class="flex flex-row gap-2 w-full mt-auto">
-            <a href="for-agencies" class="flex-1 border-2 border-white text-white px-2 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-white hover:text-[#4bb8bc] transition duration-300 font-semibold text-xs md:text-sm">Learn More</a>
-            <a href="contact-for-agencies" class="wave-cta-light flex-1 bg-white text-[#4bb8bc] px-2 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-xs md:text-sm hover:scale-105" style="animation-delay: 2s">Contact Us</a>
-          </div>
-        </div>
-        <div class="bg-gradient-to-br from-[#59CDD1] to-[#4bb8bc] p-3 md:p-6 rounded-lg shadow-lg text-center flex flex-col items-center animate-on-scroll">
-          <i class="fas fa-building wave-icon-glow text-2xl md:text-5xl text-white mb-2 md:mb-4" style="animation-delay: 4s"></i>
-          <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-3">For Companies</h3>
-          <p class="text-white/90 text-xs md:text-base mb-2 md:mb-6 flex-grow">Healthcare investment, hospital management, reimbursement consulting.</p>
-          <div class="flex flex-row gap-2 w-full mt-auto">
-            <a href="for-companies" class="flex-1 border-2 border-white text-white px-2 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-white hover:text-[#4bb8bc] transition duration-300 font-semibold text-xs md:text-sm">Learn More</a>
-            <a href="contact-for-companies" class="wave-cta-light flex-1 bg-white text-[#4bb8bc] px-2 md:px-4 py-1.5 md:py-2 rounded-full hover:bg-gray-100 transition duration-300 font-semibold text-xs md:text-sm hover:scale-105" style="animation-delay: 4s">Contact Us</a>
-          </div>
+
+        <button class="service-carousel-prev absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/30 hover:bg-white/50 text-white flex items-center justify-center transition duration-300" aria-label="Previous slide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="service-carousel-next absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 md:w-10 md:h-10 rounded-full bg-white/30 hover:bg-white/50 text-white flex items-center justify-center transition duration-300" aria-label="Next slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          <button class="service-carousel-dot w-2.5 h-2.5 rounded-full bg-white transition duration-300" aria-label="Show patients slide"></button>
+          <button class="service-carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 transition duration-300" aria-label="Show agencies slide"></button>
+          <button class="service-carousel-dot w-2.5 h-2.5 rounded-full bg-white/50 transition duration-300" aria-label="Show companies slide"></button>
         </div>
       </div>
     </div>

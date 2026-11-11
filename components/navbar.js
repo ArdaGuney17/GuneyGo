@@ -48,7 +48,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       forCompanies: 'Для компаний',
       popularTreatments: 'Популярные виды лечения',
       hairTransplant: 'Пересадка волос',
-      dentalTreatment: 'Стоматологическое лечение',
+      dentalTreatment: 'Лечение зубов',
       cancerTreatment: 'Лечение рака',
       contact: 'Связаться с нами',
       logoAlt: 'Логотип Artun Healthcare Consultancy'
@@ -61,7 +61,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       forAgencies: 'Tibbi turizm agentlikləri üçün',
       forCompanies: 'Şirkətlər üçün',
       popularTreatments: 'Populyar müalicələr',
-      hairTransplant: 'Saç transplantasiyası',
+      hairTransplant: 'Saç əkimi',
       dentalTreatment: 'Diş müalicəsi',
       cancerTreatment: 'Xərçəng müalicəsi',
       contact: 'Bizimlə əlaqə',
@@ -129,7 +129,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       contactForAgencies: 'agentlikler-ucun-elaqe',
       contactForCompanies: 'sirketler-ucun-elaqe',
       privacy: 'sexsi-melumatlar-bildirisi',
-      hairTransplant: 'sac-transplantasiyasi',
+      hairTransplant: 'sac-ekimi',
       dentalTreatment: 'dis-mualicesi',
       cancerTreatment: 'xerceng-mualicesi'
     }

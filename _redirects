@@ -51,10 +51,12 @@
 /az/agentlikler-ucun-elaqe.html   /az/agentlikler-ucun-elaqe   301
 /az/sirketler-ucun-elaqe.html   /az/sirketler-ucun-elaqe   301
 /az/sexsi-melumatlar-bildirisi.html   /az/sexsi-melumatlar-bildirisi   301
-/az/sac-transplantasiyasi.html   /az/sac-transplantasiyasi   301
+/az/sac-ekimi.html   /az/sac-ekimi   301
 /az/dis-mualicesi.html   /az/dis-mualicesi   301
 /az/xerceng-mualicesi.html   /az/xerceng-mualicesi   301
 
+/az/sac-transplantasiyasi.html   /az/sac-ekimi   301
+/az/sac-transplantasiyasi   /az/sac-ekimi   301
 # --- 2) Rewrites: serve the real .html file at the clean URL ---
 /en/   /en/index.html   200
 /tr/   /tr/ana-sayfa.html   200
@@ -105,7 +107,7 @@
 /az/agentlikler-ucun-elaqe   /az/agentlikler-ucun-elaqe.html   200
 /az/sirketler-ucun-elaqe   /az/sirketler-ucun-elaqe.html   200
 /az/sexsi-melumatlar-bildirisi   /az/sexsi-melumatlar-bildirisi.html   200
-/az/sac-transplantasiyasi   /az/sac-transplantasiyasi.html   200
+/az/sac-ekimi   /az/sac-ekimi.html   200
 /az/dis-mualicesi   /az/dis-mualicesi.html   200
 /az/xerceng-mualicesi   /az/xerceng-mualicesi.html   200
 

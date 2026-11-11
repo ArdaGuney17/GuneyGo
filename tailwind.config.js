@@ -4,6 +4,8 @@ module.exports = {
     "./*.html",
     "./en/*.html",
     "./tr/*.html",
+    "./ru/*.html",
+    "./az/*.html",
     "./components/*.js",
     "./js/*.js",
   ],

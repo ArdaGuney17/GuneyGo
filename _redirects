@@ -28,6 +28,32 @@
 /tr/sağlık-turizmi-acenteleri-için.html   /tr/sağlık-turizmi-acenteleri-için   301
 /tr/şirketler-için-iletişim.html   /tr/şirketler-için-iletişim   301
 /tr/şirketler-için.html   /tr/şirketler-için   301
+/ru/index.html   /ru/   301
+/ru/o-nas.html   /ru/o-nas   301
+/ru/dlya-patsientov.html   /ru/dlya-patsientov   301
+/ru/dlya-agentstv-meditsinskogo-turizma.html   /ru/dlya-agentstv-meditsinskogo-turizma   301
+/ru/dlya-kompaniy.html   /ru/dlya-kompaniy   301
+/ru/svyazatsya-s-nami.html   /ru/svyazatsya-s-nami   301
+/ru/kontakty-dlya-patsientov.html   /ru/kontakty-dlya-patsientov   301
+/ru/kontakty-dlya-agentstv.html   /ru/kontakty-dlya-agentstv   301
+/ru/kontakty-dlya-kompaniy.html   /ru/kontakty-dlya-kompaniy   301
+/ru/uvedomlenie-o-personalnyh-dannyh.html   /ru/uvedomlenie-o-personalnyh-dannyh   301
+/ru/peresadka-volos.html   /ru/peresadka-volos   301
+/ru/stomatologiya.html   /ru/stomatologiya   301
+/ru/lechenie-raka.html   /ru/lechenie-raka   301
+/az/index.html   /az/   301
+/az/haqqimizda.html   /az/haqqimizda   301
+/az/xestelar-ucun.html   /az/xestelar-ucun   301
+/az/tibbi-turizm-agentlikleri-ucun.html   /az/tibbi-turizm-agentlikleri-ucun   301
+/az/sirketler-ucun.html   /az/sirketler-ucun   301
+/az/bizimle-elaqe.html   /az/bizimle-elaqe   301
+/az/xestelar-ucun-elaqe.html   /az/xestelar-ucun-elaqe   301
+/az/agentlikler-ucun-elaqe.html   /az/agentlikler-ucun-elaqe   301
+/az/sirketler-ucun-elaqe.html   /az/sirketler-ucun-elaqe   301
+/az/sexsi-melumatlar-bildirisi.html   /az/sexsi-melumatlar-bildirisi   301
+/az/sac-transplantasiyasi.html   /az/sac-transplantasiyasi   301
+/az/dis-mualicesi.html   /az/dis-mualicesi   301
+/az/xerceng-mualicesi.html   /az/xerceng-mualicesi   301
 
 # --- 2) Rewrites: serve the real .html file at the clean URL ---
 /en/   /en/index.html   200
@@ -56,6 +82,32 @@
 /tr/sağlık-turizmi-acenteleri-için   /tr/sağlık-turizmi-acenteleri-için.html   200
 /tr/şirketler-için-iletişim   /tr/şirketler-için-iletişim.html   200
 /tr/şirketler-için   /tr/şirketler-için.html   200
+/ru/   /ru/index.html   200
+/ru/o-nas   /ru/o-nas.html   200
+/ru/dlya-patsientov   /ru/dlya-patsientov.html   200
+/ru/dlya-agentstv-meditsinskogo-turizma   /ru/dlya-agentstv-meditsinskogo-turizma.html   200
+/ru/dlya-kompaniy   /ru/dlya-kompaniy.html   200
+/ru/svyazatsya-s-nami   /ru/svyazatsya-s-nami.html   200
+/ru/kontakty-dlya-patsientov   /ru/kontakty-dlya-patsientov.html   200
+/ru/kontakty-dlya-agentstv   /ru/kontakty-dlya-agentstv.html   200
+/ru/kontakty-dlya-kompaniy   /ru/kontakty-dlya-kompaniy.html   200
+/ru/uvedomlenie-o-personalnyh-dannyh   /ru/uvedomlenie-o-personalnyh-dannyh.html   200
+/ru/peresadka-volos   /ru/peresadka-volos.html   200
+/ru/stomatologiya   /ru/stomatologiya.html   200
+/ru/lechenie-raka   /ru/lechenie-raka.html   200
+/az/   /az/index.html   200
+/az/haqqimizda   /az/haqqimizda.html   200
+/az/xestelar-ucun   /az/xestelar-ucun.html   200
+/az/tibbi-turizm-agentlikleri-ucun   /az/tibbi-turizm-agentlikleri-ucun.html   200
+/az/sirketler-ucun   /az/sirketler-ucun.html   200
+/az/bizimle-elaqe   /az/bizimle-elaqe.html   200
+/az/xestelar-ucun-elaqe   /az/xestelar-ucun-elaqe.html   200
+/az/agentlikler-ucun-elaqe   /az/agentlikler-ucun-elaqe.html   200
+/az/sirketler-ucun-elaqe   /az/sirketler-ucun-elaqe.html   200
+/az/sexsi-melumatlar-bildirisi   /az/sexsi-melumatlar-bildirisi.html   200
+/az/sac-transplantasiyasi   /az/sac-transplantasiyasi.html   200
+/az/dis-mualicesi   /az/dis-mualicesi.html   200
+/az/xerceng-mualicesi   /az/xerceng-mualicesi.html   200
 
 # --- 3) Root-level convenience redirects ---
 /index.html   /   301

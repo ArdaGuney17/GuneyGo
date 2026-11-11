@@ -13,11 +13,27 @@
     <priority>1.00</priority>
   </url>
   <url>
+    <loc>https://artunhealthcare.com/ru/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
     <loc>https://artunhealthcare.com/en/about-us</loc>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://artunhealthcare.com/tr/hakk%C4%B1m%C4%B1zda</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/ru/o-nas</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/haqqimizda</loc>
     <priority>0.80</priority>
   </url>
   <url>
@@ -29,11 +45,27 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://artunhealthcare.com/ru/dlya-patsientov</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/xestelar-ucun</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://artunhealthcare.com/en/for-agencies</loc>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://artunhealthcare.com/tr/sa%C4%9Fl%C4%B1k-turizmi-acenteleri-i%C3%A7in</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/ru/dlya-agentstv-meditsinskogo-turizma</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/tibbi-turizm-agentlikleri-ucun</loc>
     <priority>0.80</priority>
   </url>
   <url>
@@ -45,11 +77,27 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://artunhealthcare.com/ru/dlya-kompaniy</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/sirketler-ucun</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://artunhealthcare.com/en/contact-us</loc>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://artunhealthcare.com/tr/ileti%C5%9Fime-ge%C3%A7in</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/ru/svyazatsya-s-nami</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/bizimle-elaqe</loc>
     <priority>0.80</priority>
   </url>
   <url>
@@ -61,11 +109,27 @@
     <priority>0.64</priority>
   </url>
   <url>
+    <loc>https://artunhealthcare.com/ru/kontakty-dlya-patsientov</loc>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/xestelar-ucun-elaqe</loc>
+    <priority>0.64</priority>
+  </url>
+  <url>
     <loc>https://artunhealthcare.com/en/contact-for-agencies</loc>
     <priority>0.64</priority>
   </url>
   <url>
     <loc>https://artunhealthcare.com/tr/acenteler-i%C3%A7in-ileti%C5%9Fim</loc>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/ru/kontakty-dlya-agentstv</loc>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/agentlikler-ucun-elaqe</loc>
     <priority>0.64</priority>
   </url>
   <url>
@@ -77,11 +141,27 @@
     <priority>0.64</priority>
   </url>
   <url>
+    <loc>https://artunhealthcare.com/ru/kontakty-dlya-kompaniy</loc>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/sirketler-ucun-elaqe</loc>
+    <priority>0.64</priority>
+  </url>
+  <url>
     <loc>https://artunhealthcare.com/en/aydinlatmametni</loc>
     <priority>0.40</priority>
   </url>
   <url>
     <loc>https://artunhealthcare.com/tr/aydinlatmametni_tr</loc>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/ru/uvedomlenie-o-personalnyh-dannyh</loc>
+    <priority>0.40</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/sexsi-melumatlar-bildirisi</loc>
     <priority>0.40</priority>
   </url>
   <url>
@@ -93,6 +173,14 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://artunhealthcare.com/ru/peresadka-volos</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/sac-transplantasiyasi</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://artunhealthcare.com/en/dental-treatment</loc>
     <priority>0.90</priority>
   </url>
@@ -101,11 +189,27 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://artunhealthcare.com/ru/stomatologiya</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/dis-mualicesi</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://artunhealthcare.com/en/cancer-treatment</loc>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://artunhealthcare.com/tr/kanser-tedavisi</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/ru/lechenie-raka</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://artunhealthcare.com/az/xerceng-mualicesi</loc>
     <priority>0.90</priority>
   </url>
 </urlset>

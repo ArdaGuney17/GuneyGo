@@ -3,24 +3,75 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
   const root = document.getElementById('navbar-root');
   if (!root) return;
 
-  const isTR = lang === 'tr';
+  const LANGS = [
+    { code: 'en', label: 'ENG' },
+    { code: 'tr', label: 'TR' },
+    { code: 'ru', label: 'RU' },
+    { code: 'az', label: 'AZ' }
+  ];
 
-  const texts = {
-    home: isTR ? 'Ana Sayfa' : 'Home',
-    about: isTR ? 'Hakkımızda' : 'About Us',
-    services: isTR ? 'Hizmetlerimiz' : 'Our Services',
-    forPatients: isTR ? 'Hastalar İçin' : 'For Patients',
-    forAgencies: isTR ? 'Medikal Turizm Acenteleri İçin' : 'For Medical Tourism Agencies',
-    forCompanies: isTR ? 'Şirketler İçin' : 'For Companies',
-    popularTreatments: isTR ? 'Popüler Tedaviler' : 'Popular Treatments',
-    hairTransplant: isTR ? 'Saç Ekimi' : 'Hair Transplant',
-    dentalTreatment: isTR ? 'Diş Tedavisi' : 'Dental Treatment',
-    cancerTreatment: isTR ? 'Kanser Tedavisi' : 'Cancer Treatment',
-    contact: isTR ? 'İletişime Geçin' : 'Contact Us'
+  const allTexts = {
+    en: {
+      home: 'Home',
+      about: 'About Us',
+      services: 'Our Services',
+      forPatients: 'For Patients',
+      forAgencies: 'For Medical Tourism Agencies',
+      forCompanies: 'For Companies',
+      popularTreatments: 'Popular Treatments',
+      hairTransplant: 'Hair Transplant',
+      dentalTreatment: 'Dental Treatment',
+      cancerTreatment: 'Cancer Treatment',
+      contact: 'Contact Us',
+      logoAlt: 'Artun Consultancy Logo'
+    },
+    tr: {
+      home: 'Ana Sayfa',
+      about: 'Hakkımızda',
+      services: 'Hizmetlerimiz',
+      forPatients: 'Hastalar İçin',
+      forAgencies: 'Medikal Turizm Acenteleri İçin',
+      forCompanies: 'Şirketler İçin',
+      popularTreatments: 'Popüler Tedaviler',
+      hairTransplant: 'Saç Ekimi',
+      dentalTreatment: 'Diş Tedavisi',
+      cancerTreatment: 'Kanser Tedavisi',
+      contact: 'İletişime Geçin',
+      logoAlt: 'Artun Sağlık Danışmanlığı Logosu'
+    },
+    ru: {
+      home: 'Главная',
+      about: 'О нас',
+      services: 'Наши услуги',
+      forPatients: 'Для пациентов',
+      forAgencies: 'Для агентств медицинского туризма',
+      forCompanies: 'Для компаний',
+      popularTreatments: 'Популярные виды лечения',
+      hairTransplant: 'Пересадка волос',
+      dentalTreatment: 'Стоматологическое лечение',
+      cancerTreatment: 'Лечение рака',
+      contact: 'Связаться с нами',
+      logoAlt: 'Логотип Artun Healthcare Consultancy'
+    },
+    az: {
+      home: 'Ana səhifə',
+      about: 'Haqqımızda',
+      services: 'Xidmətlərimiz',
+      forPatients: 'Xəstələr üçün',
+      forAgencies: 'Tibbi turizm agentlikləri üçün',
+      forCompanies: 'Şirkətlər üçün',
+      popularTreatments: 'Populyar müalicələr',
+      hairTransplant: 'Saç transplantasiyası',
+      dentalTreatment: 'Diş müalicəsi',
+      cancerTreatment: 'Xərçəng müalicəsi',
+      contact: 'Bizimlə əlaqə',
+      logoAlt: 'Artun Healthcare Consultancy loqosu'
+    }
   };
+  const texts = allTexts[lang] || allTexts.en;
 
   // Clean (extension-less) slugs per language, keyed by a stable page identifier.
-  // '' means that language's homepage, served at /en/ or /tr/.
+  // '' means that language's homepage, served at /en/, /tr/, /ru/ or /az/.
   const slugs = {
     en: {
       home: '',
@@ -51,11 +102,41 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       hairTransplant: 'saç-ekimi',
       dentalTreatment: 'diş-tedavisi',
       cancerTreatment: 'kanser-tedavisi'
+    },
+    ru: {
+      home: '',
+      about: 'o-nas',
+      forPatients: 'dlya-patsientov',
+      forAgencies: 'dlya-agentstv-meditsinskogo-turizma',
+      forCompanies: 'dlya-kompaniy',
+      contact: 'svyazatsya-s-nami',
+      contactForPatients: 'kontakty-dlya-patsientov',
+      contactForAgencies: 'kontakty-dlya-agentstv',
+      contactForCompanies: 'kontakty-dlya-kompaniy',
+      privacy: 'uvedomlenie-o-personalnyh-dannyh',
+      hairTransplant: 'peresadka-volos',
+      dentalTreatment: 'stomatologiya',
+      cancerTreatment: 'lechenie-raka'
+    },
+    az: {
+      home: '',
+      about: 'haqqimizda',
+      forPatients: 'xestelar-ucun',
+      forAgencies: 'tibbi-turizm-agentlikleri-ucun',
+      forCompanies: 'sirketler-ucun',
+      contact: 'bizimle-elaqe',
+      contactForPatients: 'xestelar-ucun-elaqe',
+      contactForAgencies: 'agentlikler-ucun-elaqe',
+      contactForCompanies: 'sirketler-ucun-elaqe',
+      privacy: 'sexsi-melumatlar-bildirisi',
+      hairTransplant: 'sac-transplantasiyasi',
+      dentalTreatment: 'dis-mualicesi',
+      cancerTreatment: 'xerceng-mualicesi'
     }
   };
 
   // Build a relative href to `key` in `targetLang`, from a page rendered in `lang`.
-  // Every page lives one level deep (either /en/... or /tr/...), so this stays simple.
+  // Every page lives one level deep (/en/..., /tr/..., /ru/... or /az/...), so this stays simple.
   const hrefTo = (targetLang, key) => {
     const slug = slugs[targetLang][key] ?? '';
     if (targetLang === lang) return slug === '' ? './' : slug;
@@ -74,16 +155,37 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
     contact: hrefTo(lang, 'contact')
   };
 
-  const linkEN = hrefTo('en', pageKey);
-  const linkTR = hrefTo('tr', pageKey);
+  // Only the Turkish site has its own (Turkish-wording) logo file; every other language uses the English one.
+  const logoFile = lang === 'tr' ? 'ArtuntrW' : 'artun2';
+
+  // Russian and Azerbaijani labels are longer, so the full desktop menu only kicks in from the lg
+  // breakpoint (1024px); below that those languages use the hamburger menu instead of wrapping.
+  // (Full class names are spelled out so Tailwind's scanner picks them up.)
+  const wide = lang === 'ru' || lang === 'az';
+  const desktopNavClass = wide
+    ? 'hidden lg:flex items-center space-x-4 xl:space-x-6 whitespace-nowrap'
+    : 'hidden md:flex items-center space-x-6';
+  const menuBtnClass = wide
+    ? 'menu-icon-pulse lg:hidden text-2xl text-gray-400'
+    : 'menu-icon-pulse md:hidden text-2xl text-gray-400';
+  const mobileNavClass = wide
+    ? 'hidden lg:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism'
+    : 'hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism';
+
+  const desktopLangSwitcher = LANGS
+    .map((l) => `<a href="${hrefTo(l.code, pageKey)}" hreflang="${l.code}" class="${l.code === lang ? 'text-[#59CDD1]' : ''}">${l.label}</a>`)
+    .join('\n        <span>/</span>\n        ');
+  const mobileLangSwitcher = LANGS
+    .map((l) => `<a href="${hrefTo(l.code, pageKey)}" hreflang="${l.code}" class="${l.code === lang ? 'text-[#59CDD1]' : 'text-gray-300 hover:text-white'}">${l.label}</a>`)
+    .join('\n      <span class="text-gray-500">/</span>\n      ');
 
   const html = `
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
   <div class="container mx-auto px-4 flex justify-between items-center">
     <a href="${links.home}">
-      <img src="../img/${isTR ? 'ArtuntrW' : 'artun2'}.png" alt="${isTR ? 'Artun Sağlık Danışmanlığı Logosu' : 'Artun Consultancy Logo'}" class="h-7 w-auto md:h-8">
+      <img src="../img/${logoFile}.png" alt="${texts.logoAlt}" class="h-7 w-auto md:h-8">
     </a>
-    <nav class="hidden md:flex items-center space-x-6">
+    <nav class="${desktopNavClass}">
       <a href="${links.home}" class="text-gray-300 hover:text-white transition-colors duration-300">${texts.home}</a>
       <a href="${links.about}" class="text-gray-300 hover:text-white transition-colors duration-300">${texts.about}</a>
       <div class="dropdown relative">
@@ -108,17 +210,15 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
       </div>
       <a href="${links.contact}" class="heartbeat-cta bg-[#59CDD1] bg-opacity-70 text-white px-5 py-2 rounded-full hover:bg-opacity-90 transition duration-300 shadow-md">${texts.contact}</a>
       <div class="lang-switcher text-gray-300 font-semibold space-x-2">
-        <a href="${linkEN}" class="${!isTR ? 'text-[#59CDD1]' : ''}">ENG</a>
-        <span>/</span>
-        <a href="${linkTR}" class="${isTR ? 'text-[#59CDD1]' : ''}">TR</a>
+        ${desktopLangSwitcher}
       </div>
     </nav>
-    <button id="mobile-menu-btn" class="menu-icon-pulse md:hidden text-2xl text-gray-400">
+    <button id="mobile-menu-btn" class="${menuBtnClass}">
       <i class="fas fa-bars"></i>
     </button>
   </div>
 </header>
-<nav id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism">
+<nav id="mobile-menu" class="${mobileNavClass}">
   <div class="flex flex-col space-y-2">
     <a href="${links.home}" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.home}</a>
     <a href="${links.about}" class="text-white text-center py-2 hover:bg-gray-700/50 rounded-md">${texts.about}</a>
@@ -144,9 +244,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
     </div>
     <a href="${links.contact}" class="heartbeat-cta bg-[#59CDD1] bg-opacity-70 text-white text-center py-2 rounded-full hover:bg-opacity-90">${texts.contact}</a>
     <div class="flex justify-center space-x-2 pt-4 border-t border-gray-600/50 mt-2">
-      <a href="${linkEN}" class="${!isTR ? 'text-[#59CDD1]' : 'text-gray-300 hover:text-white'}">ENG</a>
-      <span class="text-gray-500">/</span>
-      <a href="${linkTR}" class="${isTR ? 'text-[#59CDD1]' : 'text-gray-300 hover:text-white'}">TR</a>
+      ${mobileLangSwitcher}
     </div>
   </div>
 </nav>

@@ -46,7 +46,7 @@ function renderFloatingMailButton() {
                 pointer-events: none;
             }
             .floating-btn-wa {
-                background-color: rgba(37, 211, 102, 0.7);
+                background-color: rgba(37, 211, 102, 0.5);
                 --pulse-ring: rgba(37, 211, 102, 0.85);
             }
             .floating-btn-wa:hover { background-color: rgb(30, 190, 91); }

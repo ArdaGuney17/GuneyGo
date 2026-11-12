@@ -1,6 +1,9 @@
 # Auto-generated: clean (extension-less) URLs for the whole site.
 # Netlify processes rules top to bottom; first match wins.
 
+# --- 0) Geo: visitors from Azerbaijan who open the bare domain get the Azerbaijani site ---
+/   /az/   302!   Country=az
+
 # --- 1) Permanent redirects: old *.html URLs -> clean URLs ---
 /en/index.html   /en/   301
 /tr/ana-sayfa.html   /tr/   301

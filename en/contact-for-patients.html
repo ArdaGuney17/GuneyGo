@@ -507,5 +507,12 @@
     renderNavbar('en', 'contactForPatients');
     renderFooter('en');
 </script>
+<script>
+  (function () {
+    var topic = new URLSearchParams(window.location.search).get('topic');
+    var box = document.getElementById('message');
+    if (topic && box && !box.value) box.value = 'I am interested in: ' + topic.slice(0, 120) + '\n';
+  })();
+</script>
 </body>
 </html>

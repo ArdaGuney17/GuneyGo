@@ -5,19 +5,19 @@ function renderFooter(lang = 'en') {
 
   const allTexts = {
     en: {
-      rights: '© 2025 Artun Healthcare Consultancy. All rights reserved.',
+      rights: '© ' + new Date().getFullYear() + ' Artun Healthcare Consultancy. All rights reserved.',
       logoAlt: 'Artun Consultancy Logo'
     },
     tr: {
-      rights: '© 2025 Artun Sağlık Hizmetleri Danışmanlığı. Tüm hakları saklıdır.',
+      rights: '© ' + new Date().getFullYear() + ' Artun Sağlık Hizmetleri Danışmanlığı. Tüm hakları saklıdır.',
       logoAlt: 'Artun Sağlık Danışmanlığı Logosu'
     },
     ru: {
-      rights: '© 2025 Artun Healthcare Consultancy. Все права защищены.',
+      rights: '© ' + new Date().getFullYear() + ' Artun Healthcare Consultancy. Все права защищены.',
       logoAlt: 'Логотип Artun Healthcare Consultancy'
     },
     az: {
-      rights: '© 2025 Artun Healthcare Consultancy. Bütün hüquqlar qorunur.',
+      rights: '© ' + new Date().getFullYear() + ' Artun Healthcare Consultancy. Bütün hüquqlar qorunur.',
       logoAlt: 'Artun Healthcare Consultancy loqosu'
     }
   };

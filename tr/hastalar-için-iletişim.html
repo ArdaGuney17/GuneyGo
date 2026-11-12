@@ -538,5 +538,12 @@
     renderNavbar('tr', 'contactForPatients');
     renderFooter('tr');
 </script>
+<script>
+  (function () {
+    var topic = new URLSearchParams(window.location.search).get('topic');
+    var box = document.getElementById('message');
+    if (topic && box && !box.value) box.value = 'İlgilendiğim tedavi alanı: ' + topic.slice(0, 120) + '\n';
+  })();
+</script>
 </body>
 </html>

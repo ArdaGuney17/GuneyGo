@@ -155,21 +155,21 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
     contact: hrefTo(lang, 'contact')
   };
 
-  // Only the Turkish site has its own (Turkish-wording) logo file; every other language uses the English one.
-  const logoFile = lang === 'tr' ? 'ArtuntrW' : 'artun2';
+  // Each language has its own logo wording (tr / ru / az); anything else uses the English one.
+  const logoFile = { tr: 'ArtuntrW', ru: 'artun_ru', az: 'artun_az' }[lang] || 'artun2';
 
-  // Russian and Azerbaijani labels are longer, so the full desktop menu only kicks in from the lg
-  // breakpoint (1024px); below that those languages use the hamburger menu instead of wrapping.
+  // Russian and Azerbaijani labels (and logos) are longer, so the full desktop menu only kicks in from
+  // the xl breakpoint (1280px); below that those languages use the hamburger menu instead of squeezing the logo.
   // (Full class names are spelled out so Tailwind's scanner picks them up.)
   const wide = lang === 'ru' || lang === 'az';
   const desktopNavClass = wide
-    ? 'hidden lg:flex items-center space-x-4 xl:space-x-6 whitespace-nowrap'
+    ? 'hidden xl:flex items-center space-x-5 whitespace-nowrap'
     : 'hidden md:flex items-center space-x-6';
   const menuBtnClass = wide
-    ? 'menu-icon-pulse lg:hidden text-2xl text-gray-400'
+    ? 'menu-icon-pulse xl:hidden text-2xl text-gray-400'
     : 'menu-icon-pulse md:hidden text-2xl text-gray-400';
   const mobileNavClass = wide
-    ? 'hidden lg:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism'
+    ? 'hidden xl:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism'
     : 'hidden md:hidden fixed top-16 left-0 w-full p-4 z-40 glassmorphism';
 
   const desktopLangSwitcher = LANGS
@@ -182,7 +182,7 @@ function renderNavbar(lang = 'en', pageKey = 'home') {
   const html = `
 <header class="fixed top-0 left-0 right-0 z-50 bg-gray-900 shadow-md py-4">
   <div class="container mx-auto px-4 flex justify-between items-center">
-    <a href="${links.home}">
+    <a href="${links.home}" class="${wide ? 'shrink min-w-0 mr-4' : ''}">
       <img src="../img/${logoFile}.png" alt="${texts.logoAlt}" class="h-7 w-auto md:h-8">
     </a>
     <nav class="${desktopNavClass}">

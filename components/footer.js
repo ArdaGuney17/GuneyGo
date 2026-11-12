@@ -22,8 +22,8 @@ function renderFooter(lang = 'en') {
     }
   };
   const texts = allTexts[lang] || allTexts.en;
-  // Only the Turkish site has its own (Turkish-wording) logo file; every other language uses the English one.
-  const logoFile = lang === 'tr' ? 'ArtuntrW' : 'artun2';
+  // Each language has its own logo wording (tr / ru / az); anything else uses the English one.
+  const logoFile = { tr: 'ArtuntrW', ru: 'artun_ru', az: 'artun_az' }[lang] || 'artun2';
 
   const html = `
 <footer id="page-footer" class="bg-gray-900 text-white mt-auto border-t border-gray-800">

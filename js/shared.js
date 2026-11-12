@@ -40,11 +40,17 @@ function renderFloatingMailButton() {
                 content: '';
                 position: absolute;
                 top: 0; left: 0; right: 0; bottom: 0;
-                border: 3px solid rgba(234, 88, 12, 0.85);
+                border: 3px solid var(--pulse-ring, rgba(234, 88, 12, 0.85));
                 border-radius: 50%;
                 animation: mail-pulse-ring 2s ease-out infinite;
                 pointer-events: none;
             }
+            .floating-btn-wa {
+                background-color: rgba(37, 211, 102, 0.7);
+                --pulse-ring: rgba(37, 211, 102, 0.85);
+            }
+            .floating-btn-wa:hover { background-color: rgb(30, 190, 91); }
+            .floating-btn-wa.pulse-mail, .floating-btn-wa.pulse-mail::before { animation-delay: 1s; }
             @keyframes mail-pulse-scale {
                 0%, 100% { transform: scale(1); }
                 50% { transform: scale(1.1); }
@@ -60,7 +66,14 @@ function renderFloatingMailButton() {
     const container = document.createElement('div');
     container.id = 'floating-buttons-container';
     container.className = 'floating-btn-container animate-on-scroll-right';
-    container.innerHTML = `
+    // Russian and Azerbaijani pages also get a WhatsApp button for our Azerbaijan representative.
+    const pageLang = (document.documentElement.lang || '').toLowerCase();
+    const waLabel = { az: 'WhatsApp ilə yazın', ru: 'Написать в WhatsApp' }[pageLang];
+    const waButton = waLabel ? `
+        <a href="https://wa.me/994101113777" target="_blank" rel="noopener" class="floating-btn floating-btn-wa text-white shadow-xl transition duration-300 transform hover:scale-110 pulse-mail" aria-label="${waLabel}" title="${waLabel}">
+            <i class="fab fa-whatsapp" style="font-size: 1.35em;"></i>
+        </a>` : '';
+    container.innerHTML = waButton + `
         <a href="mailto:info@artunhealthcare.com" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
             <i class="fas fa-envelope"></i>
         </a>

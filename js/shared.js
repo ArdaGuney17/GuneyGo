@@ -73,8 +73,9 @@ function renderFloatingMailButton() {
         <a href="https://wa.me/994101113777" target="_blank" rel="noopener" class="floating-btn floating-btn-wa text-white shadow-xl transition duration-300 transform hover:scale-110 pulse-mail" aria-label="${waLabel}" title="${waLabel}">
             <i class="fab fa-whatsapp" style="font-size: 1.35em;"></i>
         </a>` : '';
+    const mailTo = waLabel ? 'nigar.ismayil@artunhealthcare.com' : 'info@artunhealthcare.com';
     container.innerHTML = waButton + `
-        <a href="mailto:info@artunhealthcare.com" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
+        <a href="mailto:${mailTo}" class="floating-btn bg-orange-500/70 text-white shadow-xl hover:bg-orange-600 transition duration-300 transform hover:scale-110 pulse-mail" aria-label="Send us an Email">
             <i class="fas fa-envelope"></i>
         </a>
     `;

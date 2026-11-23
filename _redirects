@@ -114,5 +114,17 @@
 /az/dis-mualicesi   /az/dis-mualicesi.html   200
 /az/xerceng-mualicesi   /az/xerceng-mualicesi.html   200
 
+# Former root-level page URLs reported by Search Console
+/for-agencies   /en/for-agencies   301
+/for-patients   /en/for-patients   301
+/hakk%C4%B1m%C4%B1zda.html   /tr/hakk%C4%B1m%C4%B1zda   301
+/hastalar-i%C3%A7in   /tr/hastalar-i%C3%A7in   301
+/acenteler-i%C3%A7in-ileti%C5%9Fim.html   /tr/acenteler-i%C3%A7in-ileti%C5%9Fim   301
+/ana-sayfa.html   /tr/   301
+/contact-us   /en/contact-us   301
+/about-us   /en/about-us   301
+/hastalar-i%C3%A7in-ileti%C5%9Fim.html   /tr/hastalar-i%C3%A7in-ileti%C5%9Fim   301
+/ana-sayfa   /tr/   301
+
 # --- 3) Root-level convenience redirects ---
 /index.html   /   301
